@@ -5,7 +5,7 @@
 	<title>Home</title>
 </head>
 <body>
-
+<h1>나는 빡빡이다</h1>
 
 </body>
 </html>  
