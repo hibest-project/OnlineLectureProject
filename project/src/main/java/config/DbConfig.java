@@ -13,7 +13,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages= {"com.project.www.member.mapper"})
+@MapperScan(basePackages= {"com.project.www.mypage.mapper"})
 public class DbConfig {
 
 
