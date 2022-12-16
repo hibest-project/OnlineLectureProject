@@ -5,13 +5,12 @@
 <mapper namespace="com.project.www.mypage.mapper.MyPageMapper">
 
 	<select id="getMyClass" resultType="com.project.www.mypage.dto.ListenClass">
-		select m.id,c.class_name,
-		c.image, d.title from
-		listen_class lc, class c, dtail_kategorie d, member m
-		where m.id = lc.id
-		and lc.class_id = c.class_id
-		and c.dtail_num = d.dtail_num
-		and m.id = 1;
+		select m.id,l.name,l.image, d.title
+		from listen_lecture ll, lecture l, dtail_kategorie d, member m
+		where m.id = ll.id
+		and ll.lecture_id = l.lecture_id
+		and l.dtail_num = d.dtail_num
+		and m.id = "abb";
 	</select>
 
 </mapper>

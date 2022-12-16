@@ -10,7 +10,7 @@
 	<h1>마이페이지</h1>
 	<ul>
 		<li><a href="${pageContext.request.contextPath }/MyPage/myclass">수강중인강의</a></li>
-		<li><a href="${pageContext.request.contextPath }/MyPage/myclass">프로필 수정</a></li>
+		<li><a href="${pageContext.request.contextPath }/MyPage/Modify"></a></li>
 		<li><a href="${pageContext.request.contextPath }/MyPage/myclass">크리에이터 센터</a></li>
 		<li><a href="${pageContext.request.contextPath }/MyPage/myclass">설정</a></li>
 		<li><a href="${pageContext.request.contextPath }/MyPage/myclass">로그아웃</a></li>
