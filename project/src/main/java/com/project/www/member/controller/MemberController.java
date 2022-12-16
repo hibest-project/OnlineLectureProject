@@ -15,7 +15,7 @@ import com.project.www.member.service.MemberService;
 
 import lombok.extern.slf4j.Slf4j;
 
-
+/*깃 허브 이용 해보기*/
 @Controller
 @RequestMapping("/member")
 @Slf4j
@@ -55,6 +55,7 @@ public class MemberController {
 		}*/
 		return "home";
 	}
+	
 	
 	
 /*	@GetMapping("/login")
