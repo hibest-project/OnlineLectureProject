@@ -40,21 +40,22 @@ public class MemberController {
 	}
 	@PostMapping("/login")
 	public String login(Member member, Model model, HttpSession session) {
-		
+			
 		Member _member = memberService.getMember(member.getId());
 		if(_member == null) {
 			model.addAttribute("result", "noSuchIdorWorngPassword");
-		}else {
-//			if(bCryptPasswordEncoder.matches(member.getId(), _member.getPassword())) {
-//				
-//				log.info("member" + _member);
-//				session.setAttribute("member", _member);
-//			}else {
-//				model.addAttribute("result", "noSuchIdorWorngPassword");
-//			}
-		}
+		}/*else {
+			if(bCryptPasswordEncoder.matches(_member.getId(), _member.getPassword())) {
+				
+				log.info("member" + _member);
+				session.setAttribute("member", _member);
+			}else {
+				model.addAttribute("result", "noSuchIdorWorngPassword");
+			}
+		}*/
 		return "home";
 	}
+	
 	
 /*	@GetMapping("/login")
 	public String loginMembers(Model model) {
@@ -72,6 +73,7 @@ public class MemberController {
 		memberService.registMember(member);
 		
 		return "home";
+		//return "redirect:login";
 		
 	}
 

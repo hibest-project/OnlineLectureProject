@@ -4,7 +4,7 @@ import com.project.www.member.dto.Member;
 
 public interface MemberService {
 
-	Member getMember(int id);
+	Member getMember(Long id);
 
 	void registMember(Member member);
 

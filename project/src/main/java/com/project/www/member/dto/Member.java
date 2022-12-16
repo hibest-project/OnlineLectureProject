@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Component
 public class Member {
 	
-	private int id;
+	private Long id;
 	private String name;
 	private String password;
 	private String email;
