@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="${contextPath }/member/loginForm">로그인</a>
+	<a href="${contextPath }/member/loginForm">로그인하기</a>
 	
 </body>
 </html>
