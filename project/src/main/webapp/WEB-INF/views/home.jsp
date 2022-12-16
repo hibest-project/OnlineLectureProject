@@ -5,7 +5,7 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>나는 박홍도다</h1>
+<h1>나는 박솔이다</h1>
 
 </body>
 </html>  
