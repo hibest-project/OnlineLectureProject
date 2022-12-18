@@ -10,7 +10,7 @@
 		where m.id = ll.id
 		and ll.lecture_id = l.lecture_id
 		and l.dtail_num = d.dtail_num
-		and m.id = "abb";
+		and m.id = "abb"
 	</select>
 
 </mapper>

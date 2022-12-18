@@ -1,4 +1,4 @@
-package com.project.www.mypage.dto;
+		package com.project.www.mypage.dto;
 
 import org.springframework.stereotype.Component;
 
@@ -12,10 +12,9 @@ import lombok.NoArgsConstructor;
 @Component
 public class ListenClass {
 
-	private int listen_class_id ; 
-	private int id; 
-	private int class_id;
-	private String class_name ;
+
+	private String id; 
+	private String name ;
 	private String image;
 	private String title;
 }
