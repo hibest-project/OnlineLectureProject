@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.project.www.customercenter.dto.InquiryBoard;
 import com.project.www.customercenter.dto.QnA;
 import com.project.www.customercenter.service.CustomerCenterService;
-import com.project.www.mypage.dto.ListenClass;
 
 import lombok.extern.slf4j.Slf4j;
 
