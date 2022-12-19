@@ -18,5 +18,6 @@ public class InquiryBoard {
 	private String title;
 	private Date date;
 	private String email;
+	private String content;
 
 }

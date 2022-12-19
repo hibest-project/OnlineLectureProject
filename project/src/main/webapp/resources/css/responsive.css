@@ -1,0 +1,333 @@
+@media screen and (max-width: 1100px) {
+  .dropdowns,
+  .nav__right > input,
+  .search,
+  .nav__right > a,
+  .banner-btns,
+  .slide-btns,
+  .footer > hr,
+  .bottom-left,
+  .bottom-right,
+  .no-display {
+    display: none;
+  }
+
+  .sidenav > input:focus,
+  .closebtn,
+  .rp-footer-info > button:focus {
+    outline: none;
+  }
+
+  .card:hover .card-meta,
+  .card:hover .fourth-meta {
+    display: none;
+  }
+
+  .body {
+    box-sizing: border-box;
+  }
+
+  .nav {
+    height: 30px;
+    padding: 13px 0;
+  }
+
+  .nav__logo {
+    margin: 0 auto;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: margin-left 0.5s;
+  }
+
+  .sidenav {
+    display: block;
+    position: fixed;
+    width: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+    z-index: 100;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .sidenav > input {
+    width: 85%;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .sidenav > input::placeholder {
+    color: darkgray;
+  }
+
+  .sidenav > span {
+    position: absolute;
+    margin-top: 7px;
+    right: 10%;
+  }
+
+  .sidenav > hr {
+    margin-top: 10px;
+  }
+
+  .sidenav-list > a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .nav__right {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+  }
+
+  .login,
+  .register {
+    font-size: 14px;
+    border: none;
+  }
+
+  .header-input > input {
+    width: 100%;
+  }
+
+  .search-icon {
+    right: 10%;
+  }
+
+  .contents {
+    margin: 0 15px;
+  }
+
+  .row-first > a,
+  .row-second > a,
+  .row-third > a,
+  .row-fourth > a {
+    font-size: 22px;
+  }
+
+  .rp-margin {
+    margin-right: 0;
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .card > h4 {
+    font-size: 14px;
+  }
+
+  .card > h5 {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .card > p {
+    font-size: 16px;
+  }
+
+  .card > p > del {
+    font-size: 14px;
+  }
+
+  .tags > span {
+    font-size: 12px;
+  }
+
+  .card-second > a > h4 {
+    padding: 20px 20px 0 20px;
+  }
+
+  .card-third > a > img {
+    height: 150px;
+  }
+
+  .row-fifth {
+    flex-direction: column;
+  }
+
+  .row-left > h1 {
+    font-size: 28px;
+  }
+
+  .row-left > p {
+    margin-top: 10px;
+  }
+
+  .row-left > button {
+    padding: 8px 20px;
+  }
+
+  .row-right {
+    margin-top: 40px;
+  }
+
+  .review {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .bottom-slide > img {
+    height: 150px;
+  }
+
+  .banner-info {
+    top: 15px;
+    left: 15px;
+  }
+
+  .banner-info > b,
+  .banner-info > p {
+    font-size: 16px;
+  }
+
+  .banner-info > button {
+    font-size: 14px;
+  }
+
+  .row-sixth {
+    padding: 50px 20px;
+  }
+
+  .sixth-card {
+    padding: 50px 20px;
+  }
+
+  .sixth-card > p {
+    margin-bottom: 30px;
+  }
+
+  footer {
+    padding: 10px 20px 50px 20px;
+  }
+
+  .top-col {
+    display: none;
+  }
+
+  .rp-footer-top {
+    display: block;
+    width: 100%;
+  }
+
+  .row {
+    padding-top: 15px;
+    border-bottom: 2px solid #3f4143;
+  }
+
+  .accordion {
+    background-color: #303740;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: 0.4s;
+  }
+
+  .panel {
+    color: darkgray;
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 5px;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .toggled:after {
+    content: '\2212';
+  }
+
+  .rp-footer-bottom {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: block;
+    margin: auto;
+    color: darkgray;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .rp-footer-bottom > p {
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .rp-footer-info > button {
+    background: none;
+    border: none;
+    color: darkgray;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.4s;
+  }
+
+  .rp-bottom-icons {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .rp-icon > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: gray;
+    cursor: pointer;
+  }
+
+  .rp-footer-detail {
+    color: darkgray;
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 5px;
+    transition: max-height 0.2s ease-out;
+  }
+}

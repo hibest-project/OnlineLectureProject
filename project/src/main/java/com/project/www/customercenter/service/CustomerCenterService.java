@@ -11,4 +11,7 @@ public interface CustomerCenterService {
 
 	List<InquiryBoard> viewAllInquiryBoard();
 
+	static void InquiryWriteBoard(InquiryBoard inquiryRequest) {
+	}
+
 }

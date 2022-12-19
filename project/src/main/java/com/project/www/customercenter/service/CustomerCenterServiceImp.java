@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ace.blue.diary.dto.DiaryWriteRequest;
 import com.project.www.customercenter.dto.InquiryBoard;
 import com.project.www.customercenter.dto.QnA;
 import com.project.www.customercenter.mapper.CustomerCenterMapper;
@@ -25,5 +26,10 @@ public class CustomerCenterServiceImp implements CustomerCenterService {
 	public List<InquiryBoard> viewAllInquiryBoard() {
 		
 		return customerCenterMapper.getInquiryBoard();
+	}
+	
+	public void InquiryWriteBoard(InquiryBoard inquiryRequest) {
+		return customerCenterMapper.updateinquiryWriteBoard();
+		
 	}
 }

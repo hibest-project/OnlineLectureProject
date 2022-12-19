@@ -11,7 +11,7 @@
 
 	<select id="getInquiryBoard" resultType="com.project.www.customercenter.dto.InquiryBoard">
 		select
-		Inquiry_id,id,title,date,email
+		Inquiry_id,title,date,email,content,id
 		from inquiry_board order by Inquiry_id desc
 	</select>
 
