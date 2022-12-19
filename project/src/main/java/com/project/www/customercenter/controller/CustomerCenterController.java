@@ -45,5 +45,11 @@ public class CustomerCenterController {
 		return "customercenter/InquiryBoard";
 	}
 	
+	@GetMapping("/WriteBoard")
+	public String viewWriteBoard() {
+		return "customercenter/WriteBoard";
+	}
+	
+	
 
 }
