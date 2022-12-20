@@ -7,11 +7,11 @@ import config.MyMapper;
 @MyMapper
 public interface MemberMapper {
 	
-	public Member selectOne(Long id);
+	public Member selectOne(String id);
 
 	public void insert(Member member);
 
-
-
+	
+	
 	
 }

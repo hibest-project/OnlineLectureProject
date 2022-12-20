@@ -15,7 +15,7 @@ public class MemberServiceImpl implements MemberService{
 	MemberMapper memberMapper;
 
 	@Override
-	public Member getMember(Long id) {
+	public Member getMember(String id) {
 		return memberMapper.selectOne(id);
 	}
 

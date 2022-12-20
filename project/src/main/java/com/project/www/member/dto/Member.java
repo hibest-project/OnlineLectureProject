@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Component
 public class Member {
 	
-	private Long id;
+	private String id;
 	private String name;
 	private String password;
 	private String email;
@@ -24,3 +24,4 @@ public class Member {
 	private String phone;
 	
 }
+

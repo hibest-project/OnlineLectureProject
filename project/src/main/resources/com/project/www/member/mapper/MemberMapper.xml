@@ -5,15 +5,15 @@
   
 <mapper namespace="com.project.www.member.mapper.MemberMapper">
 
-	<!-- 로그인 하기 -->
+	<!-- 로그인 -->
 	<select id="selectOne" resultType="com.project.www.member.dto.Member">
 		<!-- select * from member where member_id = #{id} and password = #{password} -->
-		select id, password from member where id = #{id}
+		select * from member where id = #{id}
 	</select>
 	
-	<!-- 회원가입 하기 -->
+	<!-- 회원가입 -->
 	<insert id="insert" > <!-- insert의 반환 값 integer -> 1행, 2행 반환 한다 -->
-		insert into member (member_id, name, password, email, birthday, address, gender, phone)
+		insert into member (id, name, password, email, birthday, address, gender, phone)
 		values (#{id}, #{name}, #{password}, #{email}, #{birthday}, #{address}, #{gender}, #{phone})
 		 
 	</insert> 
