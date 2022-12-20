@@ -10,9 +10,19 @@
 
 
 	<select id="getInquiryBoard" resultType="com.project.www.customercenter.dto.InquiryBoard">
-		select
-		Inquiry_id,title,date,email,content,id
-		from inquiry_board order by Inquiry_id desc
+		select Inquiry_id,title,date,email,content,id from inquiry_board order by Inquiry_id desc
 	</select>
+
+	<!-- 입력타입 id 수정해야함 -->
+	<insert id="uploadinquiry">
+		INSERT inquiry_board (title, content
+		,date) VALUES (#{title}, #{content} ,now())
+	</insert>
+
+	<select id="getinquiry" resultType="com.project.www.customercenter.dto.InquiryBoard">
+		select * from inquiry_board where inquiry_id = #{inquiryId}
+
+	</select>
+
 
 </mapper>

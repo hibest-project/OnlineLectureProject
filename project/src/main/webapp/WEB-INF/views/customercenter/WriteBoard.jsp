@@ -2967,7 +2967,7 @@ iframe#_hjRemoteVarsFrame {
 </head>
 <body>
 	<div id="root">
-		<form class="css-3idtre" action="${pageContext.request.contextPath }/CustomerCenter/UploadWriteBoard" method="post">
+		<form class="css-3idtre" action="${path}/customercenter/uploadwriteboard" method="post">
 
 			<div
 				class="mantine-InputWrapper-root mantine-Textarea-root mantine-y8hpbv">

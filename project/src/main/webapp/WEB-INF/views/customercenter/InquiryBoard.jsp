@@ -20,22 +20,11 @@
 
 	<section class="faq_section">
 		<div class="container is-mobile">
-			<div class="tabs is-boxed">
-				<ul>
-					<li><a href="*"><span>수료증확인</span></a>
-					<li><a
-						href="${pageContext.request.contextPath }/CustomerCenter/CustomerCenterHome"><span>자주묻는질문</span></a>
-					<li><a
-						href="${pageContext.request.contextPath }/CustomerCenter/InquiryBoard"><span>1:1문의
-								게시판</span></a>
-					<li><a href="*"><span>이용약관</span></a>
-					<li><a href="*"><span>개인정보 처리방침</span></a>
-				</ul>
-			</div>
+			<jsp:include page="./customercenter_nav.jsp" />
 
 
 
-			<a href="${pageContext.request.contextPath }/CustomerCenter/WriteBoard">
+			<a href="${path}/customercenter/writeboard">
 			<button class="ac-button is-md is-solid is-gray posts-container-header__button features__new-question e-new-question ">
 				<span class="infd-icon"><svg width="16" height="16"
 						xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -54,12 +43,13 @@
 						<div class="question__title">
 
 							<h3 class="title__text">
+								<a href="${path}/customercenter/inquiryId?inquiryId=${InquiryBoard.inquiry_id}" >
 								${InquiryBoard.title} <span class="infd-icon title__icon">
+								</a>
 
-								</span>
 							</h3>
 						</div>
-						<p class="question__body">${InquiryBoard.content}</p>
+						
 						<div class="question__tags"></div>
 						<div class="question__info-footer">
 							<span class="question__info-user-name"><li>${InquiryBoard.id}</li></span>
@@ -86,7 +76,7 @@
 		</div>
 	</section>
 	<li><a
-		href="${pageContext.request.contextPath }/CustomerCenter/WriteBoard">글쓰기</a></li>
+		href="${path}/customercenter/writeboard">글쓰기</a></li>
 
 	<jsp:include page="../footer.jsp" />
 

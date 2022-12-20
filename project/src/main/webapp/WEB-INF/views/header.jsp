@@ -61,7 +61,7 @@
         <div class="nav__right">
           <input type="text" />
           <div class="search"><i class="fas fa-search"></i></div>
-          <a href="${pageContext.request.contextPath }/CustomerCenter/CustomerCenterHome">고객센터</a>
+          <a href="${pageContext.request.contextPath }/customercenter/customercenterhome">고객센터</a>
           <button class="login">로그인</button>
           <button class="register">회원가입</button>
         </div>

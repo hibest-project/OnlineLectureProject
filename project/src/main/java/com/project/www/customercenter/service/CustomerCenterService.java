@@ -14,4 +14,6 @@ public interface CustomerCenterService {
 	static void InquiryWriteBoard(InquiryBoard inquiryRequest) {
 	}
 
+	List<InquiryBoard> readinquiry(int inquiryId);
+
 }
