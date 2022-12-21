@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.project.www.customercenter.dto.Comments;
 import com.project.www.customercenter.dto.InquiryBoard;
 import com.project.www.customercenter.dto.QnA;
 import com.project.www.customercenter.mapper.CustomerCenterMapper;
@@ -15,23 +16,28 @@ import com.project.www.customercenter.mapper.CustomerCenterMapper;
 public class CustomerCenterServiceImp implements CustomerCenterService {
 	@Autowired
 	CustomerCenterMapper customerCenterMapper;
-
+	
 	@Override
-	public List<QnA> viewAllQnA() {
-		return customerCenterMapper.getQnA();
+	public List<QnA> getQnA() {
+		return customerCenterMapper.getQnAList();
 	}
 
 	@Override
-	public List<InquiryBoard> viewAllInquiryBoard() {
+	public List<InquiryBoard> getInquiryBoard() {
 		
-		return customerCenterMapper.getInquiryBoard();
+		return customerCenterMapper.getInquiryBoardList();
 	}
 
 	@Override
-	public List<InquiryBoard> readinquiry(int inquiryId) {
+	public List<InquiryBoard> getInquiry(InquiryBoard inquiryid) {
 
-		System.out.println(inquiryId);
-		return customerCenterMapper.getinquiry(inquiryId);
+		System.out.println(inquiryid);
+		return customerCenterMapper.getinquiryList(inquiryid);
+	}
+
+	@Override
+	public List<Comments> getComments(InquiryBoard inquiryid) {
+		return customerCenterMapper.getCommentsList(inquiryid);
 	}
 
 }

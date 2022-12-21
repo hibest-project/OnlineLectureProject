@@ -7,24 +7,29 @@
 <head>
 <title>Insert title here</title>
 <link href="${path}/resources/css/sub.css" rel="stylesheet" />
-<link rel="stylesheet" href="${path}/resources/css/1.css">
-<link rel="stylesheet" href="${path}/resources/css/2.css">
-<link rel="stylesheet" href="${path}/resources/css/3.css">
-<link rel="stylesheet" href="${path}/resources/css/4.css">
-<link rel="stylesheet" href="${path}/resources/css/5.css">
-<link rel="stylesheet" href="${path}/resources/css/6.css">
+<link rel="stylesheet" href="${path}/resources/css/_post_chat_item.c66a95e721d9ac3bf047.css">
+<link rel="stylesheet" href="${path}/resources/css/all.css">
+<link rel="stylesheet" href="${path}/resources/css/bulma-accordion.min.css">
+<link rel="stylesheet" href="${path}/resources/css/bulma-switch.min.css">
+<link rel="stylesheet" href="${path}/resources/css/bulma-tooltip.min.css">
+<link rel="stylesheet" href="${path}/resources/css/MAIN.ea79944d69658074a062.css">
+<link rel="stylesheet" href="${path}/resources/css/npm_tinymce.594df9f476c7ad317e8e.css">
 </head>
 <body id="inflearn" class="faq pg___faq is_logged_in is-student-user">
 
 	<jsp:include page="../header.jsp" />
 
+<br>
+<br>
+<br>
+<br>
 	<section class="faq_section">
 		<div class="container is-mobile">
 			<jsp:include page="./customercenter_nav.jsp" />
 
 
 
-			<a href="${path}/customercenter/writeboard">
+			<a href="${path}/customercenter/writeBoard">
 			<button class="ac-button is-md is-solid is-gray posts-container-header__button features__new-question e-new-question ">
 				<span class="infd-icon"><svg width="16" height="16"
 						xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -43,7 +48,7 @@
 						<div class="question__title">
 
 							<h3 class="title__text">
-								<a href="${path}/customercenter/inquiryId?inquiryId=${InquiryBoard.inquiry_id}" >
+								<a href="${path}/customercenter/inquiry?inquiryid=${InquiryBoard.inquiryid}" >
 								${InquiryBoard.title} <span class="infd-icon title__icon">
 								</a>
 

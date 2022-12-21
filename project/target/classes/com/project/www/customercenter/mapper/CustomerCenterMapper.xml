@@ -4,25 +4,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.www.customercenter.mapper.CustomerCenterMapper">
 
-	<select id="getQnA" resultType="com.project.www.customercenter.dto.QnA">
+	<select id="getQnAList" resultType="com.project.www.customercenter.dto.QnA">
 		select * from q_n_board
 	</select>
 
 
-	<select id="getInquiryBoard" resultType="com.project.www.customercenter.dto.InquiryBoard">
-		select Inquiry_id,title,date,email,content,id from inquiry_board order by Inquiry_id desc
+	<select id="getInquiryBoardList" resultType="com.project.www.customercenter.dto.InquiryBoard">
+		select inquiryid,title,date,email,content,id from inquiry_board order by inquiryid desc
 	</select>
 
 	<!-- 입력타입 id 수정해야함 -->
-	<insert id="uploadinquiry">
-		INSERT inquiry_board (title, content
-		,date) VALUES (#{title}, #{content} ,now())
+	<insert id="writeBoardInsert">
+		insert inquiry_board (title, content,date) VALUES (#{title}, #{content} ,now())
 	</insert>
 
-	<select id="getinquiry" resultType="com.project.www.customercenter.dto.InquiryBoard">
-		select * from inquiry_board where inquiry_id = #{inquiryId}
+	<select id="getinquiryList" resultType="com.project.www.customercenter.dto.InquiryBoard">
+		select * from inquiry_board where inquiryid = #{inquiryid}
 
 	</select>
+	
+	<select id="getCommentsList" resultType="com.project.www.customercenter.dto.Comments">
+		select * from Comments where inquiryid = #{inquiryid}
+
+	</select>
+	
+	<insert id="writeCommentsInsert" >	
+		insert  comments (inquiryid, id, text, image) VALUES (#{inquiryid}, #{id}, #{text}, #{image} )
+	</insert>
 
 
 </mapper>

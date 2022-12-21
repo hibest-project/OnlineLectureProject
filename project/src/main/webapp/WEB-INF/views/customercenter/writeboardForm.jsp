@@ -7,13 +7,13 @@
 <head>
 <title>Insert title here</title>
 <link href="${path}/resources/css/sub.css" rel="stylesheet" />
-<link rel="stylesheet" href="${path}/resources/css/1.css">
-<link rel="stylesheet" href="${path}/resources/css/2.css">
-<link rel="stylesheet" href="${path}/resources/css/3.css">
-<link rel="stylesheet" href="${path}/resources/css/4.css">
-<link rel="stylesheet" href="${path}/resources/css/5.css">
-<link rel="stylesheet" href="${path}/resources/css/6.css">
-<link rel="stylesheet" href="${path}/resources/css/7.css">
+<link rel="stylesheet" href="${path}/resources/css/_post_chat_item.c66a95e721d9ac3bf047.css">
+<link rel="stylesheet" href="${path}/resources/css/all.css">
+<link rel="stylesheet" href="${path}/resources/css/bulma-accordion.min.css">
+<link rel="stylesheet" href="${path}/resources/css/bulma-switch.min.css">
+<link rel="stylesheet" href="${path}/resources/css/bulma-tooltip.min.css">
+<link rel="stylesheet" href="${path}/resources/css/MAIN.ea79944d69658074a062.css">
+<link rel="stylesheet" href="${path}/resources/css/npm_tinymce.594df9f476c7ad317e8e.css">
 <style type="text/css">
 :root, :host { -
 	-fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid"; -

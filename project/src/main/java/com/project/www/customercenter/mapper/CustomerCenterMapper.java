@@ -2,8 +2,11 @@ package com.project.www.customercenter.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
+import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.ui.Model;
+
+import com.project.www.customercenter.dto.Comments;
 import com.project.www.customercenter.dto.InquiryBoard;
 import com.project.www.customercenter.dto.QnA;
 
@@ -12,13 +15,20 @@ import config.MyMapper;
 @MyMapper
 public interface CustomerCenterMapper {
 
-	List<QnA> getQnA();
+	List<QnA> getQnAList();
 
-	List<InquiryBoard> getInquiryBoard();
+	List<InquiryBoard> getInquiryBoardList();
 
-	void uploadinquiry(InquiryBoard inquiryRequest);
+	void writeBoardInsert(InquiryBoard inquiryRequest);
 
-	List<InquiryBoard> getinquiry(int inquiryId);
+	List<InquiryBoard> getinquiryList(InquiryBoard inquiryid);
+
+	List<Comments> getCommentsList(InquiryBoard inquiryid);
+
+	void uploadWriteComments(HttpServletRequest request );
+
+	void writeCommentsInsert(Comments inquiryid);
+
 
 	
 

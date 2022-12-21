@@ -13,11 +13,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Component
 public class InquiryBoard {
-	private int inquiry_id;
+	private int inquiryid;
 	private String id;
 	private String title;
 	private Date date;
 	private String email;
 	private String content;
+	
 
 }

@@ -2,6 +2,8 @@ package com.project.www.customercenter.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.project.www.customercenter.dto.Comments;
 import com.project.www.customercenter.dto.InquiryBoard;
 import com.project.www.customercenter.dto.QnA;
 import com.project.www.customercenter.mapper.CustomerCenterMapper;
@@ -35,43 +38,50 @@ public class CustomerCenterController {
 
 	// QnA 게시판 보러가기
 	@GetMapping("/customercenterhome")
-	public String viewQnA(Model model) {
-		List<QnA> list = customerCenterService.viewAllQnA();
+	public String QnA(Model model) {
+		List<QnA> list = customerCenterService.getQnA();
 		System.out.println(list);
 		model.addAttribute("list", list);
-		return "customercenter/CustomerCenterHome";
+		return "customercenter/customercenterForm";
 	}
 	//1:1 질문 게시판
-	@GetMapping("/inquiryboard")
-	public String viewAllInquiryBoard(Model model) {
-		List<InquiryBoard> list = customerCenterService.viewAllInquiryBoard();
+	@GetMapping("/inquiryBoard")
+	public String InquiryBoard(Model model) {
+		List<InquiryBoard> list = customerCenterService.getInquiryBoard();
 		System.out.println("list"+list);
 		model.addAttribute("list", list);
-		return "customercenter/InquiryBoard";
+		return "customercenter/inquiryboardForm";
 	}
 	//1:1글작성 하러가기 
-	@GetMapping("/writeboard")
-	public String viewWriteBoard() {
-		return "customercenter/WriteBoard";
+	@GetMapping("/writeBoard")
+	public String WriteBoard() {
+		return "customercenter/writeboardForm";
 	}
 	//1:1 글작성후 >db
 	@PostMapping("/uploadwriteboard")
-	public String write(InquiryBoard InquiryRequest) {
+	public String inputWriteBoard(InquiryBoard inquiryRequest) {
 		//System.out.println("InquiryRequest>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+InquiryRequest);
-		customerCenterMapper.uploadinquiry(InquiryRequest);
-		return "redirect:./inquiryboard";
+		customerCenterMapper.writeBoardInsert(inquiryRequest);
+		return "redirect:./inquiryBoard";
 	}
 	//1:1 글 보기
-	@GetMapping("/inquiryId")
-	public String readinquiry(Model model, int inquiryId ) {
-		System.out.println(inquiryId);
-		List<InquiryBoard> list = customerCenterService.readinquiry(inquiryId);
-		
-
-		System.out.println("list"+list);
+	@GetMapping("/inquiry")
+	public String inquiry(Model model, InquiryBoard inquiryid) {
+		System.out.println(inquiryid+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		List<InquiryBoard> list = customerCenterService.getInquiry(inquiryid);
+		List<Comments> Commentslist = customerCenterService.getComments(inquiryid);
 		model.addAttribute("list", list);
+		model.addAttribute("Commentslist", Commentslist);
 		return "customercenter/ReadBoard";
 	}
+	@RequestMapping("/writecomments")
+	public String WriteComments(Comments inquiryid) {
+		System.out.println(inquiryid);
+		customerCenterMapper.writeCommentsInsert(inquiryid);
+
+		return  "redirect:./inquiry";
+	}
+	
 	
 	
 	
