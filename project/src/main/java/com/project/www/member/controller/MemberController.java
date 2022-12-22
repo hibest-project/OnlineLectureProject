@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,12 +39,13 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
-	//로그인
+	//로그인 폼
 	@GetMapping("/loginForm")
 	public void loginForm() {
 		
 	}
 	
+	//로그인
 	@PostMapping("/login")
 	public String login(Member member, Model model, HttpSession session) {
 		log.info("member  >>>>> " + member);
@@ -74,15 +76,18 @@ public class MemberController {
 		return "home";
 	}
 	
-	//회원가입
+	//회원가입 폼
 	@GetMapping("/registForm")
 	public void registForm() {
 		
 	}
 	
-	@PostMapping("/regist")
+	//회원가입 
+	@GetMapping("/regist")
 	public String regist(Member member, Model model) {
 		log.info("member >>>>>>>>>>>>>> " + member);
+		log.info("model >>>>>>>>>>>>>> " + model);
+		
 		String encodedPassword = bCryptPasswordEncoder.encode(member.getPassword());
 		member.setPassword(encodedPassword);
 		memberService.registMember(member);
@@ -91,7 +96,27 @@ public class MemberController {
 		
 	}
 
-	//중복 체크
+	//회원정보 수정
+/*	@RequestMapping("/update")
+	public String update(Member member, Model model) {
+		memberService.updateMember(member);
+		return "redirect:login";
+	}*/
+
+	@GetMapping("/modifyForm")
+	public void modifyForm() {
+		
+	}
+	
+	@GetMapping("/modify")
+	public String modify(Member member, Model model) {
+		memberService.modifyMember(member);
+		return "ridirect:login";
+	}
+
+	
+
+	//아이디 중복 체크
 	@GetMapping("/check_dupl")
 	public @ResponseBody String check_dupl(String id) {
 		log.info("id >>>>>>>>>>>>>>>> " + id);
@@ -102,6 +127,7 @@ public class MemberController {
 		}
 		return "no_dup";
 	}
+	
 	
 }
 

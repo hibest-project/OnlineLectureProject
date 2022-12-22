@@ -64,6 +64,7 @@
           <c:if test="${empty auth}">
           <a href="${pageContext.request.contextPath }/member/loginForm">로그인</a>
           <a href="${pageContext.request.contextPath }/member/registForm">회원가입</a>
+          <%-- <a href="${pageContext.request.contextPath }/member/updateForm">수정</a> --%>
           </c:if>
           <c:if test="${!empty auth}">
           <span>${auth.name}님, 즐 하루!!!</span>

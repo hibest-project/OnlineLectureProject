@@ -14,14 +14,23 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	MemberMapper memberMapper;
 
+	//로그인
 	@Override
 	public Member getMember(String id) {
 		return memberMapper.selectOne(id);
 	}
 
+	//회원가입
 	@Override
 	public void registMember(Member member) {
 		memberMapper.insert(member);
+	}
+
+	//회원정보 수정
+	@Override
+	public void modifyMember(Member member) {
+		memberMapper.modify(member);
+		
 	}
 
 	
