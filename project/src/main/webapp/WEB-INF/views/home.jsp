@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/css/main.aa70040a92f0bb23778b.css" />
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
-	<jsp:include page="header.jsp"/>
+	
 	
 	
 	<jsp:include page="footer.jsp"/>
