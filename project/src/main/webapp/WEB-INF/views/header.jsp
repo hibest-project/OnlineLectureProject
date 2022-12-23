@@ -9,8 +9,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Insert title here</title>
-<link rel="stylesheet"	href="${pageContext.request.contextPath }/resources/css/style.css"	type="text/css" />
-<link rel="stylesheet"	href="${pageContext.request.contextPath }/resources/css/responsive.css" />
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/resources/css/style.css"	type="text/css" /> 
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/resources/css/responsive.css" /> 
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 <body>
@@ -68,6 +68,7 @@
           </c:if>
           <c:if test="${!empty auth}">
           <span>${auth.name}님, 즐 하루!!!</span>
+          <a href="${pageContext.request.contextPath }/member/myPage" id="myPage">마이페이지</a>
           <a href="${pageContext.request.contextPath }/member/logout" id="logout">로그아웃</a>
           </c:if>
           <script>

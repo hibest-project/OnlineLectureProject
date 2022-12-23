@@ -9,15 +9,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${contextPath }/resources/css/1.css">
+<%-- <link rel="stylesheet" href="${contextPath }/resources/css/1.css">
 <link rel="stylesheet" href="${contextPath }/resources/css/2.css">
 <link rel="stylesheet" href="${contextPath }/resources/css/3.css">
 <link rel="stylesheet" href="${contextPath }/resources/css/4.css">
 <link rel="stylesheet" href="${contextPath }/resources/css/5.css">
-<link rel="stylesheet" href="${contextPath }/resources/css/6.css">
+<link rel="stylesheet" href="${contextPath }/resources/css/6.css"> --%>
 
 </head>
 <body>
+
+<%-- action="${contextPath}/member/modify" method="post" 
+form에서 get 방식으로 받아온 상세정보를 value 값으로 받아와 출력--%>
 
 </body>
 </html>

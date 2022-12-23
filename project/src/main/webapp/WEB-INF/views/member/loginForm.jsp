@@ -50,9 +50,9 @@
 				<!-- <input type="submit" value="로그인" /> -->
 			</form>
 			<p class="sign-in-modal__more-action">
-				<a href="" class="more-action__text">아이디(이메일) 찾기</a>
+				<a href="" class="more-action__text">회원정보 수정</a>
 				<span class="more-action-divider"></span>
-				<a href="" class="more-action__text">비밀번호 찾기</a>
+				<a href="" class="more-action__text">회원탈퇴</a>
 				<span class="more-action-divider"></span>
 				<a href="${contextPath }/member/registForm" class="more-action__text">회원가입</a>
 				<%-- <span class="e-to-sign-up more-action__text more-action__text--sign-up"

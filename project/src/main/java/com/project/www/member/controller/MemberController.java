@@ -41,9 +41,11 @@ public class MemberController {
 	
 	//로그인 폼
 	@GetMapping("/loginForm")
-	public void loginForm() {
-		
-	}
+	public void loginForm() {}
+	
+	//myPage
+	@GetMapping("/myPage")
+	public void myPage() {}
 	
 	//로그인
 	@PostMapping("/login")
