@@ -35,7 +35,7 @@ public class MentoringController {
 	
 	public String getscore() {
 		Integer score = mentoringGrade.getScore();
-		List<MentoringGrade> list = mentorService.getScore();
+//		List<MentoringGrade> list = mentorService.getScore();
 		
 		
 		return null;
