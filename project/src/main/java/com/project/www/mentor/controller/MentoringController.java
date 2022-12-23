@@ -31,6 +31,13 @@ public class MentoringController {
 
 	}
 
+	@GetMapping("/modal")
+	public String modal() {
+		
+		return "mentor/mentorsModal";
+	}
+	
+	
 	public List<MentoringGrade> getScoreList() {
 		List<MentoringGrade> list = mentorService.getScore();
 		return list;
