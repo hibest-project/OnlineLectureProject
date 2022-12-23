@@ -33,7 +33,6 @@ public class MentoringController {
 
 	@GetMapping("/modal")
 	public String modal() {
-		
 		return "mentor/mentorsModal";
 	}
 	
