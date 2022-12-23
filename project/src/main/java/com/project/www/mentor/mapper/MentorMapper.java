@@ -13,6 +13,6 @@ public interface MentorMapper {
 
 	public List<Mentoring> getList();
 
-	public List<MentoringGrade> getScore();
+	public List<MentoringGrade> getScoreAvg();
 
 }

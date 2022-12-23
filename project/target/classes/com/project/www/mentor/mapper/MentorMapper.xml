@@ -29,9 +29,11 @@
 		select * from mentor inner join mentoring using(mentor_id, id)
 	</select>
 
-<!-- 	<select id="getScore" resultType="com.project.www.mentor.dto.MentoringGrade"> -->
-<!-- 		select round(avg(score),1) from mentoring_grade where mentoring_id = #{mentoring_id} -->
-<!-- 	</select>	 -->
+	<select id="getScoreAvg" resultType="com.project.www.mentor.dto.MentoringGrade">
+		select mg.mentoring_id, round(avg(score),1) score 
+		from mentoring_grade mg
+		group by mg.mentoring_id;
+	</select>	
 
 
 </mapper>

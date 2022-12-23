@@ -63,7 +63,7 @@
                         <a href="#" class="navbar-item"><span>로드맵</span></a>
                      </div>
                      <div class="navbar-item">
-                        <a href="mentoring/viewMentoring" class="navbar-item"><span>멘토링</span></a>
+                        <a href="${contextPath }/mentoring/viewMentoring" class="navbar-item"><span>멘토링</span></a>
                      </div>
       
                      <div class="has-dropdown is-hoverable navbar-item  icon_drop_menu">

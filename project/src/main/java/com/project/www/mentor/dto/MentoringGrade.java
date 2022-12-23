@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 public class MentoringGrade {
 
 	public int m_grade;
-	public int mentoring_id;
+	private int mentoring_id;
 	public String id;
 	public String content;
-	public int score;
+	public double score;
 }

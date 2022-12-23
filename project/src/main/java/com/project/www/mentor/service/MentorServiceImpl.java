@@ -24,7 +24,7 @@ public class MentorServiceImpl implements MentorService{
 
 	@Override
 	public List<MentoringGrade> getScore() {
-		return mentorMapper.getScore();
+		return mentorMapper.getScoreAvg();
 	}
 
 }

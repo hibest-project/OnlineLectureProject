@@ -161,7 +161,7 @@
             
 <div class="mentor-cards">
   <h2 class="visually-hidden">멘토 리스트</h2>
-  <c:forEach var="m" items="${list }">
+  <c:forEach var="m" items="${list }" varStatus="status">
     
     <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
@@ -188,7 +188,7 @@
           
           <button class="mentor-card__rating e-show-reviews">
             <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
-            <span class="rating-number">5.0</span>
+            <span class="rating-number">${list2[status.index ].score}</span>
             <i class="fal fa-chevron-right"></i>
           </button>
         </div>

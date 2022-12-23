@@ -15,30 +15,24 @@ import com.project.www.mentor.service.MentorService;
 @Controller
 @RequestMapping("/mentoring")
 public class MentoringController {
-	
+
 	@Autowired
 	MentorService mentorService;
 	@Autowired
 	MentoringGrade mentoringGrade;
-	
+
 	@GetMapping("/viewMentoring")
 	public String mentoring(Model model) {
 		List<Mentoring> list = mentorService.viewAll();
-		System.out.println("list>>>>>>>>>>> "+ list);
 		model.addAttribute("list", list);
-		
-		
-		
+		model.addAttribute("list2", getScoreList());
+		System.out.println(model);
 		return "mentor/mentors";
-		
+
 	}
-	
-	public String getscore() {
-		Integer score = mentoringGrade.getScore();
-//		List<MentoringGrade> list = mentorService.getScore();
-		
-		
-		return null;
-		
+
+	public List<MentoringGrade> getScoreList() {
+		List<MentoringGrade> list = mentorService.getScore();
+		return list;
 	}
 }
