@@ -11,10 +11,6 @@
               width=device-width, initial-scale=1.0,
               minimum-scale=1.0, maximum-scale=1.0,
               user-scalable=no, target-densitydpi=device-dpi">
-              
-
-
-
 <title>홈페이지</title>
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
@@ -57,8 +53,9 @@
 								class="has-dropdown is-hoverable navbar-item category_menu content--no-list-style">
 								<a href="#" class="navbar-item"><span>강의</span></a>
 								<ul class="navbar-dropdown is-boxed">
-		
-									<li><a class="navbar-item" href="#">카테고리이름</a></li>
+									<c:forEach var="categorie" items="${clist }">
+									<li><a class="navbar-item" href="${contextPath }/categorie/categorieNum?categorieNum=${categorie.categorie_num }">${categorie.name }</a></li>
+									</c:forEach>
 								</ul>					
 							</div>
 							
