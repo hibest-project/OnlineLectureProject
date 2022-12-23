@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.www.mypage.mapper.MyPageMapper">
+
+	<select id="getMyClass" resultType="com.project.www.mypage.dto.ListenClass">
+		select m.id,l.name,l.image, d.title
+		from listen_lecture ll, lecture l, dtail_kategorie d, member m
+		where m.id = ll.id
+		and ll.lecture_id = l.lecture_id
+		and l.dtail_num = d.dtail_num
+		and m.id = "abb"
+	</select>
+
+</mapper>
