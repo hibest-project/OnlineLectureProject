@@ -13,7 +13,8 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages = {"com.project.www"}, annotationClass=config.MyMapper.class)
+@MapperScan(basePackages = { "com.project.www" }, annotationClass = config.MyMapper.class)
+
 public class DbConfig {
 
 	/*
@@ -29,9 +30,9 @@ public class DbConfig {
 	@Bean(destroyMethod = "close")
 	public HikariDataSource dataSource() {
 		HikariDataSource ds = new HikariDataSource();
-		//ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		// ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		ds.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		//ds.setJdbcUrl("jdbc:mysql://localhost/world?characterEncoding=utf8");
+		// ds.setJdbcUrl("jdbc:mysql://localhost/world?characterEncoding=utf8");
 		ds.setJdbcUrl("jdbc:log4jdbc:mysql://localhost/project?characterEncoding=utf8");
 		ds.setUsername("project");
 		ds.setPassword("project");
@@ -48,7 +49,7 @@ public class DbConfig {
 		sqlSessionFactory.setDataSource(dataSource());
 		return (SqlSessionFactory) sqlSessionFactory.getObject();
 	}
-	
+
 	@Bean
 	public PlatformTransactionManager transactionManager() {
 		DataSourceTransactionManager tm = new DataSourceTransactionManager();

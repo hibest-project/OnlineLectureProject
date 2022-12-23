@@ -113,7 +113,7 @@ public class MemberController {
 	@GetMapping("/modify")
 	public String modify(Member member, Model model) {
 		memberService.modifyMember(member);
-		return "ridirect:login";
+		return "redirect:login";
 	}
 
 	
