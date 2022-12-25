@@ -26,7 +26,7 @@ public class MentoringController {
 		List<Mentoring> list = mentorService.viewAll();
 		model.addAttribute("list", list);
 		model.addAttribute("list2", getScoreList());
-		System.out.println(model);
+		//System.out.println(model);
 		return "mentor/mentors";
 
 	}

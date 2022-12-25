@@ -163,7 +163,7 @@
   <h2 class="visually-hidden">멘토 리스트</h2>
   <c:forEach var="m" items="${list }" varStatus="status">
     
-    <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
+    <section class="mentor-card e-mentoring" id="modal_open" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
         <h3 class="mentor-card__title">${m.title }</h3>
         <div class="mentor-card__job-wrapper">
@@ -199,15 +199,15 @@
   
     <section class="mentor-card e-mentoring" data-id="1141">
       <div class="mentor-card__top">
-        <h3 class="mentor-card__title">프론트엔드 개발자 취업 혹은 방향성</h3>
+        <h3 class="mentor-card__title">개발.. 그게 돈이 됩니까?</h3>
         <div class="mentor-card__job-wrapper">
           <dl class="mentor-card__job-info-list">
             
-            <div><dt>직무</dt><dd>프론트엔드/웹퍼블리셔</dd></div>
+            <div><dt>직무</dt><dd>설거지</dd></div>
             
-            <div><dt>경력</dt><dd>주니어 (1~3년)</dd></div>
+            <div><dt>경력</dt><dd>주니어 (응애)</dd></div>
             
-            <div><dt>현직</dt><dd class="mentor-card__company-name">당근마켓</dd></div>
+            <div><dt>현직</dt><dd class="mentor-card__company-name">ha2미디어</dd></div>
           </dl>
           <figure class="mentor-card__thumbnail">
             <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png" alt="멘토 이미지" loading="lazy">
@@ -216,66 +216,7 @@
       </div>
       <div class="mentor-card__bottom">
         <div>
-          <a href="/users/195729" target="_blank" rel="noopener noreferrer" class="mentor-card__name">junghyeonsu</a>
-          
-          <button class="mentor-card__rating e-show-reviews">
-            <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
-            <span class="rating-number">5.0</span>
-            <i class="fal fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-  
-    <section class="mentor-card e-mentoring" data-id="1027">
-      <div class="mentor-card__top">
-        <h3 class="mentor-card__title">백엔드 엔지니어 커리어 이야기 - 초심자 그 너머로</h3>
-        <div class="mentor-card__job-wrapper">
-          <dl class="mentor-card__job-info-list">
-            
-            <div><dt>직무</dt><dd>백엔드/서버 개발자</dd></div>
-            
-            <div><dt>경력</dt><dd>미들 (4~8년)</dd></div>
-            
-            <div><dt>현직</dt><dd class="mentor-card__company-name">카카오페이</dd></div>
-          </dl>
-          <figure class="mentor-card__thumbnail">
-            <img src="https://cdn.inflearn.com/public/users/thumbnails/105536/9cbd6c2b-0989-4deb-9bca-86b4ef3acb88" alt="멘토 이미지" loading="lazy">
-          </figure>
-        </div>
-      </div>
-      <div class="mentor-card__bottom">
-        <div>
-          <a href="/users/105536" target="_blank" rel="noopener noreferrer" class="mentor-card__name">Heli</a>
-          
-          <button class="mentor-card__rating e-show-reviews">
-            <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
-            <span class="rating-number">5.0</span>
-            <i class="fal fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-  
-    <section class="mentor-card e-mentoring" data-id="566">
-      <div class="mentor-card__top">
-        <h3 class="mentor-card__title">신입~주니어 개발자 취직, 이력서&amp;프론트엔드 상담 및 고민, 커리어 및 로드맵 설계</h3>
-        <div class="mentor-card__job-wrapper">
-          <dl class="mentor-card__job-info-list">
-            
-            <div><dt>직무</dt><dd>프론트엔드/웹퍼블리셔</dd></div>
-            
-            <div><dt>경력</dt><dd>미들 (4~8년)</dd></div>
-            
-          </dl>
-          <figure class="mentor-card__thumbnail">
-            <img src="https://cdn.inflearn.com/public/users/thumbnails/36294/c14ef375-cddf-4d75-82d9-055109c79eb6" alt="멘토 이미지" loading="lazy">
-          </figure>
-        </div>
-      </div>
-      <div class="mentor-card__bottom">
-        <div>
-          <a href="/users/36294" target="_blank" rel="noopener noreferrer" class="mentor-card__name">장현석</a>
+          <a href="/users/195729" target="_blank" rel="noopener noreferrer" class="mentor-card__name">강동진</a>
           
           <button class="mentor-card__rating e-show-reviews">
             <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
@@ -307,5 +248,6 @@
     </div>
   </main>
 </section></main>
+<script type="text/javascript" src="../resources/js/mentors/modal.js"></script> 
 </body>
 </html>
