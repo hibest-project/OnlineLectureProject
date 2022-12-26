@@ -130,6 +130,7 @@
 							<div class="navbar-item buttons">
 								<a role="button" class="button space-inset-4 signin">로그인</a> <a
 									class="e-signup button space-inset-4 is-primary">회원가입</a>
+									<a href="${contextPath}/mypage/viewmypage ">마이페이지</a>
 							</div>
 						</div>
 					</div>

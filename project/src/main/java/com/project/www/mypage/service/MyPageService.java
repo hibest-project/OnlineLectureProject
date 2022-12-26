@@ -2,12 +2,10 @@ package com.project.www.mypage.service;
 
 import java.util.List;
 
-import com.project.www.mypage.dto.ListenClass;
-
-
+import com.project.www.mypage.dto.ListenLecture;
 
 public interface MyPageService {
 
-	List<ListenClass> viewMyClass();
+	List<ListenLecture> getListenClass() ;
 
 }

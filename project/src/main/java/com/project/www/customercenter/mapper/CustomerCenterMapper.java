@@ -33,7 +33,7 @@ public interface CustomerCenterMapper {
 
 	void deleteInquiry(InquiryBoard inquiryid);
 
-//	List<Comments> deleteComments(InquiryBoard inquiryid);
+;
 
 
 	

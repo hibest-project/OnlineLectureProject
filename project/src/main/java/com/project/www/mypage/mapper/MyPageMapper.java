@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.project.www.mypage.dto.ListenClass;
+import com.project.www.mypage.dto.ListenLecture;
 
 import config.MyMapper;
 
 @MyMapper
 public interface MyPageMapper {
+
+	List<ListenLecture> getListenClassList();
 	
-	public List<ListenClass> getMyClass();
+	
 }

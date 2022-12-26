@@ -10,11 +10,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-public class ListenClass {
+public class ListenLecture {
 
 
-	private String id; 
+	private String listenClassId; 
 	private String name ;
 	private String image;
 	private String title;
+	public static void main(String[] args) {
+		
+	}
 }

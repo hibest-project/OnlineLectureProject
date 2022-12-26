@@ -8,26 +8,31 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.project.www.mypage.dto.ListenClass;
+import com.project.www.mypage.dto.ListenLecture;
 import com.project.www.mypage.service.MyPageService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/MyPage")
+@RequestMapping("/mypage")
 @Slf4j
 public class MyPageController {
 	@Autowired
 	MyPageService myPageService;
 	
-	@GetMapping("/myclass")
-	public String viewListenClass(Model model) {
-		List<ListenClass> list = myPageService.viewMyClass();
-		System.out.println(list);
-		model.addAttribute("list", list);
-		return "mypage/MyPageMain";
+	@GetMapping("/viewmypage")
+	public String mypageForm() {
+		return "mypage/mypageForm";
 	}
 	
+	// 수강중인강의 보러가기
+		@GetMapping("/listenclass")
+		public String ListenClass(Model model) {
+			List<ListenLecture> list = myPageService.getListenClass();
+			System.out.println(list);
+			model.addAttribute("list", list);
+			return "mypage/listenclass";
+		}
 	
-	
+
 }
