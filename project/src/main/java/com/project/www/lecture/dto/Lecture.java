@@ -17,7 +17,7 @@ public class Lecture {
 	private int dtail_num;
 	private int teacher_id;
 	private String title;
-	private String price;
+	private int price;
 	private int discount;
 	private String level;
 	private String date;
