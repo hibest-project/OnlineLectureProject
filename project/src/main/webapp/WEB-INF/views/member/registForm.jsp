@@ -129,6 +129,8 @@
 					placeholder="" name="gender" value="m" />여
 				</div>
 			</div>
+			
+			 
 			<!-- <div class="form__input-block">
 				<label for="gender" class="form__label">성별</label>
 				<input id="gender" data-kv="gender" type="radio" class="form__input--email form__input e-sign-up-input e-email"
