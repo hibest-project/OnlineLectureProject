@@ -12,5 +12,9 @@
 		and l.dtail_num = d.dtail_num
 		and m.id = "abb"
 	</select> 
+	
+	<select id="getWishList" resultType="com.project.www.mypage.dto.WishList">
+
+	</select>
 
 </mapper>

@@ -17,7 +17,7 @@
 	<ul class="menu-list">
 		<li><a class="btn_wrap " href="/account/dashboard"> <span>대시보드</span>
 		</a></li>
-		<li><a class="btn_wrap " href="/users/me"> <span>프로필</span>
+		<li><a class="btn_wrap " href="${contextPath }/member/myPage"> <span>프로필</span>
 		</a></li>
 		<li><a class="btn_wrap " href="/messages"> <span>알림</span>
 		</a></li>
@@ -42,7 +42,7 @@
 	<ul class="menu-list">
 		<li><a class="btn_wrap " href="/carts"> <span>수강바구니</span>
 		</a></li>
-		<li><a class="btn_wrap " href="/likes"> <span>좋아요</span>
+		<li><a class="btn_wrap " href="${contextPath }/mypage/likes"> <span>좋아요</span>
 		</a></li>
 		<li><a class="btn_wrap " href="/coupons"> <span>쿠폰함</span>
 		</a></li>
@@ -56,8 +56,7 @@
 		<li><a class="btn_wrap is_active" href="/settings/account"> <span>계정
 					정보</span>
 		</a></li>
-		<li><a class="btn_wrap " href="/settings/notification"> <span>알림
-					설정</span>
+		<li> <a href="${contextPath}/customercenter/customercenterhome"> <span>고객센터</span>
 		</a></li>
 	</ul>
 	

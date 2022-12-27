@@ -3,6 +3,7 @@ package com.project.www.customercenter.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,11 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mysql.cj.Session;
 import com.project.www.customercenter.dto.Comments;
 import com.project.www.customercenter.dto.InquiryBoard;
 import com.project.www.customercenter.dto.QnA;
 import com.project.www.customercenter.mapper.CustomerCenterMapper;
 import com.project.www.customercenter.service.CustomerCenterService;
+import com.project.www.member.dto.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -54,14 +57,19 @@ public class CustomerCenterController {
 	}
 	//1:1글작성 하러가기 
 	@GetMapping("/writeBoard")
-	public String WriteBoard() {
+	public String WriteBoard(HttpSession session) {
 		return "customercenter/writeboardForm";
 	}
 	//1:1 글작성후 >db
 	@PostMapping("/uploadwriteboard")
-	public String inputWriteBoard(InquiryBoard inquiryRequest) {
+	public String inputWriteBoard(InquiryBoard inquiryRequest ,HttpSession session ) {
 		//System.out.println("InquiryRequest>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+InquiryRequest);
-		customerCenterMapper.writeBoardInsert(inquiryRequest);
+		Member name =  (Member) session.getAttribute("auth");
+		System.out.println("name>>>>>>>>>>>>>>>>>>" + name);
+		inquiryRequest.setId(name.getId());
+		
+		customerCenterMapper.writeBoardInsert(inquiryRequest );
+		
 		return "redirect:./inquiryBoard";
 	}
 	//1:1 글 보기

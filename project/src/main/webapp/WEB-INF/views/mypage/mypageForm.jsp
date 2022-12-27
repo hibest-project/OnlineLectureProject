@@ -54,39 +54,6 @@
 					<div class="profile_edit_container">
 						<div class="profile_edit">
 
-							<div class="profile__image-edit-container bootstrap-components">
-								<fieldset>
-								
-									<legend class="h6-bold profile__image-edit-title">프로필
-										이미지</legend>
-									<form class="field e-profile-image-upload profile__image-form">
-										<div class="file-cta profile__image-container">
-											<img class="e-profile-image profile__image"
-												src="https://cdn.inflearn.com/public/main/profile/default_profile.png"
-												alt="엠아이후님의 프로필">
-										</div>
-										<div class="profile__image-right">
-											<div class="profile__image-controllers">
-												<label class="file-label btn btn-secondary btn-md">
-													<input type="file"
-													class="file-input e-profile-image-input profile__image-input"
-													name="profile_image"> 변경
-												</label>
-
-												<button type="button"
-													class="btn btn-light e-profile-image-remove-btn profile__image-remove-btn--off">
-													삭제</button>
-
-											</div>
-											<p class="desc-6-normal profile__image-notice">확장자: png,
-												jpg, jpeg / 용량: 1MB 이하</p>
-											<p
-												class="e-warning desc-6-normal profile__image-edit-warning profile__image-edit-warning--off"></p>
-										</div>
-									</form>
-								</fieldset>
-							</div>
-
 							<div class="right">
 								<label for="name" class="label input_label"> <span>닉네임</span>
 									<input id="name" type="text" class="input" value="엠아이후"

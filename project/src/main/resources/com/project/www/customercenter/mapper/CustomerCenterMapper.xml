@@ -15,7 +15,7 @@
 
 	<!-- 입력타입 id 수정해야함 -->
 	<insert id="writeBoardInsert">
-		insert inquiry_board (title, content,date) VALUES (#{title}, #{content} ,now())
+		insert inquiry_board (title, id, content,date) VALUES (#{title}, #{id}, #{content} ,now())
 	</insert>
 	<!-- 1:1 질문개시글 불러오기 -->
 	<select id="getinquiryList" resultType="com.project.www.customercenter.dto.InquiryBoard">

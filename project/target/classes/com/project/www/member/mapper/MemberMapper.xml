@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.project.www.member.mapper.MemberMapper">
+
+	<!-- 로그인 -->
+	<select id="selectOne" resultType="com.project.www.member.dto.Member">
+		<!-- select * from member where member_id = #{id} and password = #{password} -->
+		select * from member where id = #{id}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="insert" > <!-- insert의 반환 값 integer -> 1행, 2행 반환 한다 -->
+		insert into member (id, name, password, email, birthday, address, gender, phone)
+		values (#{id}, #{name}, #{password}, #{email}, #{birthday}, #{address}, #{gender}, #{phone})
+	</insert> 
+	
+	<!-- 회원정보 수정 -->
+	<update id="modify">
+		update into member set (id, name, password, email, birthday, address, gender, phone)
+		values (#{id}, #{name}, #{password}, #{email}, #{birthday}, #{address}, #{gender}, #{phone})
+	</update>
+	
+	<!-- <select id="login" parameterType="String" resultType="int">
+		select count(*) from member where member_id = #{member_id}
+	</select> -->
+
+</mapper>

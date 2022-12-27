@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.project.www.mypage.dto.ListenLecture;
+import com.project.www.mypage.dto.WishList;
 import com.project.www.mypage.mapper.MyPageMapper;
 
 @Service
@@ -20,6 +21,12 @@ public class MyPageServiceImpl implements MyPageService {
 	public List<ListenLecture> getListenClass() {
 		
 		return myPageMapper.getListenClassList();
+	}
+
+	@Override
+	public List<WishList> getWish() {
+		
+		return myPageMapper.getWishList();
 	}
 	
 

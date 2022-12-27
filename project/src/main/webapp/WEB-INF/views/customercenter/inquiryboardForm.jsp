@@ -88,7 +88,6 @@
 
 		</div>
 	</section>
-	<li><a href="${path}/customercenter/writeboard">글쓰기</a></li>
 
 	<jsp:include page="../footer.jsp" />
 
