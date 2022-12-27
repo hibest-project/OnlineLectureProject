@@ -54,15 +54,14 @@
 			</div> -->
 			<div class="form__input-block" >
 				<label for="id" class="form__label">아이디</label>
-				<div class="ac-input-with-item--large password-input form__input--password form__input e-password ">
-					<input id="id" value data-kv="id" type="id"
-					class="e-sign-up-input--password" spellcheck="false" 
-					placeholder="" name="id"/>
+				<div class="ac-input-with-item--large">
+					<input id="id"  type="text" placeholder="" name="id"/>
 			</div>
+			<button id="check_dupl" type="button">중복확인</button><span id="dup"></span>
 			<div class="form__input-block">
 				<label for="name" class="form__label">이름</label>
 				<div class="ac-input-with-item--large password-input form__input--password form__input e-password ">
-					<input id="name" value data-kv="name" type="name"
+					<input id="name" type="text"
 					class="e-sign-up-input--password" spellcheck="false" 
 					placeholder="" name="name"/>
 				</div>
@@ -122,10 +121,10 @@
 			<div class="form__input-block">
 				<label for="gender" class="form__label">성별</label>
 				<div class="ac-input-with-item--large password-input form__input--password form__input e-password ">
-					<input id="gender" value data-kv="gender" type=gender
+					<input id="gender" value data-kv="gender" type="radio"
 					class="e-sign-up-input--password" spellcheck="false" 
 					placeholder="" name="gender" value="m" checked/>남
-					<input id="gender" value data-kv="gender" type=gender
+					<input id="gender" value data-kv="gender" type="radio"
 					class="e-sign-up-input--password" spellcheck="false" 
 					placeholder="" name="gender" value="m" />여
 				</div>
