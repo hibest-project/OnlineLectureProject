@@ -6,6 +6,6 @@ import com.project.www.lecture.dto.Lecture;
 
 public interface LectureService {
 
-	List<Lecture> viewLecture();
+	List<Lecture> viewFreelecture();
 
 }

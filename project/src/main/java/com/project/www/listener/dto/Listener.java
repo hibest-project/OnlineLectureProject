@@ -1,4 +1,4 @@
-package com.project.www.categorie.dto;
+package com.project.www.listener.dto;
 
 import org.springframework.stereotype.Component;
 
@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-public class Categorie {
+public class Listener {
 
-	private int categorie_num;
-	private String cname;
+	private int listener_id; 
+	private String id;
+	private int lecture_id;
 }

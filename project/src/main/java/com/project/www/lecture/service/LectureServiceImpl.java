@@ -15,11 +15,10 @@ public class LectureServiceImpl implements LectureService{
 
 	@Autowired
 	LectureMapper lectureMapper;
-
+	
 	@Override
-	public List<Lecture> viewLecture() {
+	public List<Lecture> viewFreelecture() {
 		return lectureMapper.getLlist();
 	}
-	
-	
+
 }

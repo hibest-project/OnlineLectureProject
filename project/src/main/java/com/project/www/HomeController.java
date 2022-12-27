@@ -17,7 +17,6 @@ import com.project.www.lecture.service.LectureService;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	
 	@Autowired
 	LectureService lectureService;
 	
@@ -25,11 +24,13 @@ public class HomeController {
 	CategorieService categorieService;
 	
 	@GetMapping()
-	public String home(Model model) {
+	public String home(Model model ,Lecture lecture) {
 		List<Categorie> clist = categorieService.viewAllCategorie();
-		List<Lecture> Llist = lectureService.viewLecture();
+		List<Lecture> Llist = lectureService.viewFreelecture();
 		model.addAttribute("clist", clist);
 		model.addAttribute("Llist", Llist);
+		
+		
 		return "home";
 	} 
 	

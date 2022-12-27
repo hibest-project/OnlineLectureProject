@@ -22,5 +22,12 @@ public class Lecture {
 	private String level;
 	private String date;
 	private String about_lecture;
-	private String image;	
+	private String fileName;
+	private String cname;
+	private String dname;
+	private String teacher_name;
+	
+	
+	
+	
 }

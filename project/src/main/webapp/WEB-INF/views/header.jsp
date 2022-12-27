@@ -54,7 +54,7 @@
 								<a href="#" class="navbar-item"><span>강의</span></a>
 								<ul class="navbar-dropdown is-boxed">
 									<c:forEach var="categorie" items="${clist }">
-									<li><a class="navbar-item" href="${contextPath }/categorie/categorieNum?categorieNum=${categorie.categorie_num }">${categorie.name }</a></li>
+									<li><a class="navbar-item" href="${contextPath }/categorie/categorieNum?categorieNum=${categorie.categorie_num }">${categorie.cname }</a></li>
 									</c:forEach>
 								</ul>					
 							</div>

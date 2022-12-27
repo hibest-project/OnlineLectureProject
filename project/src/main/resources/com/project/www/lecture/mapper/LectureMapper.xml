@@ -5,7 +5,9 @@
 <mapper namespace="com.project.www.lecture.mapper.LectureMapper">
 
 	<select id="getLlist" resultType="com.project.www.lecture.dto.Lecture">
-		select * from  lecture where discount = 100
+	select l.lecture_id ,l.title, l.price, l.discount, l.level, l.date, l.about_lecture, l.fileName ,t.teacher_name, c.cname, d.dname
+from lecture l,teacher t, categorie c, detail_categorie d
+where t.teacher_id = l.teacher_id and c.categorie_num = l.categorie_num and d.detail_num = l.detail_num and discount= 100;
 	</select>
-
+	
 </mapper>
