@@ -36,7 +36,7 @@
 <body id="inflearn" class="main_page is_logged_out is-student-user">
 
    <jsp:include page="../header.jsp"/>
-
+<!-- 왜안되지? -->
 
 <main id="main">
 
