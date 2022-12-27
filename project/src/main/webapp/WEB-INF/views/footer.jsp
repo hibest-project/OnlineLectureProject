@@ -43,7 +43,7 @@
   </div>
   <div class="menu_list ">
     <div class="list_title open">
-      고객센터
+     <a href="${contextPath}/customercenter/customercenterhome">  고객센터</a>
       <span class="is-mobile list_caret"><i class="far fa-angle-up"></i><i class="far fa-angle-down"></i></span></div>
     <div class="menu_sublist" style="max-height: 145px;"> <a href="#" class="list_link">공지사항</a><a href="#" class="list_link">자주묻는 질문</a><a href="#" class="list_link">저작권 신고센터</a><a href="#" class="list_link">수료증 확인</a><a href="#" class="list_link">강의 · 기능요청</a>
     </div>
