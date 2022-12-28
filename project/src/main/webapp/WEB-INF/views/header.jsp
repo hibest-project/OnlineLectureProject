@@ -12,6 +12,8 @@
               minimum-scale=1.0, maximum-scale=1.0,
               user-scalable=no, target-densitydpi=device-dpi">
 <title>홈페이지</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
    <header id="header"> 

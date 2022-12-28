@@ -1,11 +1,27 @@
-var modal = document.getElementById('modal1');
+const open = document.getElementById('cards');
 
-modal.addEventListener("click", function(e) {
-	var name = e.target.className;
-	var tag = e.target.tagName;
+const sc = document.getElementById('sc');
+let modal = "";
+
+open.addEventListener("click", function(e) {
+	var className = e.target.className;
+	var target = e.target;
 	
-	if (tag == 'H3' || tag == 'SECTION') {
-		alert("wow");
+	console.log("className >>> ", className);
+	console.log("target >>> ", target);
+	var tag = e.target.tagName;
+	console.log("tag >>> ", tag);
+	
+	if(tag === 'H3'){
+		let num = target.dataset.num;
+		modal = document.getElementById('modal'+num);
+		modal.style.display = "flex";
+		sc.scrollTop = 0;
 	}
-
 });
+
+let close = document.querySelectorAll('.close');
+console.log("close >>> ", close);
+close.forEach((item) => item.addEventListener("click", function(e) {
+	modal.style.display = "none";
+}));

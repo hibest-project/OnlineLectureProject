@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>Insert title here</title>
+	<link rel="stylesheet" href="${path}/resources/css/mentors/modal.css">
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css1.css">
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css2.css">
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css3.css">
@@ -160,29 +161,25 @@
           <div class="view">
             
 
-<div class="mentor-cards" id = "modal1">
-  <h2 class="visually-hidden">멘토 리스트</h2>
+<div class="mentor-cards" id = "cards">
 
   <c:forEach var="m" items="${list }" varStatus="status">
     <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
-        <h3 class="mentor-card__title">${m.title }</h3>
+        <h3 class="mentor-card__title" data-num="${status.index }">${m.title }</h3>
         <div class="mentor-card__job-wrapper">
           <dl class="mentor-card__job-info-list">
             <div><dt>직무</dt><dd>${m.mentor.job }</dd></div>
             <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
-			
 			<c:if test="${m.mentor.current ne null }">
 			<div><dt>현직</dt><dd class="mentor-card__company-name">${m.mentor.current }</dd></div>
 			</c:if>
-			
           </dl>
           <figure class="mentor-card__thumbnail">
             <img src="https://cdn.inflearn.com/public/users/thumbnails/23830/e519ad7c-9bb6-4459-9af9-06b6c2323d90" alt="멘토 이미지" loading="lazy">
           </figure>
         </div>
       </div>
-      
       <div class="mentor-card__bottom">
         <div>
           <a href="#" class="mentor-card__name">${m.mentor.name }</a>
@@ -193,13 +190,75 @@
           </button>
         </div>
       </div>
-      
     </section>
+  
     
   </c:forEach>
 
  </div>
+ <c:forEach var="m" items="${list }" varStatus="status">
+<!-- 모달 시작 -->
+<div class="modal apply-mentoring-modal" id ="modal${status.index }" style="display: none;">
+<div class="dimmed"></div>
+<div class="apply-mentoring__container">
+<div id="apply-mentoring-modal-step2" class="apply-mentoring__step step-show apply-mentoring-intro-mentor-step" data-step="2">
+  <div class="apply-mentoring__header">
+    <div class="apply-mentoring-header-left">
+      <h1>멘토링 소개</h1>
+      
+    </div>
+    <div class="apply-mentoring-header-right">
+      
+      
+        <button type="button" class="apply-mentoring__button-sharing e-apply-sharing">
+          <span><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill="#212529" fill-rule="evenodd" clip-rule="evenodd" d="M13.3334 3.66666C13.3334 4.95533 12.2887 6 11 6C10.3257 6 9.7181 5.7139 9.29211 5.25646L5.88379 7.27067C5.95923 7.50012 6.00004 7.74529 6.00004 8C6.00004 8.25469 5.95923 8.49986 5.8838 8.72932L9.29224 10.7434C9.71822 10.286 10.3257 10 11 10C12.2887 10 13.3334 11.0447 13.3334 12.3333C13.3334 13.622 12.2887 14.6667 11 14.6667C9.71138 14.6667 8.66671 13.622 8.66671 12.3333C8.66671 12.0786 8.70752 11.8335 8.78296 11.604L5.37452 9.58992C4.94854 10.0473 4.34103 10.3333 3.66671 10.3333C2.37804 10.3333 1.33337 9.28866 1.33337 8C1.33337 6.71133 2.37804 5.66666 3.66671 5.66666C4.34102 5.66666 4.94853 5.9527 5.37452 6.41007L8.78295 4.39599L8.78321 4.39678C8.70761 4.1671 8.66671 3.92166 8.66671 3.66666C8.66671 2.378 9.71138 1.33333 11 1.33333C12.2887 1.33333 13.3334 2.378 13.3334 3.66666ZM12.3334 3.66666C12.3334 4.40304 11.7364 4.99999 11 4.99999C10.2637 4.99999 9.66671 4.40304 9.66671 3.66666C9.66671 2.93028 10.2637 2.33333 11 2.33333C11.7364 2.33333 12.3334 2.93028 12.3334 3.66666ZM3.66671 9.33333C4.40309 9.33333 5.00004 8.73637 5.00004 8C5.00004 7.26362 4.40309 6.66666 3.66671 6.66666C2.93033 6.66666 2.33337 7.26362 2.33337 8C2.33337 8.73637 2.93033 9.33333 3.66671 9.33333ZM12.3334 12.3333C12.3334 13.0697 11.7364 13.6667 11 13.6667C10.2637 13.6667 9.66671 13.0697 9.66671 12.3333C9.66671 11.5969 10.2637 11 11 11C11.7364 11 12.3334 11.5969 12.3334 12.3333Z"></path></svg></span>
+          <span>공유</span>
+        </button>
+      <button type="button" class="apply-mentoring__button-cancel e-apply-cancel close" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.237 5.237a.808.808 0 0 1 1.142 0L12 10.857l5.621-5.62a.808.808 0 1 1 1.142 1.142L13.143 12l5.62 5.621a.807.807 0 1 1-1.142 1.142L12 13.143l-5.621 5.62a.808.808 0 1 1-1.142-1.142L10.857 12l-5.62-5.621a.808.808 0 0 1 0-1.142z" fill="#858A8D"></path></svg>
+      </button>
+    </div>
+  </div>
+  <div class="apply-mentoring__body">
+    <div class="apply-mentoring__intro"  id="sc">
+      <div class="apply-mentoring__intro-header">
+      <div class="apply-mentoring__thumbnail-name-wrapper">
+        <a class="apply-mentoring__thumbnail-name-link" href="/users/104234" target="_blank" rel="noopener noreferrer">
+          <img class="apply-mentoring__mentor-thumbnail" src="https://cdn.inflearn.com/public/users/thumbnails/104234/87c344bd-11a9-44b6-a381-813682910fae">
+          <span class="apply-mentoring__mentor-name">Kyle</span>
+        </a>
+      </div>
+      <h2 class="apply-mentoring__mentoring-title">보다 괜찮은 개발자 커리어 &amp; 공부법 &amp; 이력서 첨삭</h2>
+      <h3 class="apply-mentoring__info-title">멘토 정보</h3>
+     
+      <dl class="apply-mentoring__job-info-list">
+        <div><dt>직무</dt><dd>${m.mentor.job }</dd></div>
+        <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
+        <div><dt>현직</dt><dd class="apply-mentoring__company-name">${m.mentor.current }</dd></div>
+      </dl>
+    </div>
+      <div class="apply-mentoring__intro-body"><p>${m.mentor.content }</p>
 
+<p><a href="https://busy-trawler-2e3.notion.site/kyle-3e9a8d1002094f5d9954c57ad8b2dc46">최근 멘토링 하셨던 분의 후기</a> 입니다. 감사합니다 :D</p></div>
+    </div>
+    <div class="apply-mentoring__intro-duration-price">
+      <p>
+        1회 멘토링 : <span class="intro-duration">${m.time}</span> / <span class="intro-price">${m.price }</span>원 / <span class="intro-personnel">1</span>명
+        
+      </p>
+    </div>
+  </div>
+  <div class="apply-mentoring__footer">
+    
+    
+    <button type="button" class="ac-button is-solid is-primary apply-mentoring__button-next e-apply-next">
+      신청하기
+    </button>
+    
+  </div>
+</div></div></div>
+		<!-- 모달 끝 -->
+</c:forEach>
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
       <ul class="pages">
         
@@ -217,17 +276,11 @@
       </div>
     </div>
   </main>
+  
 </section>
-		<!-- 모달창 -->
-	<div class="black_bg"></div>
-	<div class="modal_wrap">
-		<div class="modal_close">
-			<a href="#">close</a>
-		</div>
-		<div>모달창 내용</div>
-	</div>
-	
+
+
 </main>
-<script type="text/javascript" src="../resources/js/mentors/modal.js"></script> 
+<script src="${path }/resources/js/mentors/modal.js"></script>
 </body>
 </html>
