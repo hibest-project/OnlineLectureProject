@@ -239,11 +239,16 @@
         </c:if>
       </dl>
     </div>
-      <div class="apply-mentoring__intro-body"><p>${m.mentor.content }</p></div>
+      <div class="apply-mentoring__intro-body">
+      	<h3>자기소개</h3>
+      	<p>${m.mentor.content }</p>&nbsp;
+      	<h3>진행방식</h3>
+      	<p>${m.content }</p>
+      </div>
     </div>
     <div class="apply-mentoring__intro-duration-price">
       <p>
-        1회 멘토링 : <span class="intro-duration">${m.time}</span> / <span class="intro-price">${m.price }</span>원 / <span class="intro-personnel">1</span>명
+        <span class="intro-duration">${m.time}</span> / <span class="intro-price">${m.price }</span>원 / <span class="intro-personnel">1</span>명
       </p>
     </div>
   </div>
