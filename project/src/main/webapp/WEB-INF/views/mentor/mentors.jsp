@@ -225,26 +225,25 @@
       <div class="apply-mentoring__thumbnail-name-wrapper">
         <a class="apply-mentoring__thumbnail-name-link" href="/users/104234" target="_blank" rel="noopener noreferrer">
           <img class="apply-mentoring__mentor-thumbnail" src="https://cdn.inflearn.com/public/users/thumbnails/104234/87c344bd-11a9-44b6-a381-813682910fae">
-          <span class="apply-mentoring__mentor-name">Kyle</span>
+          <span class="apply-mentoring__mentor-name">${m.mentor.name }</span>
         </a>
       </div>
-      <h2 class="apply-mentoring__mentoring-title">보다 괜찮은 개발자 커리어 &amp; 공부법 &amp; 이력서 첨삭</h2>
+      <h2 class="apply-mentoring__mentoring-title">${m.title }</h2>
       <h3 class="apply-mentoring__info-title">멘토 정보</h3>
      
       <dl class="apply-mentoring__job-info-list">
         <div><dt>직무</dt><dd>${m.mentor.job }</dd></div>
         <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
+        <c:if test="${m.mentor.current ne null }">
         <div><dt>현직</dt><dd class="apply-mentoring__company-name">${m.mentor.current }</dd></div>
+        </c:if>
       </dl>
     </div>
-      <div class="apply-mentoring__intro-body"><p>${m.mentor.content }</p>
-
-<p><a href="https://busy-trawler-2e3.notion.site/kyle-3e9a8d1002094f5d9954c57ad8b2dc46">최근 멘토링 하셨던 분의 후기</a> 입니다. 감사합니다 :D</p></div>
+      <div class="apply-mentoring__intro-body"><p>${m.mentor.content }</p></div>
     </div>
     <div class="apply-mentoring__intro-duration-price">
       <p>
         1회 멘토링 : <span class="intro-duration">${m.time}</span> / <span class="intro-price">${m.price }</span>원 / <span class="intro-personnel">1</span>명
-        
       </p>
     </div>
   </div>
