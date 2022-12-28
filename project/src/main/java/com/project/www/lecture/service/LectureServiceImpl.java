@@ -21,4 +21,10 @@ public class LectureServiceImpl implements LectureService{
 		return lectureMapper.getLlist();
 	}
 
+	@Override
+	public List<Lecture> viewStartLecture() {
+		
+		return lectureMapper.getStartList();
+	}
+
 }

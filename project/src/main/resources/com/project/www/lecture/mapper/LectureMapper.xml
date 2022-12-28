@@ -5,9 +5,19 @@
 <mapper namespace="com.project.www.lecture.mapper.LectureMapper">
 
 	<select id="getLlist" resultType="com.project.www.lecture.dto.Lecture">
-	select l.lecture_id ,l.title, l.price, l.discount, l.level, l.date, l.about_lecture, l.fileName ,t.teacher_name, c.cname, d.dname
-from lecture l,teacher t, categorie c, detail_categorie d
-where t.teacher_id = l.teacher_id and c.categorie_num = l.categorie_num and d.detail_num = l.detail_num and discount= 100;
+	select l.lecture_id, l.title, l.price, l.discount, l.level, l.fileName, t.teacher_name, c.cname, d.dname,price - round(price * discount/100,0) as realprice, 
+round(avg(score), 1) as score , count(li.lecture_id) as count_listener, count(r.lecture_id) as count_review
+from lecture l, teacher t, categorie c, detail_categorie d, listener li, review r
+where t.teacher_id = l.teacher_id and c.categorie_num = l.categorie_num and d.detail_num = l.detail_num  and  r.lecture_id = l.lecture_id and li.listener_id = r.listener_id   and discount = 100
+group by l.lecture_id;
+	</select>
+	
+	<select id="getStartList" resultType="com.project.www.lecture.dto.Lecture">
+	select l.lecture_id, l.title, l.price, l.discount, l.level, l.fileName, t.teacher_name, c.cname, d.dname,price - round(price * discount/100,0) as realprice, 
+round(avg(score), 1) as score , count(li.lecture_id) as count_listener, count(r.lecture_id) as count_review
+from lecture l, teacher t, categorie c, detail_categorie d, listener li, review r
+where t.teacher_id = l.teacher_id and c.categorie_num = l.categorie_num and d.detail_num = l.detail_num  and  r.lecture_id = l.lecture_id and li.listener_id = r.listener_id   and level = '입문'
+group by l.lecture_id;
 	</select>
 	
 </mapper>

@@ -8,4 +8,6 @@ public interface LectureService {
 
 	List<Lecture> viewFreelecture();
 
+	List<Lecture> viewStartLecture();
+
 }

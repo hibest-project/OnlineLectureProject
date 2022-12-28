@@ -11,4 +11,6 @@ public interface LectureMapper {
 
 	List<Lecture> getLlist();
 
+	List<Lecture> getStartList();
+
 }

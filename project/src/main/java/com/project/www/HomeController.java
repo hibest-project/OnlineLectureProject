@@ -24,12 +24,13 @@ public class HomeController {
 	CategorieService categorieService;
 	
 	@GetMapping()
-	public String home(Model model ,Lecture lecture) {
+	public String home(Model model ) {
 		List<Categorie> clist = categorieService.viewAllCategorie();
 		List<Lecture> Llist = lectureService.viewFreelecture();
+		List<Lecture> startList = lectureService.viewStartLecture();
 		model.addAttribute("clist", clist);
 		model.addAttribute("Llist", Llist);
-		
+		model.addAttribute("startList", startList);
 		
 		return "home";
 	} 

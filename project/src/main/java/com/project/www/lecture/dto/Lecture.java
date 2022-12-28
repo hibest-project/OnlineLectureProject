@@ -26,6 +26,11 @@ public class Lecture {
 	private String cname;
 	private String dname;
 	private String teacher_name;
+	private int realprice;
+	private int count_listener;
+	private int count_review;
+	private double score;
+	
 	
 	
 	
