@@ -19,7 +19,7 @@
 	<main id="main" class="">
 <section class="instructor_list_section">
   <header class="instructor_list_hero">
-    <a href="/mentors-intro">
+    <a href="#">
       <div class="hero-content container">
         <div class="hero-content__image-cover"></div>
         <h1 class="heading_list">멘토링</h1>
@@ -159,33 +159,33 @@
         <div class="panel_right">
           <div class="view">
             
-<div class="mentor-cards">
+
+<div class="mentor-cards" id = "modal1">
   <h2 class="visually-hidden">멘토 리스트</h2>
+
   <c:forEach var="m" items="${list }" varStatus="status">
-    
-    <section class="mentor-card e-mentoring" id="modal_open" data-id="${m.mentor.mentor_id}">
+    <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
         <h3 class="mentor-card__title">${m.title }</h3>
         <div class="mentor-card__job-wrapper">
           <dl class="mentor-card__job-info-list">
-            
             <div><dt>직무</dt><dd>${m.mentor.job }</dd></div>
-            
             <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
+			
 			<c:if test="${m.mentor.current ne null }">
-            <div><dt>현직</dt><dd class="mentor-card__company-name">${m.mentor.current }</dd></div>
-            </c:if>
-            
+			<div><dt>현직</dt><dd class="mentor-card__company-name">${m.mentor.current }</dd></div>
+			</c:if>
+			
           </dl>
           <figure class="mentor-card__thumbnail">
             <img src="https://cdn.inflearn.com/public/users/thumbnails/23830/e519ad7c-9bb6-4459-9af9-06b6c2323d90" alt="멘토 이미지" loading="lazy">
           </figure>
         </div>
       </div>
+      
       <div class="mentor-card__bottom">
         <div>
-          <a href="/users/23830" target="_blank" rel="noopener noreferrer" class="mentor-card__name">${m.mentor.name }</a>
-          
+          <a href="#" class="mentor-card__name">${m.mentor.name }</a>
           <button class="mentor-card__rating e-show-reviews">
             <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
             <span class="rating-number">${list2[status.index ].score}</span>
@@ -193,52 +193,22 @@
           </button>
         </div>
       </div>
+      
     </section>
     
   </c:forEach>
-  
-    <section class="mentor-card e-mentoring" data-id="1141">
-      <div class="mentor-card__top">
-        <h3 class="mentor-card__title">개발.. 그게 돈이 됩니까?</h3>
-        <div class="mentor-card__job-wrapper">
-          <dl class="mentor-card__job-info-list">
-            
-            <div><dt>직무</dt><dd>설거지</dd></div>
-            
-            <div><dt>경력</dt><dd>주니어 (응애)</dd></div>
-            
-            <div><dt>현직</dt><dd class="mentor-card__company-name">ha2미디어</dd></div>
-          </dl>
-          <figure class="mentor-card__thumbnail">
-            <img src="https://cdn.inflearn.com/public/main/profile/default_profile.png" alt="멘토 이미지" loading="lazy">
-          </figure>
-        </div>
-      </div>
-      <div class="mentor-card__bottom">
-        <div>
-          <a href="/users/195729" target="_blank" rel="noopener noreferrer" class="mentor-card__name">강동진</a>
-          
-          <button class="mentor-card__rating e-show-reviews">
-            <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
-            <span class="rating-number">5.0</span>
-            <i class="fal fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
 
-</div>
+ </div>
 
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
       <ul class="pages">
         
         
-        <li><button class="page e-pagination  active" data-page="1" aria-label="1페이지로 이동">1</button></li><li><button class="page e-pagination  " data-page="2" aria-label="2페이지로 이동">2</button></li><li><button class="page e-pagination  " data-page="3" aria-label="3페이지로 이동">3</button></li><li><button class="page e-pagination  " data-page="4" aria-label="4페이지로 이동">4</button></li>
-                <li><button class="page e-pagination  " data-page="5" aria-label="5페이지로 이동">5</button></li>
-                <li><button class="page e-pagination  " data-page="6" aria-label="6페이지로 이동">…</button></li>
-              
-        <li><button class="page e-pagination  " data-page="7" aria-label="7페이지로 이동">7</button></li>
-        <li><button class="page e-pagination  next" data-page="2" aria-label="2페이지로 이동">다음</button></li>
+		<li><button class="page e-pagination  active" data-page="1" aria-label="1페이지로 이동">1</button></li><li><button class="page e-pagination  " data-page="2" aria-label="2페이지로 이동">2</button></li><li><button class="page e-pagination  " data-page="3" aria-label="3페이지로 이동">3</button></li><li><button class="page e-pagination  " data-page="4" aria-label="4페이지로 이동">4</button></li>
+		<li><button class="page e-pagination  " data-page="5" aria-label="5페이지로 이동">5</button></li>
+		<li><button class="page e-pagination  " data-page="6" aria-label="6페이지로 이동">…</button></li>
+		<li><button class="page e-pagination  " data-page="7" aria-label="7페이지로 이동">7</button></li>
+		<li><button class="page e-pagination  next" data-page="2" aria-label="2페이지로 이동">다음</button></li>
       </ul>
     </nav>
   
@@ -247,7 +217,17 @@
       </div>
     </div>
   </main>
-</section></main>
+</section>
+		<!-- 모달창 -->
+	<div class="black_bg"></div>
+	<div class="modal_wrap">
+		<div class="modal_close">
+			<a href="#">close</a>
+		</div>
+		<div>모달창 내용</div>
+	</div>
+	
+</main>
 <script type="text/javascript" src="../resources/js/mentors/modal.js"></script> 
 </body>
 </html>
