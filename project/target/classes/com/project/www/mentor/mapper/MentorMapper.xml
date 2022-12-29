@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.www.mentor.mapper.MentorMapper">
+	
 	<resultMap id="mentoring" type="com.project.www.mentor.dto.Mentoring">
 		<id property="mentoring_id" column="mentoring_id" />
 		<id property="id" column="id" />
@@ -20,20 +21,35 @@
 			<result property="phone" column="phone" />
 			<result property="job" column="job" />
 			<result property="current" column="current" />
-			<result property="content" column="content" />
+			<result property="content_" column="content_" />
 			<result property="career" column="career" />
 		</association>
 	</resultMap>
 
 	<select id="getList" resultMap="mentoring">
-		select * from mentor inner join mentoring using(mentor_id, id)
+		select * from mentor inner join mentoring using(mentor_id, id) order by mentoring_id desc
 	</select>
 
 	<select id="getScoreAvg" resultType="com.project.www.mentor.dto.MentoringGrade">
 		select mg.mentoring_id, round(avg(score),1) score 
 		from mentoring_grade mg
 		group by mg.mentoring_id;
-	</select>	
+	</select>
+	
+	<sql id="search">
+		<if test="condition == 'Mentoring'">
+			WHERE content LIKE CONCAT('%',#{keyword},'%')
+		</if>
+	</sql>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from mentoring
+		<include refid="search" ></include>
+	</select>
 
-
+	<select id="getPage" resultMap="mentoring" parameterType="com.project.www.mentor.dto.PageDTO">
+     	select * from mentoring 
+     	<include refid="search" ></include>
+     	order by mentoring_id desc limit #{pageNum}, #{countPerPage}
+     </select>
 </mapper>

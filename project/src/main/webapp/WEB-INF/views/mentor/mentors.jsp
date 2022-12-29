@@ -176,7 +176,7 @@
 			</c:if>
           </dl>
           <figure class="mentor-card__thumbnail">
-            <img src="https://cdn.inflearn.com/public/users/thumbnails/23830/e519ad7c-9bb6-4459-9af9-06b6c2323d90" alt="멘토 이미지" loading="lazy">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/12/31/pacman-145854_960_720.png" alt="멘토 이미지" loading="lazy">
           </figure>
         </div>
       </div>
@@ -224,7 +224,7 @@
       <div class="apply-mentoring__intro-header">
       <div class="apply-mentoring__thumbnail-name-wrapper">
         <a class="apply-mentoring__thumbnail-name-link" href="/users/104234" target="_blank" rel="noopener noreferrer">
-          <img class="apply-mentoring__mentor-thumbnail" src="https://cdn.inflearn.com/public/users/thumbnails/104234/87c344bd-11a9-44b6-a381-813682910fae">
+          <img class="apply-mentoring__mentor-thumbnail" src="https://cdn.pixabay.com/photo/2013/07/12/12/31/pacman-145844_960_720.png">
           <span class="apply-mentoring__mentor-name">${m.mentor.name }</span>
         </a>
       </div>
@@ -241,7 +241,7 @@
     </div>
       <div class="apply-mentoring__intro-body">
       	<h3>자기소개</h3>
-      	<p>${m.mentor.content }</p>&nbsp;
+      	<p>${m.mentor.content_ }</p>&nbsp;
       	<h3>진행방식</h3>
       	<p>${m.content }</p>
       </div>
@@ -267,7 +267,10 @@
       <ul class="pages">
         
         
-		<li><button class="page e-pagination  active" data-page="1" aria-label="1페이지로 이동">1</button></li><li><button class="page e-pagination  " data-page="2" aria-label="2페이지로 이동">2</button></li><li><button class="page e-pagination  " data-page="3" aria-label="3페이지로 이동">3</button></li><li><button class="page e-pagination  " data-page="4" aria-label="4페이지로 이동">4</button></li>
+		<li><button class="page e-pagination  active" data-page="1" aria-label="1페이지로 이동">1</button></li>
+		<li><button class="page e-pagination  " data-page="2" aria-label="2페이지로 이동">2</button></li>
+		<li><button class="page e-pagination  " data-page="3" aria-label="3페이지로 이동">3</button></li>
+		<li><button class="page e-pagination  " data-page="4" aria-label="4페이지로 이동">4</button></li>
 		<li><button class="page e-pagination  " data-page="5" aria-label="5페이지로 이동">5</button></li>
 		<li><button class="page e-pagination  " data-page="6" aria-label="6페이지로 이동">…</button></li>
 		<li><button class="page e-pagination  " data-page="7" aria-label="7페이지로 이동">7</button></li>

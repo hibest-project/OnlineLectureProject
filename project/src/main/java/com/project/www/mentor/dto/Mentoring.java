@@ -14,7 +14,7 @@ public class Mentoring {
 	
 	private int mentoring_id;
 	private String id;
-	private String 	title;
+	private String title;
 	private String content;
 	private String rule;
 	private String time;

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.project.www.mentor.dto.Mentoring;
 import com.project.www.mentor.dto.MentoringGrade;
+import com.project.www.mentor.dto.PageDTO;
 import com.project.www.mentor.mapper.MentorMapper;
 
 @Service
@@ -26,5 +27,17 @@ public class MentorServiceImpl implements MentorService{
 	public List<MentoringGrade> getScore() {
 		return mentorMapper.getScoreAvg();
 	}
+
+	@Override
+	public int getTotal(PageDTO dto) {
+		return mentorMapper.getTotalCount();
+	}
+
+	@Override
+	public List<Mentoring> getPage(PageDTO dto) {
+		
+		return mentorMapper.getPage();
+	}
+
 
 }

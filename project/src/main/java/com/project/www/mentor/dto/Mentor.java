@@ -20,7 +20,7 @@ public class Mentor {
 	public String phone;
 	public String job;
 	public String current;
-	public String content;
+	public String content_;
 	public String career;
 
 }

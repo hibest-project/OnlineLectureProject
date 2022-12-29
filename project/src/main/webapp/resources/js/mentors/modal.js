@@ -4,10 +4,7 @@ const sc = document.getElementById('sc');
 let modal = "";
 
 open.addEventListener("click", function(e) {
-	var className = e.target.className;
 	var target = e.target;
-	
-	console.log("className >>> ", className);
 	console.log("target >>> ", target);
 	var tag = e.target.tagName;
 	console.log("tag >>> ", tag);
