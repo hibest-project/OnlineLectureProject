@@ -94,7 +94,7 @@
 					</div>
 					<div class="ac-input-with-item--large ">
 						<input id="password" type="text" value="" name="password" />
-						<!-- (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자) -->
+						<!--  (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)--> 
 					</div>
 					
 					<!-- <div class="ac-input-with-item--large password-input form__input--password form__input e-password ">
