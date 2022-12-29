@@ -109,7 +109,7 @@
 									<span class="course_card_ribbon is-shown-admin student_cnt">1539</span>
 								</div>
 								<div class="card-content">
-									<div class="course_title">강의 제목자리</div>
+									<div class="course_title">강 의 제목자리</div>
 									<div class="instructor">강사 이름자리</div>
 									<div class="rating">
 										<div class="rating_star">
