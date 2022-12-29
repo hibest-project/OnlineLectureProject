@@ -18,6 +18,7 @@
 <link rel="stylesheet"
 	href="${contextPath }/resources/css/bulma-tooltip.min.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/all.css" />
+<link rel="stylesheet" href="${contextPath }/resources/css/_my_likes.f3b23d18ec0dac620056.css" />
 
 </head>
 <body id="inflearn"
@@ -42,7 +43,6 @@
 					<div class="summary">
 						<dl class="summary__count">
 							<dt>전체</dt>
-							<dd class="summary__count-all">4</dd>
 						</dl>
 						<div class="my-likes__orders">
 
@@ -109,8 +109,8 @@
 									<span class="course_card_ribbon is-shown-admin student_cnt">1539</span>
 								</div>
 								<div class="card-content">
-									<div class="course_title">스프링과 JPA 기반 웹 애플리케이션 개발</div>
-									<div class="instructor">백기선</div>
+									<div class="course_title">강의 제목자리</div>
+									<div class="instructor">강사 이름자리</div>
 									<div class="rating">
 										<div class="rating_star">
 											<div class="star_solid" style="width: 95.57894736842104%">
@@ -178,11 +178,11 @@
 										</div>
 										<span class="review_cnt">(95)</span>
 									</div>
-									<div class="price">₩330,000</div>
+									<div class="price">₩가격자리</div>
 
 									<div class="tags">
 										<span class="tag "
-											style="background-color: hsl(321, 63%, 90%)">+1500명</span> <span
+											style="background-color: hsl(321, 63%, 90%)">회원 아이디 카운트</span> <span
 											class="tag is-hidden-student"
 											style="background-color: hsl(155, 40%, 87%)">독점</span>
 
@@ -197,11 +197,8 @@
 							</a>
 							<div class="course_card_back">
 								<a class="e_course_click" href="/course/스프링-JPA-웹앱">
-									<p class="course_title">스프링과 JPA 기반 웹 애플리케이션 개발</p>
-									<p class="course_description">이 강좌에서 여러분은 실제로 운영 중인 서비스를
-										스프링, JPA 그리고 타임리프를 비롯한 여러 자바 기반의 여러 오픈 소스 기술을 사용하여 웹 애플리케이션을
-										개발하는 과정을 학습할 수 있습니다. 이 강좌를 충분히 학습한다면 여러분 만의 웹 서비스를 만들거나 취직에
-										도움이 될만한 포트폴리오를 만들 수 있을 겁니다.</p>
+									<p class="course_title">강의 제목 자리</p>
+									<p class="course_description">강의 내용 부분</p>
 									<div class="back_course_metas">
 										<div class="course_level">
 											<span><svg width="16" aria-hidden="true"
@@ -209,7 +206,7 @@
 													class="svg-inline--fa fa-signal-alt fa-w-20" role="img"
 													xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
 												<path fill="currentColor"
-													d="M576 32v448h-32V32h32M416 160v320h-32V160h32M256 288v192h-32V288h32M96 416v64H64v-64h32M576 0h-32c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32zM416 128h-32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zM256 256h-32c-17.67 0-32 14.33-32 32v192c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V288c0-17.67-14.33-32-32-32zM96 384H64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"></path></svg></span>
+													d="M576 32v448h-32V32h32M416 160v320h-32V160h32M256 288v192h-32V288h32M96 416v64H64v-64h32M576 0h-32c-17.67 0-32 14.33-32 32v448c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32zM416 128h-32c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zM256 256h-32c-17.67 0-32 14.33-32 32v192c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V288c0-17.67-14.33-32-32-32zM96 384H64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"></path></svg>난이도 자리</span>
 										</div>
 										<div class="course_categories">
 											<span> <svg width="16" aria-hidden="true"
@@ -219,7 +216,7 @@
 												<path fill="currentColor"
 													d="M288 224h224a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32H400L368 0h-80a32 32 0 0 0-32 32v64H64V8a8 8 0 0 0-8-8H40a8 8 0 0 0-8 8v392a16 16 0 0 0 16 16h208v64a32 32 0 0 0 32 32h224a32 32 0 0 0 32-32V352a32 32 0 0 0-32-32H400l-32-32h-80a32 32 0 0 0-32 32v64H64V128h192v64a32 32 0 0 0 32 32zm0 96h66.74l32 32H512v128H288zm0-288h66.74l32 32H512v128H288z"></path></svg>
 
-											</span>
+											카테고리자리</span>
 										</div>
 										<div class="course_skills">
 											<span> <svg width="16" aria-hidden="true"
@@ -229,7 +226,7 @@
 												<path fill="currentColor"
 													d="M384 215.1V102.5c0-15-9.3-28.4-23.4-33.7l-92-34.5c-8.1-3.1-17.1-3.1-25.3 0l-92 34.5c-14.1 5.3-23.4 18.7-23.4 33.7v112.6L23.4 254.4C9.3 259.6 0 273.1 0 288.1v106.6c0 13.6 7.7 26.1 19.9 32.2l98.6 49.3c10.1 5.1 22.1 5.1 32.2 0L256 423.6l105.3 52.6c10.1 5.1 22.1 5.1 32.2 0l98.6-49.3c12.2-6.1 19.9-18.6 19.9-32.2V288.1c0-15-9.3-28.4-23.4-33.7L384 215.1zm-116 34.8V152l92-31.7v97.6l-92 32zM152 94.2l104-39 104 39v.2L256 131 152 94.3v-.1zm0 26.1l92 31.7v97.9l-92-32v-97.6zm-30 329.4l-96.8-48.4V308l96.8 39.3v102.4zM25.2 280.8v-.2l109.4-41 108.1 40.5v1.2l-108.1 43.9-109.4-44.4zm122 66.5l95.5-38.8V402l-95.5 47.8V347.3zm217.6 102.4L269.3 402v-93.4l95.5 38.8v102.3zm122-48.4L390 449.7V347.3l96.8-39.3v93.3zm0-120.5l-109.4 44.4-108.1-43.9v-1.2l108.1-40.5 109.4 41v.2z"></path></svg>
 
-											</span>
+											디테일카테고리자리</span>
 										</div>
 									</div>
 								</a>

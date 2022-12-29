@@ -13,8 +13,8 @@
 		and m.id = "abb"
 	</select> 
 	
-	<select id="getWishList" resultType="com.project.www.mypage.dto.WishList">
+	<!-- <select id="getWishList" resultType="com.project.www.mypage.dto.WishList">
 
-	</select>
+	</select> -->
 
 </mapper>

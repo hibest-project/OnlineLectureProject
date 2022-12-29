@@ -37,10 +37,10 @@ public class MyPageController {
 		//좋아요목록
 		@GetMapping("/likes")
 		public String likes(Model model) {
-			List<WishList> list = myPageService.getWish();
+		/*	List<WishList> list = myPageService.getWish();
 			System.out.println(list);
-			model.addAttribute("list", list);
-			return "mypage/listenclass";
+			model.addAttribute("list", list);*/
+			return "mypage/wishlist";
 		}
 	
 

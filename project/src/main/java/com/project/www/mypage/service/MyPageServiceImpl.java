@@ -23,11 +23,11 @@ public class MyPageServiceImpl implements MyPageService {
 		return myPageMapper.getListenClassList();
 	}
 
-	@Override
-	public List<WishList> getWish() {
-		
-		return myPageMapper.getWishList();
-	}
+//	@Override
+//	public List<WishList> getWish() {
+//		
+//		return myPageMapper.getWishList();
+//	}
 	
 
 	

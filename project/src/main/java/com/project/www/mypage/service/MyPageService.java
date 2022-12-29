@@ -9,6 +9,6 @@ public interface MyPageService {
 
 	List<ListenLecture> getListenClass() ;
 
-	List<WishList> getWish();
+//	List<WishList> getWish();
 
 }
