@@ -50,6 +50,7 @@
 	<select id="getPage" resultMap="mentoring" parameterType="com.project.www.mentor.dto.PageDTO">
      	select * from mentoring 
      	<include refid="search" ></include>
-     	order by mentoring_id desc limit #{pageNum}, #{countPerPage}
+     	order by mentoring_id desc 
+     	limit #{pageNum}, #{countPerPage}
      </select>
 </mapper>
