@@ -18,16 +18,15 @@ public class MyPageServiceImpl implements MyPageService {
 	MyPageMapper myPageMapper;
 
 	@Override
-	public List<ListenLecture> getListenClass() {
+	public List<ListenLecture> getListenClass(String id) {
 		
-		return myPageMapper.getListenClassList();
+		return myPageMapper.getListenClassList(id);
 	}
 
-//	@Override
-//	public List<WishList> getWish() {
-//		
-//		return myPageMapper.getWishList();
-//	}
+	@Override
+	public List<WishList> getWish(String id) {
+		return myPageMapper.getWishList(id);
+	}
 	
 
 	

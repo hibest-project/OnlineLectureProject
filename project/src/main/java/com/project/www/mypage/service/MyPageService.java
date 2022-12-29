@@ -7,8 +7,10 @@ import com.project.www.mypage.dto.WishList;
 
 public interface MyPageService {
 
-	List<ListenLecture> getListenClass() ;
+	List<ListenLecture> getListenClass(String id) ;
 
-//	List<WishList> getWish();
+	List<WishList> getWish(String id);
+
+
 
 }

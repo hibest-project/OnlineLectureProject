@@ -103,7 +103,7 @@
 									</div>
 									<div class="card-content">
 										<div class="course-title-wrapper">
-											<div class="course_title">${ListenLecture.name }</div>
+											<div class="course_title">${ListenLecture.title }</div>
 											<div class="play-now-btn-container"></div>
 										</div>
 										<div class="course_meta">

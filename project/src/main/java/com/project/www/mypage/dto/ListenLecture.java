@@ -15,7 +15,7 @@ public class ListenLecture {
 
 	private String listenClassId; 
 	private String name ;
-	private String image;
+	private String fileName;
 	private String title;
 	public static void main(String[] args) {
 		

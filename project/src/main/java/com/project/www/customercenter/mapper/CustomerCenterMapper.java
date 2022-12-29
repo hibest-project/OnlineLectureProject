@@ -21,15 +21,13 @@ public interface CustomerCenterMapper {
 	void writeBoardInsert(InquiryBoard inquiryRequest) ;
 
 
-	List<InquiryBoard> getinquiryList(InquiryBoard inquiryid);
+	List<InquiryBoard> getinquiryList(int inquiryid);
 
-	List<Comments> getCommentsList(InquiryBoard inquiryid);
+	List<Comments> getCommentsList(int inquiryid);
 
 	void uploadWriteComments(HttpServletRequest request );
 
-	void writeCommentsInsert(Comments inquiryid);
-
-
+	void writeCommentsInsert(Comments comments);
 
 	void deleteInquiry(InquiryBoard inquiryid);
 

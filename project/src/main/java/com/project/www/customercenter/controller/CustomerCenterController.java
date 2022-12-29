@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mysql.cj.Session;
 import com.project.www.customercenter.dto.Comments;
@@ -74,24 +75,29 @@ public class CustomerCenterController {
 	}
 	//1:1 글 보기
 	@GetMapping("/inquiry")
-	public String inquiry(Model model, InquiryBoard inquiryid) {
+	public String inquiry(Model model, int inquiryid) {
 		System.out.println(inquiryid+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
 		List<InquiryBoard> list = customerCenterService.getInquiry(inquiryid);
 		List<Comments> Commentslist = customerCenterService.getComments(inquiryid);
 		model.addAttribute("list", list);
 		model.addAttribute("Commentslist", Commentslist);
+		
 		return "customercenter/ReadBoard";
 	}
+	
+	//1:1 댓글등록
 	@RequestMapping("/writecomments")
-	public String WriteComments(Comments inquiryid) {
-		System.out.println(inquiryid);
-		customerCenterMapper.writeCommentsInsert(inquiryid);
+	public String WriteComments(Comments comments ,RedirectAttributes re) {
+		System.out.println("comments+++++++++++++++++++"+comments);
+		re.addAttribute("inquiryid",comments.getInquiryid());
+		customerCenterMapper.writeCommentsInsert(comments);
 
 		return  "redirect:./inquiry";
 	}
 	//1:1 삭제 >db
 	@GetMapping("/inquiryremove")
-	public String inquiryRemove(Model model, InquiryBoard inquiryid) {
+	public String inquiryRemove(InquiryBoard inquiryid) {
 		System.out.println(inquiryid+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		customerCenterMapper.deleteInquiry(inquiryid);
 //		List<Comments> Commentslist = customerCenterMapper.deleteComments(inquiryid);
