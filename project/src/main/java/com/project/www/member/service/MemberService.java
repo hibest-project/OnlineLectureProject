@@ -12,7 +12,7 @@ public interface MemberService {
 	void registMember(Member member);
 
 	//회원정보 수정
-	void modifyMember(Member member);
+	public boolean modifyMember(Member member);
 	
 
 }

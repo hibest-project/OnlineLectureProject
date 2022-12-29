@@ -73,9 +73,9 @@
 	<div class="columns">
 		<jsp:include page="../mypage/mypageside.jsp"></jsp:include>
 		<section class="signup">
-		<h2 class="signup__title">마이 페이지1</h2>
+		<h2 class="signup__title">마이 페이지</h2>
 		<div class="signup__main">
-			<form class="signup__form" action="${contextPath }/member/regist">
+			<form class="signup__form" action="${contextPath }/member/modify" method="post">
 
 				<input id="id" type="hidden" name="id" value="${mem.id }" />
 
@@ -84,16 +84,19 @@
 						<label for="name" class="form__label">이름</label>
 					</div>
 					<div class="ac-input-with-item--large ">
-						<input id="name" type="text" value="${mem.name }" name="name"
-							disabled />
+						<input id="name" type="text" value="${mem.name }" name="name" disabled/>
 					</div>
 				</div>
 				<div class="form__input-block">
 					<div class="input_label">
 						<label for="password" class="form__label">비밀번호</label>
-						<button type="button" class="mod_btn">수정</button>
+						<!-- <button type="button" class="mod_btn">수정</button> -->
 					</div>
-
+					<div class="ac-input-with-item--large ">
+						<input id="password" type="text" value="" name="password" />
+						<!-- (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자) -->
+					</div>
+					
 					<!-- <div class="ac-input-with-item--large password-input form__input--password form__input e-password ">
 					<input id="password" value data-kv="password" type="password"
 					class="e-sign-up-input--password" spellcheck="false" 
@@ -123,12 +126,11 @@
 				<div class="form__input-block">
 					<div class="input_label">
 						<label for="email" class="form__label">이메일</label>
-						<button type="button" class="mod_btn">수정</button>
+						<!-- <button type="button" class="mod_btn">수정</button> -->
 					</div>
 
 					<div class="ac-input-with-item--large ">
-						<input id="email" value="${mem.email }" type="text" name="email"
-							disabled />
+						<input id="email" value="${mem.email }" type="text" name="email" disabled/>
 					</div>
 				</div>
 				<div class="form__input-block">
@@ -141,24 +143,22 @@
 				<div class="form__input-block">
 					<div class="input_label">
 						<label for="address" class="form__label">주소</label>
-						<button type="button" class="mod_btn">수정</button>
+						<!-- <button type="button" class="mod_btn">수정</button> -->
 					</div>
-
+					
 					<div class="ac-input-with-item--large">
-						<input id="address" value="${mem.address }" type="text"
-							name="address" disabled />
+						<input id="address" value="${mem.address }" type="text" name="address"/>
 					</div>
 				</div>
 
 				<div class="form__input-block">
 					<div class="input_label">
 						<label for="phone" class="form__label">전화번호</label>
-						<button type="button" class="mod_btn">수정</button>
+						<!-- <button type="button" class="mod_btn">수정</button> -->
 					</div>
 
 					<div class="ac-input-with-item--large ">
-						<input id="phone" value="${mem.phone }" type="text" name="phone"
-							disabled />
+						<input id="phone" value="${mem.phone }" type="text" name="phone"/>
 					</div>
 				</div>
 				<button
@@ -168,6 +168,24 @@
 		</section>
 	</div>
 	</main>
+
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	var formObj = $("form");
+	
+	$('button').on("click", function(e){
+		e.preventDefault();
+		var operation = $(this).data("modify");
+		console.log(operation);
+		
+		if(operation === 'modify'){
+			formObj.attr
+		}
+	});
+});
+
+</script> -->
+
 
 	<jsp:include page="../footer.jsp" />
 </body>

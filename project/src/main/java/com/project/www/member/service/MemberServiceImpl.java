@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mysql.cj.log.Log;
 import com.project.www.member.dto.Member;
 import com.project.www.member.mapper.MemberMapper;
 
@@ -28,9 +29,8 @@ public class MemberServiceImpl implements MemberService{
 
 	//회원정보 수정
 	@Override
-	public void modifyMember(Member member) {
-		memberMapper.modify(member);
-		
+	public boolean modifyMember(Member member) {
+		return MemberMapper.modify(member) == 1;
 	}
 
 	

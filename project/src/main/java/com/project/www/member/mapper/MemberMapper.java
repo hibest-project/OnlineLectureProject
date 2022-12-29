@@ -14,7 +14,11 @@ public interface MemberMapper {
 	public void insert(Member member);
 
 	//회원정보 수정
-	public void modify(Member member);
+	public static int modify(Member member) {
+		return 0;
+	}
+
+
 	
 	
 }

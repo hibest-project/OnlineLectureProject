@@ -7,10 +7,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.google.protobuf.Service;
 import com.project.www.member.dto.Member;
 import com.project.www.member.service.MemberService;
 
@@ -89,21 +93,28 @@ public class MemberController {
 	}
 
 	//회원정보 수정
-/*	@RequestMapping("/update")
-	public String update(Member member, Model model) {
-		memberService.updateMember(member);
-		return "redirect:login";
-	}*/
-
-	@GetMapping("/modifyForm")
-	public void modifyForm() {
-		
+	@GetMapping({"/get", "/modify"})
+	public void get(@RequestParam("id")String id, @ModelAttribute("member") Member member, Model model) {
+		log.info("/get or modify");
+		model.addAttribute("myPage", memberService.getMember(id));
 	}
 	
-	@GetMapping("/modify")
-	public String modify(Member member, Model model) {
-		memberService.modifyMember(member);
-		return "redirect:login";
+	@PostMapping("/modify")
+	public String modify(Member member, @ModelAttribute("member") RedirectAttributes rttr) {
+		log.info("modify >>>>>>>>>>> " + member);
+		
+		if(memberService.modifyMember(member)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+		
+		rttr.addAttribute("name", member.getName());
+		rttr.addAttribute("password", member.getPassword());
+		rttr.addAttribute("email", member.getEmail());
+		rttr.addAttribute("birth", member.getBirthday());
+		rttr.addAttribute("address", member.getAddress());
+		rttr.addAttribute("phone", member.getPhone());
+		
+		return "home";
 	}
 
 	
