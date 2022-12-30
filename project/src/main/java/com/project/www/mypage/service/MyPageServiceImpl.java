@@ -1,5 +1,6 @@
 package com.project.www.mypage.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class MyPageServiceImpl implements MyPageService {
 	public List<WishList> getWish(String id) {
 		return myPageMapper.getWishList(id);
 	}
+
+
+
+
 	
 
 	

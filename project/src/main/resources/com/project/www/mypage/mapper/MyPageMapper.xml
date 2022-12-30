@@ -28,10 +28,7 @@
 		group by w.wish_list_id;
 	</select>
 	
-		<!-- 좋아요 삭제 -->
- 	<delete id="deleteLike">
-		delete from wish_list where wish_list_id = #{wish_list_id} and id = #{id};
-	</delete> 
-	
+
+
 
 </mapper>

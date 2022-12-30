@@ -1,5 +1,7 @@
 package com.project.www.mypage.dto;
 
+import java.util.HashMap;
+
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
@@ -32,5 +34,9 @@ public class WishList {
 	private int count_listener;
 	private int count_review;
 	private double score;
+	private int like_check;
+
+
+	
 
 }

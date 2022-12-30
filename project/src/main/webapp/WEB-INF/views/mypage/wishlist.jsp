@@ -49,40 +49,6 @@
 						</dl>
 						<div class="my-likes__orders">
 
-							<div
-								class="ac-dropdown e-filter my-likes__dropdown  hidden-default-icon">
-								<select name="status" class="">
-
-									<option value="all" selected="">유/무료</option>
-									<option value="paid">유료</option>
-									<option value="free">무료</option>
-								</select> <span class="ac-dropdown__icon-caret--down"><svg
-										class="display__icon-down" width="16" color="#3e4042"
-										xmlns="http://www.w3.org/2000/svg" height="16"
-										viewBox="0 0 16 16"> <path fill="#212529"
-										fill-rule="evenodd"
-										d="M12.77 5.563c.196.195.196.512 0 .707l-4.166 4.167c-.195.195-.512.195-.707 0L3.73 6.27c-.195-.195-.195-.512 0-.707.195-.195.512-.195.707 0L8.25 9.376l3.813-3.813c.196-.195.512-.195.707 0z"
-										clip-rule="evenodd"></path></svg></span>
-							</div>
-
-
-							<div
-								class="ac-dropdown e-order-default my-likes__dropdown  hidden-default-icon">
-								<select name="order" class="">
-
-									<option value="published_date">최신순</option>
-									<option value="title">제목순</option>
-									<option value="student_cnt">학생수순</option>
-									<option value="rating">평점순</option>
-								</select> <span class="ac-dropdown__icon-caret--down"><svg
-										class="display__icon-down" width="16" color="#3e4042"
-										xmlns="http://www.w3.org/2000/svg" height="16"
-										viewBox="0 0 16 16"> <path fill="#212529"
-										fill-rule="evenodd"
-										d="M12.77 5.563c.196.195.196.512 0 .707l-4.166 4.167c-.195.195-.512.195-.707 0L3.73 6.27c-.195-.195-.195-.512 0-.707.195-.195.512-.195.707 0L8.25 9.376l3.813-3.813c.196-.195.512-.195.707 0z"
-										clip-rule="evenodd"></path></svg></span>
-							</div>
-
 						</div>
 					</div>
 				</div>
@@ -190,9 +156,6 @@
 												style="background-color: hsl(321, 63%, 90%)">회원 아이디
 												카운트</span> <span class="tag is-hidden-student"
 												style="background-color: hsl(155, 40%, 87%)">독점</span>
-
-
-
 										</div>
 
 									</div>
@@ -240,36 +203,27 @@
 										</div>
 									</a>
 									<div class="course_card_control active_btn">
-
 										<div
 											class="tooltip is-tooltip-warning is-tooltip-left course-card__button-cart add_cart e_cart_action"
 											fxd-data="{&quot;type&quot;:&quot;cart&quot;}"
 											data-tooltip="수강바구니에 추가">
 											<i class="far fa-cart-plus fa-lg"></i>
 										</div>
-
-
 										<a href="${ contextPath}/mypage/likeremove"><div
-											class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like course-card__button-like--active add_cart e-like"
-											data-tooltip="좋아요에서 삭제">
-											<i class="fas fa-heart fa-lg"></i>
-										</div></a>
-
-									
-
+												class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like course-card__button-like--active add_cart e-like"
+												data-tooltip="좋아요에서 삭제">
+												<i class="fas fa-heart fa-lg"></i>
+											</div></a>
 									</div>
-
 								</div>
-
 							</div>
-
 						</div>
 					</c:forEach>
 				</div>
 			</div>
-
 		</div>
 	</section></main>
+	<jsp:include page="../footer.jsp" />
 
 
 </body>

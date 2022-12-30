@@ -1,8 +1,7 @@
 package com.project.www.mypage.mapper;
 
+import java.util.HashMap;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 
 import com.project.www.mypage.dto.ListenLecture;
 import com.project.www.mypage.dto.WishList;
@@ -16,9 +15,26 @@ public interface MyPageMapper {
 
 	List<WishList> getWishList(String id);
 
-	static void deleteLike(String id, WishList wish_list_id) {	
-		System.out.println("메퍼왔음");
-	}
+
+
+//	boolean getLikeCheck(String id);
+//
+//	void setLikeInsert(String id);
+//
+//	static void deleteLike(String id) {		
+//		
+//	}
+
+
+
+
+
+
+	
+	
+
+
+
 	
 	
 }

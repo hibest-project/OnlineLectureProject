@@ -1,5 +1,6 @@
 package com.project.www.mypage.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.project.www.mypage.dto.ListenLecture;
@@ -11,6 +12,7 @@ public interface MyPageService {
 
 	List<WishList> getWish(String id);
 
+		
 
-
+	
 }
