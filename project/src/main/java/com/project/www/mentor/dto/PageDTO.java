@@ -15,6 +15,6 @@ public class PageDTO {
 	
 	public PageDTO() {
 		this.pageNum = 1;
-		this.countPerPage = 10;
+		this.countPerPage = 12;
 	}
 }

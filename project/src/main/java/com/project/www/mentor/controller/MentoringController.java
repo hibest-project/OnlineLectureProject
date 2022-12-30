@@ -34,10 +34,6 @@ public class MentoringController {
 		model.addAttribute("list", list);
 		log.info("list>>>>>>>>>>>>>>> " + list);
 		
-		//가져오는 mentor 목록의 별점 가져오기
-		List<MentoringGrade> list2 = mentorService.getScore();
-		model.addAttribute("list2", list2);
-		log.info("list2>>>>>>>>>>>>>>> " + list2);
 		
 		//페이징 처리하기 위한 객체 생성
 		PageCreate pc = new PageCreate();
@@ -45,12 +41,6 @@ public class MentoringController {
 		pc.setArticleTotalCount(mentorService.getTotal(dto));
 		System.out.println(pc);
 		model.addAttribute("pc", pc);
-		
-		
-	
-
-		
-		
 		
 		return "mentor/mentors";
 

@@ -11,8 +11,11 @@ import com.project.www.mentor.dto.MentoringGrade;
 import com.project.www.mentor.dto.PageDTO;
 import com.project.www.mentor.mapper.MentorMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 @Transactional
+@Slf4j
 public class MentorServiceImpl implements MentorService{
 
 	@Autowired
@@ -23,10 +26,6 @@ public class MentorServiceImpl implements MentorService{
 		return mentorMapper.getList();
 	}
 
-	@Override
-	public List<MentoringGrade> getScore() {
-		return mentorMapper.getScoreAvg();
-	}
 
 	@Override
 	public int getTotal(PageDTO dto) {
@@ -35,8 +34,8 @@ public class MentorServiceImpl implements MentorService{
 
 	@Override
 	public List<Mentoring> getPage(PageDTO dto) {
-		
-		return mentorMapper.getPage();
+		log.info("pageDto >>>>>>>>>>>>> " + dto);
+		return mentorMapper.getPage(dto);
 	}
 
 

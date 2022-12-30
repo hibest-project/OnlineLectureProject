@@ -10,8 +10,6 @@ public interface MentorService {
 
 	public List<Mentoring> viewAll();
 
-	public List<MentoringGrade> getScore();
-
 	public int getTotal(PageDTO dto);
 
 	public List<Mentoring> getPage(PageDTO dto);

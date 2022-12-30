@@ -15,10 +15,11 @@ public class Mentoring {
 	private int mentoring_id;
 	private String id;
 	private String title;
-	private String content;
+	private String mentoring_content;
 	private String rule;
 	private String time;
 	private String price;
 	
 	private Mentor mentor;
+	private MentoringGrade mentoringGrade;
 }

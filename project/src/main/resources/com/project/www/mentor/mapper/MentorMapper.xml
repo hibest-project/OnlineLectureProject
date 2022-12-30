@@ -8,7 +8,7 @@
 		<id property="mentoring_id" column="mentoring_id" />
 		<id property="id" column="id" />
 		<id property="title" column="title" />
-		<id property="content" column="content" />
+		<id property="mentoring_content" column="mentoring_content" />
 		<id property="rule" column="rule" />
 		<id property="time" column="time" />
 		<id property="price" column="price" />
@@ -21,8 +21,15 @@
 			<result property="phone" column="phone" />
 			<result property="job" column="job" />
 			<result property="current" column="current" />
-			<result property="content_" column="content_" />
+			<result property="mentor_content" column="mentor_content" />
 			<result property="career" column="career" />
+		</association>
+		<association property="mentoringGrade" javaType="com.project.www.mentor.dto.MentoringGrade">
+			<result property="mentoring_id" column="mentoring_id" />
+			<result property="m_grade" column="m_grade" />
+			<result property="id" column="id" />
+			<result property="grade_content" column="grade_content" />
+			<result property="score" column="score" />
 		</association>
 	</resultMap>
 
@@ -30,12 +37,6 @@
 		select * from mentor inner join mentoring using(mentor_id, id) order by mentoring_id desc
 	</select>
 
-	<select id="getScoreAvg" resultType="com.project.www.mentor.dto.MentoringGrade">
-		select mg.mentoring_id, round(avg(score),1) score 
-		from mentoring_grade mg
-		group by mg.mentoring_id;
-	</select>
-	
 	<sql id="search">
 		<if test="condition == 'Mentoring'">
 			WHERE content LIKE CONCAT('%',#{keyword},'%')
@@ -47,8 +48,8 @@
 		<include refid="search" ></include>
 	</select>
 
-	<select id="getPage" resultMap="mentoring" parameterType="com.project.www.mentor.dto.PageDTO">
-     	select * from mentoring 
+	<select id="getPage" resultMap="mentoring" >
+     	select * from mentor inner join mentoring using(mentor_id, id)
      	<include refid="search" ></include>
      	order by mentoring_id desc 
      	limit #{pageNum}, #{countPerPage}

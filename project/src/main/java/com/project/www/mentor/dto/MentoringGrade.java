@@ -15,6 +15,6 @@ public class MentoringGrade {
 	public int m_grade;
 	private int mentoring_id;
 	public String id;
-	public String content;
+	public String grade_content;
 	public double score;
 }
