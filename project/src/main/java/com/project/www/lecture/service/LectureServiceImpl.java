@@ -27,4 +27,16 @@ public class LectureServiceImpl implements LectureService{
 		return lectureMapper.getStartList();
 	}
 
+	@Override
+	public List<Lecture> searchByCategorie(int categorieNum) {
+		
+		return lectureMapper.searchByCategorie(categorieNum);
+	}
+
+	@Override
+	public List<Lecture> viewDetailLecture(int lectureId) {
+		
+		return lectureMapper.viewDetailLecture(lectureId);
+	}
+
 }

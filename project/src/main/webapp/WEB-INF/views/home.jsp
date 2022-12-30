@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/css/npm_tinymce.594df9f476c7ad317e8e.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/MAIN.29a1bc1bc62d78adcc71.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/main.aa70040a92f0bb23778b.css" />
+
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
 
@@ -86,7 +87,7 @@
 									data-gtm-vis-first-on-screen-8964582_476="2216"
 									data-gtm-vis-total-visible-time-8964582_476="100"
 									data-gtm-vis-has-fired-8964582_476="1">
-									<a class="course_card_front e_course_click" href="${contextPath }/lecture/lecture_id?lecture_id=${lacture_id}">
+									<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 										<div class="card-image">
 											<figure class="image is_thumbnail"> 
 											<img 
@@ -181,7 +182,7 @@
 											style="display: none;" aria-hidden="true"></div>
 									</a>
 									<div class="course_card_back">
-										<a class="e_course_click" href="">
+										<a class="e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 											<p class="course_title">${lecture.title }</p>
 											<p class="course_description"></p>
 											<div class="back_course_metas">
@@ -500,166 +501,69 @@
 		</div>
 	</div>
 	</section>
-    <!-- 로드맵 -->
+   
     
-  <section class="roadmap_root">
-    <div class="container">
-      
-    <div class="main_course_list">
-      <div class="header">
-        <div class="courses_header">
-          <a href="/roadmaps">
-    <h1 class="title is-4 is-spaced">
-      기본부터 실무까지 제시해주는 로드맵 🏃🏻&zwj;♀️
-      <span class="courses_tag">RoadMap!!</span>
-      <span class="icon"><i class="fal fa-angle-right"></i></span>
-    </h1></a>
-          <p class="subtext is-2">아무것도 몰라도 따라오다 보면 전문가가 될 수 있어요!</p>
-        </div>
-      </div>
-      <div class="roadmap_content"> 
-<div class="InfD__Carousel_cards InfD__FloatButton_cover">
-  <div class="swiper-container roadmap swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" style="cursor: grab;">
-    <div class="swiper-wrapper" id="swiper-wrapper-f51ac1065877e3fcd" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);"><div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 12" style="width: 270.75px; margin-right: 6px;">
-    <div class="card image_card roadmap_card">
-      <a href="/roadmaps/634">
-        <div class="card-image">
-          <figure class="image"><img src="https://cdn.inflearn.com/public/roadmaps/634/cover/c36c88e6-8ec9-4299-81dc-4ddca9c8f914/roadmap_gameduo-main (2).png" alt="로드맵 대표 이미지"></figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <h5>게임듀오 x 인프런 특별 채용 : 게임 개발자 스타터 패키지</h5>
-            <p class="page_meta"><span class="author">By GAMEDUO</span></p>
-          </div>
-        </div>
-      </a>
-    </div></div></div>
-  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    
   
-    <div role="button" class="InfD__FloatButton_circle roadmap-swiper-button-next next" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-f51ac1065877e3fcd" aria-disabled="false">
-      
-      <i class="fas fa-chevron-right"></i>
-    
-    </div>
   
-    <div role="button" class="InfD__FloatButton_circle roadmap-swiper-button-prev prev swiper-button-disabled" tabindex="-1" aria-label="Previous slide" aria-controls="swiper-wrapper-f51ac1065877e3fcd" aria-disabled="true">
-      
-      <i class="fas fa-chevron-left"></i>
-    
-    </div>
-  
-</div></div>
-    </div>
-    </div>
-  </section>
-    <!-- 큐레이션 -->
-    
-    <!-- 신규 강의 리스트 -->
-    
-    <section class="recent_courses root" id="">
-      <div class="container">
-    <div class="main_course_list">
-      <div class="header">
-        <div class="courses_header">
-          <a href="/curation/latest">
-    <h1 class="title is-4 is-spaced">
-      따끈따끈, 신규 강의를 만나보세요! 🙋🏻&zwj;♀️
-      <span class="courses_tag">NEW!!</span>
-      <span class="icon"><i class="fal fa-angle-right"></i></span>
-    </h1></a>
-          
-        </div>
-      </div>
-      <div class="recent_courses_content"></div>
-    </div>
-      </div>
-    </section>
-    <!-- 수강평 -->
-    
-  <section class="review">
-    <div class="container">
-      <div class="content">
-        <div class="content_left">
-          <h1 class="title is-2">
-            <span id="count_user">1,006,244</span> 명이 <br>인프런과 함께합니다.
-          </h1>
-          <div class="text is-1">
-            인프런은 강의의 수강생수, 평점을 투명하게 공개합니다.<br>
-   실제로 많은 온오프라인 학원들은 단기적 성과를 높이기 위해 잘나온 특정 후기만 노출 하거나, 아예 숨겨버리는 경우가 많습니다.<br>
-   반면 인프런은 강의에 대한 후기, 학생수 등 정보를 투명하게 공개합니다. 신뢰성을 바탕으로 학습자들이 더 좋은 컨텐츠를 선택하고 교육의 질을 높입니다.
-          </div>
-          <div class="buttons">
-            <a class="button space-inset-stretch-5" href="/community/reviews">
-              <span>수강평 더보기</span> <span class="icon"><i class="fal fa-angle-right"></i></span></a>
-            <a class="button space-inset-stretch-5" href="/request-to-inflearn">
-              <span>기능/강좌 요청하기</span> <span class="icon"><i class="fal fa-angle-right"></i></span></a>
-          </div>
-        </div>
-        <div class="content_right">
-          <div class="swiper-container review_swiper swiper-container-initialized swiper-container-vertical swiper-container-pointer-events" style="cursor: grab;">
-            <div class="swiper-wrapper" id="swiper-wrapper-4f485c9d083b6399" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(0px, -3383.42px, 0px);"><div class="swiper-slide box space-inset-8 swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" role="group" aria-label="1 / 60" style="margin-bottom: 20px;">
-    <div class="box_top">
-      <span class="text is-2 name">오리날다 님(수강생)</span>
-      <span class="text is-3 date">방금</span>
-    </div>
-    <div class="box_bottom">
-      <a href="/course/http-웹-네트워크" class="title is-7">
-        <span>모든 개발자를 위한 HTTP 웹 기본 지식</span><span class="icon"><i class="fal fa-angle-right"></i></span></a>
-      <div class="text is-1">강의 듣고 나서 403 error 코드를 만났습니다. 디비를 확인해보니 user의 권한이 부여가 안 되어있네요 강의 한개씩 듣다 보면 비전공자인 저도 좋은 개발자가 될 수 있을거 같아요.
-
-고생하셨습니다 ^ㅠ^</div>
-    </div>
-  </div><div class="swiper-slide box space-inset-8 swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="19" role="group" aria-label="20 / 60" style="margin-bottom: 20px;">
-    <div class="box_top">
-      <span class="text is-2 name">뿡이 님(수강생)</span>
-      <span class="text is-3 date">3시간 전</span>
-    </div>
-    <div class="box_bottom">
-      <a href="/course/자바-100제-5" class="title is-7">
-        <span>예제로 공부하는 Java 100 문제풀이 Part.5</span><span class="icon"><i class="fal fa-angle-right"></i></span></a>
-      <div class="text is-1">좋은 강의 감사합니다.</div>
-    </div>
-  </div>
-  <div class="swiper-slide box space-inset-8 swiper-slide-active" data-swiper-slide-index="0" role="group" aria-label="21 / 60" style="margin-bottom: 20px;">
-    <div class="box_top">
-      <span class="text is-2 name">오리날다 님(수강생)</span>
-      <span class="text is-3 date">방금</span>
-    </div>
-    <div class="box_bottom">
-      <a href="/course/http-웹-네트워크" class="title is-7">
-        <span>모든 개발자를 위한 HTTP 웹 기본 지식</span><span class="icon"><i class="fal fa-angle-right"></i></span></a>
-      <div class="text is-1">강의 듣고 나서 403 error 코드를 만났습니다. 디비를 확인해보니 user의 권한이 부여가 안 되어있네요 강의 한개씩 듣다 보면 비전공자인 저도 좋은 개발자가 될 수 있을거 같아요.
-
-고생하셨습니다 ^ㅠ^</div>
-    </div>
-  </div>
-  <div class="swiper-slide box space-inset-8 swiper-slide-next" data-swiper-slide-index="1" role="group" aria-label="22 / 60" style="margin-bottom: 20px;">
-    <div class="box_top">
-      <span class="text is-2 name">초록불 님(수강생)</span>
-      <span class="text is-3 date">13분 전</span>
-    </div>
-    <div class="box_bottom">
-      <a href="/course/자바-디자인-패턴" class="title is-7">
-        <span>자바 디자인 패턴의 이해 - Gof Design Pattern</span><span class="icon"><i class="fal fa-angle-right"></i></span></a>
-      <div class="text is-1">좋았습니다</div>
-    </div>
-  </div><div class="swiper-slide box space-inset-8 swiper-slide-duplicate" data-swiper-slide-index="19" role="group" aria-label="60 / 60" style="margin-bottom: 20px;">
-    <div class="box_top">
-      <span class="text is-2 name">뿡이 님(수강생)</span>
-      <span class="text is-3 date">3시간 전</span>
-    </div>
-    <div class="box_bottom">
-      <a href="/course/자바-100제-5" class="title is-7">
-        <span>예제로 공부하는 Java 100 문제풀이 Part.5</span><span class="icon"><i class="fal fa-angle-right"></i></span></a>
-      <div class="text is-1">좋은 강의 감사합니다.</div>
-    </div>
-  </div></div>
-            <div class="swiper-mask"></div>
-          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- 수강평 --> 
+    <section class="review">
+	<div class="container">
+		<div class="content">
+			<div class="content_left">
+				<h1 class="title is-2">
+					<span id="count_user">1,006,244</span> 명이 <br>인프런과 함께합니다.
+				</h1>
+				<div class="text is-1">
+					인프런은 강의의 수강생수, 평점을 투명하게 공개합니다.<br> 실제로 많은 온오프라인 학원들은 단기적 성과를
+					높이기 위해 잘나온 특정 후기만 노출 하거나, 아예 숨겨버리는 경우가 많습니다.<br> 반면 인프런은 강의에
+					대한 후기, 학생수 등 정보를 투명하게 공개합니다. 신뢰성을 바탕으로 학습자들이 더 좋은 컨텐츠를 선택하고 교육의 질을
+					높입니다.
+				</div>
+				<div class="buttons">
+					<a class="button space-inset-stretch-5" href="/community/reviews">
+						<span>수강평 더보기</span> <span class="icon"><i
+							class="fal fa-angle-right"></i></span>
+					</a> <a class="button space-inset-stretch-5"
+						href="/request-to-inflearn"> <span>기능/강좌 요청하기</span> <span
+						class="icon"><i class="fal fa-angle-right"></i></span></a>
+				</div>
+			</div>
+			<div class="content_right">
+				<div
+					class="swiper-container review_swiper swiper-container-initialized swiper-container-vertical swiper-container-pointer-events"
+					style="cursor: grab;">
+					<div class="swiper-wrapper" id="swiper-wrapper-4f485c9d083b6399"
+						aria-live="polite"
+						style="transition-duration: 0ms; transform: translate3d(0px, -3383.42px, 0px);">
+						<div
+							class="swiper-slide box space-inset-8 swiper-slide-duplicate swiper-slide-duplicate-active"
+							data-swiper-slide-index="0" role="group" aria-label="1 / 60"
+							style="margin-bottom: 20px;">
+							<div class="box_top">
+								<span class="text is-2 name">오리날다 님(수강생)</span> <span
+									class="text is-3 date">방금</span>
+							</div>
+							<div class="box_bottom">
+								<a href="/course/http-웹-네트워크" class="title is-7"> <span>모든
+										개발자를 위한 HTTP 웹 기본 지식</span><span class="icon"><i
+										class="fal fa-angle-right"></i></span></a>
+								<div class="text is-1">강의 듣고 나서 403 error 코드를 만났습니다. 디비를
+									확인해보니 user의 권한이 부여가 안 되어있네요 강의 한개씩 듣다 보면 비전공자인 저도 좋은 개발자가 될 수
+									있을거 같아요. 고생하셨습니다 ^ㅠ^</div>
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					<div class="swiper-mask"></div>
+					<span class="swiper-notification" aria-live="assertive"
+						aria-atomic="true"></span>
+				</div>
+			</div>
+		</div>
+	
+	</section>
     <!-- 하단배너 -->
     
   <section class="banner2">

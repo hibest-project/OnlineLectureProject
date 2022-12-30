@@ -10,4 +10,8 @@ public interface LectureService {
 
 	List<Lecture> viewStartLecture();
 
+	List<Lecture> searchByCategorie(int categorieNum);
+
+	List<Lecture> viewDetailLecture(int lectureId);
+
 }

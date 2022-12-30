@@ -1,4 +1,4 @@
-package com.project.www.dtailCategorie.dto;
+package com.project.www.detailCategorie.dto;
 
 import org.springframework.stereotype.Component;
 
@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-public class DtailCategorie {
+public class DetailCategorie {
 
-	private int dtail_num;   
+	private int detail_num;
 	private int categorie_num;
-	private String dname;  
+	private String dname;
 }

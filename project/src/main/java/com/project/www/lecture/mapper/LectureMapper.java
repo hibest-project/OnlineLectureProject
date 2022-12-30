@@ -13,4 +13,8 @@ public interface LectureMapper {
 
 	List<Lecture> getStartList();
 
+	List<Lecture> searchByCategorie(int categorieNum);
+
+	List<Lecture> viewDetailLecture(int lectureId);
+
 }
