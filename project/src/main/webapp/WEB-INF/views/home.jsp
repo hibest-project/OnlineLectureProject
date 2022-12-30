@@ -44,6 +44,21 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css"
 	integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug=="
 	crossorigin="anonymous" />
+	
+	<!-- 스크립트  -->
+<%-- 	<script type="text/javascript" async="" src="${contextPath }/resources/js/ec.js"></script>
+	<script  async="" src="${contextPath }/resources/js/AceCounter_AW.js"></script>
+	<script type="text/javascript" async="" src="${contextPath }/resources/js/ch-plugin-web.js"></script>
+	<script type="text/javascript" async="" src="${contextPath }/resources/js/analytics.js"></script>
+	<script  async="" src="${contextPath }/resources/js/fbevents.js"></script>
+	<script type="text/javascript" async="" src="${contextPath }/resources/js/GIF_MP4.4088c8d96e200f5f4d85.js"></script>
+	<script  async="" src="${contextPath }/resources/js/gtm.js"></script>
+	<script type="text/javascript" async="" src="${contextPath }/resources/js/hotjar-1039300.js"></script>
+	<script type="text/javascript" async="" src="${contextPath }/resources/js/mixpanel-js-wrapper-1070825.js"></script>
+	<script type="text/javascript" async="" src="${contextPath }/resources/js/optimize.js"></script>
+	<script  async="" src="${contextPath }/resources/js/plugin.min.js"></script>
+	<script  async="" src="${contextPath }/resources/js/pwacompat.min.js"></script>
+	<script  async="" src="${contextPath }/resources/js/uwt.js"></script> --%>
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
 
