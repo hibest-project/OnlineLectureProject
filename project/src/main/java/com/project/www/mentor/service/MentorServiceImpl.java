@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.project.www.categorie.dto.Categorie;
 import com.project.www.mentor.dto.Mentoring;
-import com.project.www.mentor.dto.MentoringGrade;
 import com.project.www.mentor.dto.PageDTO;
 import com.project.www.mentor.mapper.MentorMapper;
 
@@ -34,9 +34,16 @@ public class MentorServiceImpl implements MentorService{
 
 	@Override
 	public List<Mentoring> getPage(PageDTO dto) {
-		log.info("pageDto >>>>>>>>>>>>> " + dto);
+		//log.info("pageDto >>>>>>>>>>>>> " + dto);
 		
 		return mentorMapper.getPage(dto);
+	}
+
+
+	@Override
+	public List<Categorie> getCategorie() {
+		
+		return mentorMapper.getCategorie();
 	}
 
 

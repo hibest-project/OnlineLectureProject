@@ -2,8 +2,8 @@ package com.project.www.mentor.service;
 
 import java.util.List;
 
+import com.project.www.categorie.dto.Categorie;
 import com.project.www.mentor.dto.Mentoring;
-import com.project.www.mentor.dto.MentoringGrade;
 import com.project.www.mentor.dto.PageDTO;
 
 public interface MentorService {
@@ -13,6 +13,8 @@ public interface MentorService {
 	public int getTotal(PageDTO dto);
 
 	public List<Mentoring> getPage(PageDTO dto);
+
+	public List<Categorie> getCategorie();
 
 
 }

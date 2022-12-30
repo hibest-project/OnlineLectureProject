@@ -31,6 +31,10 @@
 			<result property="grade_content" column="grade_content" />
 			<result property="score" column="score" />
 		</association>
+		<association property="categorie" javaType="com.project.www.categorie.dto.Categorie">
+			<result property="categorie_num" column="categorie_num" />
+			<result property="cname" column="cname" />
+		</association>
 	</resultMap>
 
 	<select id="getList" resultMap="mentoring">
@@ -53,5 +57,10 @@
      	<include refid="search" ></include>
      	order by mentoring_id desc 
      	limit #{pageNum}, #{countPerPage}
+     </select>
+     
+     <select id="getCategorie" resultMap="mentoring" >
+		select * from mentor m left join categorie c
+		on m.categorie_num = c.categorie_num
      </select>
 </mapper>

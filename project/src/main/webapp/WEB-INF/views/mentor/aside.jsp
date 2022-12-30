@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,69 +33,13 @@
 		<div class="accordion is-active first_accordion">
 			<div class="accordion-header toggle">분야별</div>
 			<div class="accordion-body level_accordion_body">
+			
 				<div class="accordion-content">
 					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="5" value="5"> <label for="5"
-							class="left"> 개발 · 프로그래밍 </label>
+						<a href="${path }/mentoring/aside"> 디테일카테고리자리 </a>
 					</div>
 				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="492" value="492"> <label for="492"
-							class="left"> 보안 · 네트워크 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="9" value="9"> <label for="9"
-							class="left"> 데이터 사이언스 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="39306" value="39306"> <label
-							for="39306" class="left"> 게임 개발 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="22" value="22"> <label for="22"
-							class="left"> 크리에이티브 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="33" value="33"> <label for="33"
-							class="left"> 직무 · 마케팅 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="493" value="493"> <label for="493"
-							class="left"> 학문 · 외국어 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="494" value="494"> <label for="494"
-							class="left"> 커리어 </label>
-					</div>
-				</div>
-				<div class="accordion-content">
-					<div class="atom_checkbox accordion_checkbox">
-						<input class="visually_hidden checkbox" type="checkbox"
-							data-type="terms" id="666" value="666"> <label for="666"
-							class="left"> 교양 </label>
-					</div>
-				</div>
+			
 			</div>
 		</div>
 		</nav>

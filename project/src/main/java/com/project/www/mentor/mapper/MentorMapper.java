@@ -2,8 +2,8 @@ package com.project.www.mentor.mapper;
 
 import java.util.List;
 
+import com.project.www.categorie.dto.Categorie;
 import com.project.www.mentor.dto.Mentoring;
-import com.project.www.mentor.dto.MentoringGrade;
 import com.project.www.mentor.dto.PageDTO;
 
 import config.MyMapper;
@@ -16,6 +16,8 @@ public interface MentorMapper {
 	public int getTotalCount();
 
 	public List<Mentoring> getPage(PageDTO dto);
+
+	public List<Categorie> getCategorie();
 	
 
 }
