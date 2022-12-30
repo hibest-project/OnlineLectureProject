@@ -71,22 +71,20 @@
                      <div class="has-dropdown is-hoverable navbar-item  icon_drop_menu">
                         <a href="#" class="navbar-item "><span>커뮤니티</span></a>
                         <div class="navbar-dropdown is-boxed is-right">
+                           <a class="navbar-item " href="#"> 
+                           <span class="icon"><i class="fal fa-comment-alt-edit"></i></span> 
+                           <span class="name">질문 &amp; 답변</span>
+
+                           </a> <a class="navbar-item " href="#"> 
+                           <span class="icon"><i class="fal fa-comment-alt-dots"></i></span> 
+                           <span class="name">자유주제</span>
+
+                           </a> <a class="navbar-item " href="#"> 
+                           <span class="icon"><i class="fal fa-book-open"></i></span> 
+                           <span class="name">스터디</span>
       
-                           <a class="navbar-item " href="#"> <span
-                              class="icon"><i class="fal fa-comment-alt-edit"></i></span> <span
-                              class="name">질문 &amp; 답변</span>
-      
-                           </a> <a class="navbar-item " href="#"> <span
-                              class="icon"><i class="fal fa-comment-alt-dots"></i></span> <span
-                              class="name">자유주제</span>
-      
-                           </a> <a class="navbar-item " href="#"> <span
-                              class="icon"><i class="fal fa-book-open"></i></span> <span
-                              class="name">스터디</span>
-      
-                           </a> <a class="navbar-item " href="#"> <span class="icon"><i
-                                 class="fal fa-feather-alt"></i></span> <span class="name">블로그</span>
-      
+                           </a> <a class="navbar-item " href="#"> <span class="icon">
+                           <i class="fal fa-feather-alt"></i></span> <span class="name">블로그</span>
                            </a>
                         </div>
                      </div>
@@ -95,23 +93,19 @@
                      <div class="has-dropdown is-hoverable navbar-item  icon_drop_menu">
                         <a href=# class="navbar-item "><span>인프런</span></a>
                         <div class="navbar-dropdown is-boxed is-right">
-      
-                           <a class="navbar-item " href="#"> <span
-                              class="icon"><i class="fal fa-star"></i></span> <span
-                              class="name">수강평</span>
-      
+                           <a class="navbar-item " href="#"> 
+                           <span class="icon"><i class="fal fa-star"></i></span> 
+                              <span class="name">수강평</span>
                            </a> <a class="navbar-item " href="#">
-                              <span class="icon"><i class="fal fa-lightbulb-on"></i></span> <span
-                              class="name">멘토링 후기</span>
+                              <span class="icon"><i class="fal fa-lightbulb-on"></i></span> 
+                              <span class="name">멘토링 후기</span>
       
-                           </a> <a class="navbar-item " href="#"> <span class="icon"><i
-                                 class="fal fa-paper-plane"></i></span> <span class="name">인프런
-                                 피드</span>
+                           </a> <a class="navbar-item " href="#"> <span class="icon">
+                           <i class="fal fa-paper-plane"></i></span> <span class="name">인프런 피드</span>
       
-                           </a> <a class="navbar-item " href="#"> <span
-                              class="icon"><i class="fal fa-comment-smile"></i></span> <span
+                           </a> <a class="navbar-item " href="#"> 
+                           <span class="icon"><i class="fal fa-comment-smile"></i></span> <span
                               class="name">강의·기능 요청</span>
-      
                            </a>
                         </div>
                      </div>
@@ -120,10 +114,10 @@
       
                      <div
                         class="search search_bar navbar-item header_search header_search--gnb">
-                        <input type="text" enterkeyhint="go" class="input" placeholder=""
-                           data-kv="headerSearchWord"> <span
-                           class="search__icon e-header-search"><i
-                           class="far fa-search"></i></span>
+                        <input type="text" enterkeyhint="go" 
+                        		class="input" placeholder="" data-kv="headerSearchWord"> 
+                           <span class="search__icon e-header-search">
+                           <i class="far fa-search"></i></span>
                      </div>
       
                      <div class="navbar-item buttons">

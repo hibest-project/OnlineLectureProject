@@ -35,6 +35,7 @@ public class MentorServiceImpl implements MentorService{
 	@Override
 	public List<Mentoring> getPage(PageDTO dto) {
 		log.info("pageDto >>>>>>>>>>>>> " + dto);
+		
 		return mentorMapper.getPage(dto);
 	}
 

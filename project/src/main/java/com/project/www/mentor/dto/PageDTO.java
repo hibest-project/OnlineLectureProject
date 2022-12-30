@@ -9,6 +9,7 @@ public class PageDTO {
 	private int pageNum;
 	private int countPerPage;
 	
+	
 	//검색에 필요한 데이터를 변수로 선언.
 	private String keyword;
 	private String condition;

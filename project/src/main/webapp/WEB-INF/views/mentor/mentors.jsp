@@ -142,20 +142,18 @@
 		
 				<!-- 페이징 -->
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
-    	
       <ul class="pages">
     	<c:if test="${pc.prev == true }">
-    		<li><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></li>
+    		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
     	</c:if>
         <c:forEach begin="${pc.beginPage }" end="${pc.endPage }" var="pageNum">
-		<li><a href=""><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
+		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
 		</c:forEach>
 		<c:if test="${pc.next == true }">
-    		<li><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></li>
+    		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
     	</c:if>
       </ul>
     </nav>
-
           </div>
         </div>
       </div>
