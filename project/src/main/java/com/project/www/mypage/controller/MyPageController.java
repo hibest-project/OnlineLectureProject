@@ -1,8 +1,8 @@
 package com.project.www.mypage.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.www.member.dto.Member;
 import com.project.www.mypage.dto.ListenLecture;
@@ -19,7 +19,6 @@ import com.project.www.mypage.dto.WishList;
 import com.project.www.mypage.mapper.MyPageMapper;
 import com.project.www.mypage.service.MyPageService;
 
-import config.MyMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -54,22 +53,40 @@ public class MyPageController {
 			model.addAttribute("wishlist", wishlist);
 			return "mypage/wishlist";
 		}
-//		//좋아요 추가 삭제
-//		@GetMapping("/like")
-//		public String like(HttpSession session) {
-//			String id = ((Member) session.getAttribute("auth")).getId();
-//			System.out.println("member.getid >>>>>>>>>>>"+id);
-//			
-//			boolean _like =  myPageService.getlike(id);
-//			if(_like == true) {
-//				myPageService.setlike(id);
-//				return null;
-//			}else {
-//				MyPageMapper.deleteLike(id);
-//				
-//			return null;
-//			}
-//		}
+		//좋아요 추가 삭제
+		@GetMapping("/like")
+		public boolean like(@RequestParam("lecture_id") int lecture_id ,HttpSession session) {
+			
+			String id = ((Member) session.getAttribute("auth")).getId();
+			Map<String, Object> map = new HashMap<String , Object>();
+			map.put("lecture_id", lecture_id);
+			map.put("id", id);
+			int check =  myPageService.checkLike(map);
+			System.out.println("check =====" + check);
+			boolean result = true;
+			
+			if(check == 1) {
+				int deletecheck = myPageService.deleteLike(map);
+				System.out.println("deletecheck>>>" + deletecheck);
+				result = false;
+	
+			}else {
+				int insertcheck =  myPageService.insertLike(map);
+				System.out.println("insertcheck>>>" + insertcheck);
+				
+				
+			}
+			return result;
+			
+		
+			
+			
+			
+		}
+		
+		
+		
+
 
 }
 	
