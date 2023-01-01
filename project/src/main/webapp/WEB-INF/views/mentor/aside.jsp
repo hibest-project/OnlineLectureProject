@@ -10,35 +10,38 @@
 <body>
 	<div class="sticky">
 
-		<div class="field has-addons mentors__search-input">
-			<div class="control">
-				<input class="input e-input-search-mentor" type="text" value="">
-			</div>
-			<div class="control">
-				<button type="button" class="button e-button-search-mentor">검색</button>
-			</div>
-		</div>
+<!-- 		<div class="field has-addons mentors__search-input"> -->
+<!-- 			<div class="control"> -->
+<!-- 				<input class="input e-input-search-mentor" type="text" value=""> -->
+<!-- 			</div> -->
+<!-- 			<div class="control"> -->
+<!-- 				<button type="button" class="button e-button-search-mentor">검색</button> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 
-		<div class="select sort_select">
-			<select data-type="order">
+<!-- 		<div class="select sort_select"> -->
+<!-- 			<select data-type="order"> -->
 
-				<option value="common">기본순</option>
-				<option value="latest">최근신청순</option>
-				<option value="recent">신규멘토순</option>
-				<option value="count">인기순</option>
-			</select>
-		</div>
+<!-- 				<option value="common">기본순</option> -->
+<!-- 				<option value="latest">최근신청순</option> -->
+<!-- 				<option value="recent">신규멘토순</option> -->
+<!-- 				<option value="count">인기순</option> -->
+<!-- 			</select> -->
+<!-- 		</div> -->
 
 		<nav class="accordions checkbox_accordions">
 		<div class="accordion is-active first_accordion">
 			<div class="accordion-header toggle">분야별</div>
 			<div class="accordion-body level_accordion_body">
 			
+			<c:forEach var="list" items="${categorieList }">
 				<div class="accordion-content">
 					<div class="atom_checkbox accordion_checkbox">
-						<a href="${path }/mentoring/aside"> 디테일카테고리자리 </a>
+<%-- 						<a href="${path}/mentoring/aside?categorie_num=${list.categorie_num}"> ${list.cname } </a> --%>
+						<a href="${path}/mentoring/viewMentoring?categorie_num=${list.categorie_num}"> ${list.cname } </a>
 					</div>
 				</div>
+			</c:forEach>
 			
 			</div>
 		</div>

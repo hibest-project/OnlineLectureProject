@@ -16,5 +16,8 @@ public interface MentorService {
 
 	public List<Categorie> getCategorie();
 
+	public List<Mentoring> getCategorieMentor(int num, PageDTO dto);
+
+
 
 }

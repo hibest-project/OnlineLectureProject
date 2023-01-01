@@ -2,6 +2,8 @@ package com.project.www.mentor.dto;
 
 import org.springframework.stereotype.Component;
 
+import com.project.www.categorie.dto.Categorie;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,4 +24,6 @@ public class Mentoring {
 	
 	private Mentor mentor;
 	private MentoringGrade mentoringGrade;
+	private Categorie categorie;
+	private PageDTO pageDTO;
 }

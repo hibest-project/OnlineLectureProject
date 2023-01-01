@@ -1,11 +1,14 @@
 package com.project.www.mentor.dto;
 
+import com.project.www.categorie.dto.Categorie;
+
 import lombok.Data;
 
 @Data
 public class PageCreate {
 
 	private PageDTO paging;
+	private Categorie categorie;
 	private int articleTotalCount;
 	private int beginPage;
 	private int endPage;

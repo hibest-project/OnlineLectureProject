@@ -121,9 +121,10 @@
     </div>
       <div class="apply-mentoring__intro-body">
       	<h3>자기소개</h3>
-      	<p>${m.mentor.mentor_content }</p>&nbsp;
+      	<p>${m.mentoring_content }</p>&nbsp;
       	<h3>진행방식</h3>
-      	<p>${m.mentoring_content }</p>
+      	<p>${m.mentor.mentor_content }</p>
+      	
       </div>
     </div>
     <div class="apply-mentoring__intro-duration-price">
@@ -143,6 +144,10 @@
 				<!-- 페이징 -->
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
       <ul class="pages">
+      
+			<!-- 카테고리 유무 체크 -->
+	<c:choose>
+	  <c:when test="${categorie_num eq 0}">
     	<c:if test="${pc.prev == true }">
     		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
     	</c:if>
@@ -152,6 +157,21 @@
 		<c:if test="${pc.next == true }">
     		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
     	</c:if>
+	  </c:when>
+	  
+	  <c:otherwise>
+	  	<c:if test="${pc.prev == true }">
+    		<li><a href="${path }/mentoring/viewMentoring?categorie_num=${categorie.categorie_num}&pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
+    	</c:if>
+        <c:forEach begin="${pc.beginPage }" end="${pc.endPage }" var="pageNum">
+		<li><a href="${path }/mentoring/viewMentoring?categorie_num=${categorie.categorie_num}&pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
+		</c:forEach>
+		<c:if test="${pc.next == true }">
+    		<li><a href="${path }/mentoring/viewMentoring?categorie_num=${categorie.categorie_num}&pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
+    	</c:if>
+	  </c:otherwise>
+	</c:choose>
+	    	
       </ul>
     </nav>
           </div>

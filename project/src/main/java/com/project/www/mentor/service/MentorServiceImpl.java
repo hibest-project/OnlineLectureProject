@@ -39,12 +39,20 @@ public class MentorServiceImpl implements MentorService{
 		return mentorMapper.getPage(dto);
 	}
 
-
 	@Override
 	public List<Categorie> getCategorie() {
-		
-		return mentorMapper.getCategorie();
+		return mentorMapper.categorieList();
 	}
+
+
+	@Override
+	public List<Mentoring> getCategorieMentor(int num, PageDTO dto) {
+		return mentorMapper.categorieMentor(num, dto.getPageNum(), dto.getCountPerPage());
+	}
+
+
+
+
 
 
 }

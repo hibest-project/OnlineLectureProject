@@ -31,11 +31,18 @@
 			<result property="grade_content" column="grade_content" />
 			<result property="score" column="score" />
 		</association>
-		<association property="categorie" javaType="com.project.www.categorie.dto.Categorie">
-			<result property="categorie_num" column="categorie_num" />
-			<result property="cname" column="cname" />
-		</association>
+		<collection property="categorie" resultMap="categorie"/>
+		<collection property="pageDTO" resultMap="pageDTO"/>
 	</resultMap>
+	<resultMap id="categorie" type="com.project.www.categorie.dto.Categorie">
+		<id property="categorie_num" column="categorie_num" />
+		<result property="cname" column="cname" />
+	</resultMap>
+	<resultMap id="pageDTO" type="com.project.www.mentor.dto.PageDTO">
+		<id property="pageNum" column="pageNum" />
+		<result property="countPerPage" column="countPerPage" />
+	</resultMap>
+	
 
 	<select id="getList" resultMap="mentoring">
 		select * from mentor inner join mentoring using(mentor_id, id) order by mentoring_id desc
@@ -59,8 +66,19 @@
      	limit #{pageNum}, #{countPerPage}
      </select>
      
-     <select id="getCategorie" resultMap="mentoring" >
-		select * from mentor m left join categorie c
-		on m.categorie_num = c.categorie_num
+     <select id="categorieList" resultMap="categorie" >
+		select * from categorie
      </select>
+     
+     <select id="categorieMentor" resultMap="mentoring">
+		select ming.*, m.* from mentor m inner join categorie c
+		on m.categorie_num = c.categorie_num
+        inner join mentoring ming
+        on m.mentor_id = ming.mentor_id
+		where c.categorie_num = #{categorie_num}
+		order by ming.mentoring_id desc
+		limit #{pageNum}, #{countPerPage}
+     </select>
+     
+     
 </mapper>
