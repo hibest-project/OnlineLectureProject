@@ -17,6 +17,8 @@ public interface MentorMapper {
 
 	public int getTotalCount();
 
+	public int getTotalCountByCategorie(int categorie_num);
+	
 	public List<Mentoring> getPage(PageDTO dto);
 
 	public List<Categorie> categorieList();
@@ -25,6 +27,8 @@ public interface MentorMapper {
 			@Param("categorie_num") int num, 
 			@Param("pageNum") int pageNum, 
 			@Param("countPerPage") int countPerPage);
+
+	
 
 
 }

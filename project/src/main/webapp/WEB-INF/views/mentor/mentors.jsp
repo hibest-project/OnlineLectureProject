@@ -52,7 +52,7 @@
   <c:forEach var="m" items="${list }" varStatus="status">
     <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
-        <h3 class="mentor-card__title" data-num="${status.index }">${m.mentoring_id}</h3><%-- ${m.title } --%>
+        <h3 class="mentor-card__title" data-num="${status.index }">${m.title }</h3>
         <div class="mentor-card__job-wrapper">
           <dl class="mentor-card__job-info-list">
             <div><dt>직무</dt><dd>${m.mentor.job }</dd></div>

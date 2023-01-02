@@ -33,6 +33,11 @@ public class MentorServiceImpl implements MentorService{
 	}
 
 	@Override
+	public int getTotalByCategorie(int categorie_num, PageDTO dto) {
+		return mentorMapper.getTotalCountByCategorie(categorie_num);
+	}
+	
+	@Override
 	public List<Mentoring> getPage(PageDTO dto) {
 		//log.info("pageDto >>>>>>>>>>>>> " + dto);
 		
@@ -44,11 +49,13 @@ public class MentorServiceImpl implements MentorService{
 		return mentorMapper.categorieList();
 	}
 
-
 	@Override
 	public List<Mentoring> getCategorieMentor(int num, PageDTO dto) {
 		return mentorMapper.categorieMentor(num, dto.getPageNum(), dto.getCountPerPage());
 	}
+
+
+	
 
 
 

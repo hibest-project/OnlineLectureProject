@@ -10,15 +10,22 @@
 <body>
 	<div class="sticky">
 
-<!-- 		<div class="field has-addons mentors__search-input"> -->
-<!-- 			<div class="control"> -->
-<!-- 				<input class="input e-input-search-mentor" type="text" value=""> -->
-<!-- 			</div> -->
-<!-- 			<div class="control"> -->
-<!-- 				<button type="button" class="button e-button-search-mentor">검색</button> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-
+			<!-- 검색창 -> form으로 keyword 넘겨주기 -->
+	<form action="${path }/mentoring/viewMentoring">
+		<div class="field has-addons mentors__search-input">
+			<div class="control">
+				<input class="input e-input-search-mentor" type="text" 
+					   name="keyword" placeholder="검색어 입력" value="">
+			</div>
+			<div class="control">
+				<button type="submit" class="button e-button-search-mentor">
+					검색
+				</button>
+			</div>
+		</div>
+	</form>
+		
+        
 <!-- 		<div class="select sort_select"> -->
 <!-- 			<select data-type="order"> -->
 
@@ -37,7 +44,6 @@
 			<c:forEach var="list" items="${categorieList }">
 				<div class="accordion-content">
 					<div class="atom_checkbox accordion_checkbox">
-<%-- 						<a href="${path}/mentoring/aside?categorie_num=${list.categorie_num}"> ${list.cname } </a> --%>
 						<a href="${path}/mentoring/viewMentoring?categorie_num=${list.categorie_num}"> ${list.cname } </a>
 					</div>
 				</div>
@@ -68,5 +74,13 @@
 		</div>
 	</div>
 </div>
+		<script>
+			$('.e-input-search-mentor').on('keydown', function(e){
+				if(e.code == 'Enter'){
+					$('.button.e-button-search-mentor').click();
+				}
+			})
+			
+        </script>
 </body>
 </html>

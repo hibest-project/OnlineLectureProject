@@ -18,6 +18,8 @@ public interface MentorService {
 
 	public List<Mentoring> getCategorieMentor(int num, PageDTO dto);
 
+	public int getTotalByCategorie(int categorie_num, PageDTO dto);
+
 
 
 }
