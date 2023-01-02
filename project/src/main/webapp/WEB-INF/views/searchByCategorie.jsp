@@ -72,8 +72,7 @@
 										<div class="card-image">
 											<figure class="image is_thumbnail"> <img
 												loading="lazy"
-												src="https://cdn.inflearn.com/public/courses/326674/cover/4657d793-56a4-42f3-9d44-dc88d125a49e"
-												data-src="https://cdn.inflearn.com/public/courses/326674/cover/4657d793-56a4-42f3-9d44-dc88d125a49e"
+												src="${contextPath}/thumbnails.do?lecture_id=${lecture.lecture_id}&fileName=${lecture.fileName}"
 												class="swiper-lazy" alt="image">
 											<div class="onload_placeholder"></div>
 											<div class="swiper-lazy-preloader"></div>

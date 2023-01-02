@@ -28,6 +28,7 @@
 </head>
 <body id="inflearn" class="pg___course-slug pg___course-description is_logged_in is-student-user">
 <jsp:include page="header.jsp"/>
+${list }
 	<main id="main" class=""> <section
 		class="pg___course-description-section">
 
@@ -40,7 +41,7 @@
 						<div class="cd-header__thumbnail-cover">
 							<div class="cd-header__thumbnail cd-header__thumbnail--discount">
 								<img
-									src="https://cdn.inflearn.com/public/courses/326674/cover/4657d793-56a4-42f3-9d44-dc88d125a49e"
+									src="${contextPath}/thumbnails.do?lecture_id=${lecture.lecture_id}&fileName=${lecture.fileName}"
 									alt="Thumbnail">
 
 								
