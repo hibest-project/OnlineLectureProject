@@ -247,14 +247,13 @@
 											</a>
 											<!--  좋아요, 장바구니 버튼 -->
 											<div class="course_card_control active_btn">
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
-													data-tooltip="좋아요에 추가" >
+												<div class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
+													data-tooltip="좋아요에 추가" id ="tooltip" >
 													<c:choose>
 														<c:when test="${auth ne null}">
-															<button onclick='javascript: like_func("${lecture.lecture_id}");'> <img
-																src='${contextPath }/resources/img/love.png'
-																id='like_img'></button>
+															<button onclick='javascript: like_func("${lecture.lecture_id}");'>
+															 <img src='${contextPath }/resources/img/love.png' id='like_img${lecture.lecture_id}' >
+																</button>
 														</c:when>
 														<c:otherwise>
 															<a href='javascript: login_need();'><img
@@ -284,16 +283,24 @@
 	<jsp:include page="footer.jsp" />
 	<script>
 
+	
+	
 	function like_func(id){
-		var lecture_id = id
+		
+		var lecture_id = id;
 	  $.ajax({
 	    url: '${contextPath }/mypage/like',
 	    type: "GET",
-	      dataType: "json",
-	     data: 'lecture_id=' + lecture_id,  
-	    success: function(data) {
-	    	console.log("data",data)
-			console.log(result)
+	     data: 'lecture_id=' + lecture_id
+	     ,  
+	    success: function(result) {
+	    	if(result == "like"){
+	    		document.getElementById("like_img"+lecture_id).src ='${contextPath }/resources/img/heart.png';
+	    	
+	    	}else{
+	    		document.getElementById("like_img"+lecture_id).src ='${contextPath }/resources/img/love.png';
+	    	}
+			
 	    },
 	    error: function(request, status, error){
 	     
@@ -302,7 +309,7 @@
 	}
 	
 	function login_need() {
-		console.log("로그인실패");
+		alert("로그인이필요한 서비스입니다");
 		
 		
 	}
