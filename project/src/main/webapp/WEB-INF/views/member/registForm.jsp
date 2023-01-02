@@ -176,7 +176,7 @@ div.main i{
 			
 		});
 	</script>
-	
+	     
 <script>
 $(document).ready(function(){
 	$('.main i').on('click',function(){
