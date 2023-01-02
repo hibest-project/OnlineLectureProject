@@ -1,7 +1,6 @@
 package com.project.www.member.service;
 
 import com.project.www.member.dto.Member;
-import com.project.www.member.mapper.MemberMapper;
 
 public interface MemberService {
 
@@ -12,7 +11,9 @@ public interface MemberService {
 	void registMember(Member member);
 
 	//회원정보 수정
-	public boolean modifyMember(Member member);
+	public Member modifyMember(Member member);
 	
+	//회원 탈퇴
+	public Member removeMember(Member member);
 
 }

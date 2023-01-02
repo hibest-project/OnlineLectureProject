@@ -17,11 +17,23 @@
 		values (#{id}, #{name}, #{password}, #{email}, #{birthday}, #{address}, #{gender}, #{phone})
 	</insert> 
 	
+	
 	<!-- 회원정보 수정 -->
-	<update id="modify">
-		update into member set (id, name, password, email, birthday, address, gender, phone)
-		values (#{id}, #{name}, #{password}, #{email}, #{birthday}, #{address}, #{gender}, #{phone})
-	</update>
+	<update id="modify" parameterType="com.project.www.member.dto.Member">
+    update member
+    <set>
+        <if test="password != null and password != ''">password=#{password},</if>
+        <if test="address != null and address != ''">address=#{address},</if>
+        <if test="phone != null and phone != ''">phone=#{phone},</if>
+    </set>
+    where id = #{id}
+	</update> 
+	
+	
+	<!-- 회원 탈퇴 -->
+	<delete id="remove" parameterType="com.project.www.member.dto.Member">
+		delete from member where id = #{id} and password = #{password}
+	</delete>
 	
 	<!-- <select id="login" parameterType="String" resultType="int">
 		select count(*) from member where member_id = #{member_id}
