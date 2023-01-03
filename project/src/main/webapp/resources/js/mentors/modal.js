@@ -1,7 +1,9 @@
 const open = document.getElementById('cards');
-
 const sc = document.getElementById('sc');
+
 let modal = "";
+
+alert('wow');
 
 open.addEventListener("click", function(e) {
 	var target = e.target;
@@ -15,6 +17,14 @@ open.addEventListener("click", function(e) {
 		modal.style.display = "flex";
 		sc.scrollTop = 0;
 	}
+	
+//	if(className == rating){
+//		alert('wow');
+//		let num = target.dataset.num;
+//		modal = document.getElementById('modal2'+num);
+//		modal.style.display = "flex";
+//		sc.scrollTop = 0;
+//	}
 });
 
 let close = document.querySelectorAll('.close');

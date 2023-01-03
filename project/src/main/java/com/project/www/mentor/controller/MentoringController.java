@@ -32,8 +32,8 @@ public class MentoringController {
 	@GetMapping("/viewMentoring")
 	public String mentoring(Model model, Categorie categorie, PageDTO dto) {
 
-		System.out.println("categorie >>>>>>>>>> " + categorie);
-		System.out.println("dto >>>>>>>>>>>> " + dto);
+//		System.out.println("categorie >>>>>>>>>> " + categorie);
+//		System.out.println("dto >>>>>>>>>>>> " + dto);
 		
 		// pageNum을 limit으로 바꿔주기
 		int pageNum = dto.getPageNum();
@@ -49,7 +49,8 @@ public class MentoringController {
 			List<Mentoring> list = mentorService.getPage(dto);
 			model.addAttribute("list", list);
 			dto.setPageNum(pageNum);
-					
+			System.out.println("dto2 >>>>>>>>>>>> " + dto);
+			
 			// 페이징 처리하기 위한 객체 생성
 			PageCreate pc = new PageCreate();
 			pc.setPaging(dto);
