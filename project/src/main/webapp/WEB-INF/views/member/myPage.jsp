@@ -37,6 +37,7 @@
 	href="${contextPath }/resources/css/MAIN.29a1bc1bc62d78adcc71.css" />
 <link rel="stylesheet"
 	href="${contextPath }/resources/css/main.aa70040a92f0bb23778b.css" />
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 .signup {
 	width: 50%;
