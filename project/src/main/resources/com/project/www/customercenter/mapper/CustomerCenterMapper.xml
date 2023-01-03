@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.www.customercenter.mapper.CustomerCenterMapper">
+
+	<select id="getQnAList" resultType="com.project.www.customercenter.dto.QnA">
+		select * from q_n_board
+	</select>
+
+
+	<select id="getInquiryBoardList" resultType="com.project.www.customercenter.dto.InquiryBoard">
+		select inquiryid,title,date,email,content,id from inquiry_board order by inquiryid desc
+	</select>
+
+	<!-- 입력타입 id 수정해야함 -->
+	<insert id="writeBoardInsert">
+		insert inquiry_board (title, id, content,date) VALUES (#{title}, #{id}, #{content} ,now())
+	</insert>
+	<!-- 1:1 질문개시글 불러오기 -->
+	<select id="getinquiryList" resultType="com.project.www.customercenter.dto.InquiryBoard">
+		select * from inquiry_board where inquiryid = #{inquiryid}
+	</select>
+	<!-- 1:1 질문개시글/댓글 불러오기 -->
+	<select id="getCommentsList" resultType="com.project.www.customercenter.dto.Comments">
+		select * from Comments where inquiryid = #{inquiryid}
+	</select>
+	<!--1:1 개시글 댓글등록 -->
+	<insert id="writeCommentsInsert" >	
+		insert  comments (inquiryid, id, text, image) VALUES (#{inquiryid}, #{id}, #{text}, #{image} )
+	</insert>
+	<!-- 개시글삭제 -->
+	<update id="deleteInquiry">
+		update inquiry_board set title = '삭제된글입니다',content = '삭제된글입니다',email = '삭제된글입니다' where inquiryid = #{inquiryid}
+	</update>
+	<!-- 개시글 삭제시 댓글같이삭제 -->
+<!-- 	<delete id="deleteComments">
+		delete from comments where inquiryid = #{inquiryid};
+	</delete> -->
+
+
+</mapper>
