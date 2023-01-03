@@ -366,12 +366,16 @@
 								<input class="input" type="password" placeholder="현재 비밀번호">
 								<small class="invalid"></small>
 								<div class="button_container">
-									<button class="button" disabled="">탈퇴하기</button>
+								<form action="${contextPath }/member/remove" method="post"></form>
+									<button class="ac-button is-lg is-solid is-primary e-sign-up-button form__button remove_btn" type="button" >탈퇴하기</button>
+									<%-- <a href="${contextPath }/member/remove" action="" method="post">탈퇴하기</a> --%>
+
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				</section>
 			</div>
 		</div>

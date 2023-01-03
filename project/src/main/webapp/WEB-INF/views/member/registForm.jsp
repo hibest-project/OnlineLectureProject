@@ -28,9 +28,33 @@
 <link rel="stylesheet" href="${contextPath }/resources/css/npm_tinymce.594df9f476c7ad317e8e.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/MAIN.29a1bc1bc62d78adcc71.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/main.aa70040a92f0bb23778b.css" />
+
+<!-- Font Awesome -->
+<link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
 <style>
 .signup{width:50%; margin: auto}
+.ac-input-with-item--large { width: 440px}
 
+/* 눈 아이콘 css */
+div.main{
+	position: relative;
+	padding: 20px;
+}
+div.main input{
+	width: 300px;
+	height: 30px;
+	background-color: black;
+	border: 0;
+	color: white;
+	text-indent: 10px;
+}
+div.main i{
+	postion: absolute;
+	left: 75%;
+	top: 27px;
+	color: orange;
+}
 </style>
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
@@ -55,7 +79,7 @@
 				<div class="ac-input-with-item--large">
 					<input id="id"  type="text" placeholder="" name="id"/>
 			</div>
-			<button id="check_dupl" type="button">중복확인</button><span id="dup"></span>
+			<button id="check_dupl" type="button" class="e-signup button space-inset-4 is-primary ">중복확인</button><span id="dup"></span>
 			<div class="form__input-block">
 				<label for="name" class="form__label">이름</label>
 				<div class="ac-input-with-item--large ">
@@ -66,24 +90,14 @@
 				<label for="password" class="form__label">비밀번호</label>
 				<div class="ac-input-with-item--large ">
 					<input id="password" type="password"	placeholder="********" name="password"/>
-					<span class="e-toggle-password form__toggle-password form__toggle-password--hidden">
-						<svg width="16px" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">
-							<path pill="#212529" d="M10.333 8c0 1.289-1.044 2.333-2.333 2.333C6.71 10.333 5.667 9.29 5.667 8 5.667 6.711 6.71 5.667 8 5.667c1.289 0 2.333 1.044 2.333 2.333z"></path>
-							<path pill="#212529" pill-rull="evenodd" d="M8 2.333c-2.288 0-4.083 1.023-5.37 2.16C1.348 5.63.544 6.902.22 7.469.03 7.8.03 8.2.22 8.533c.323.566 1.127 1.838 2.41 2.973 1.287 1.138 3.082 2.16 5.37 2.16 2.288 0 4.083-1.022 5.37-2.16 1.283-1.135 2.087-2.407 2.41-2.973.19-.333.19-.733 0-1.065-.323-.567-1.127-1.839-2.41-2.974-1.287-1.138-3.082-2.16-5.37-2.16zm-6.912 5.63c.295-.516 1.035-1.685 2.205-2.72C4.461 4.21 6.03 3.333 8 3.333c1.97 0 3.54.877 4.707 1.91 1.17 1.035 1.91 2.204 2.205 2.72.008.015.01.028.01.037 0 .01-.002.022-.01.037-.295.516-1.035 1.685-2.205 2.72-1.168 1.033-2.737 1.91-4.707 1.91-1.97 0-3.54-.877-4.707-1.91-1.17-1.035-1.91-2.204-2.205-2.72-.008-.015-.01-.028-.01-.037 0-.01.002-.022.01-.037z" clip-rull="evenodd"></path>
-						</svg>
-					</span>
+					<i class="fa fa-eye fa-lg"></i> 
 				</div>
 			</div>
 			<div class="form__input-block">
 				<label for="passwordConfirm" class="form__label">비밀번호 확인</label>
 				<div class="ac-input-with-item--large   ">
 					<input id="password" type="password" placeholder="********" />
-					<span class="e-toggle-password form__toggle-password form__toggle-password--hidden">
-						<svg width="16px" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16">
-							<path pill="#212529" d="M10.333 8c0 1.289-1.044 2.333-2.333 2.333C6.71 10.333 5.667 9.29 5.667 8 5.667 6.711 6.71 5.667 8 5.667c1.289 0 2.333 1.044 2.333 2.333z"></path>
-							<path pill="#212529" pill-rull="evenodd" d="M8 2.333c-2.288 0-4.083 1.023-5.37 2.16C1.348 5.63.544 6.902.22 7.469.03 7.8.03 8.2.22 8.533c.323.566 1.127 1.838 2.41 2.973 1.287 1.138 3.082 2.16 5.37 2.16 2.288 0 4.083-1.022 5.37-2.16 1.283-1.135 2.087-2.407 2.41-2.973.19-.333.19-.733 0-1.065-.323-.567-1.127-1.839-2.41-2.974-1.287-1.138-3.082-2.16-5.37-2.16zm-6.912 5.63c.295-.516 1.035-1.685 2.205-2.72C4.461 4.21 6.03 3.333 8 3.333c1.97 0 3.54.877 4.707 1.91 1.17 1.035 1.91 2.204 2.205 2.72.008.015.01.028.01.037 0 .01-.002.022-.01.037-.295.516-1.035 1.685-2.205 2.72-1.168 1.033-2.737 1.91-4.707 1.91-1.97 0-3.54-.877-4.707-1.91-1.17-1.035-1.91-2.204-2.205-2.72-.008-.015-.01-.028-.01-.037 0-.01.002-.022.01-.037z" clip-rull="evenodd"></path>
-						</svg>
-					</span>
+					<i class="fa fa-eye fa-lg"></i> 
 				</div>
 			</div>
 			<div class="form__input-block">
@@ -150,10 +164,24 @@
 			
 		});
 	</script>
+	     
+<script>
+$(document).ready(function(){
+	$('.main i').on('click',function(){
+		$('input').toggleClass('active');
+		if($('input').hasClass('active')){
+			$(this).attr('class',"fa fa-eye-slash fa-lg")
+			.prev('input').attr('type',"text");			
+		}else{
+			$(this).attr('class',"fa fa-eye fa-lg")	
+			.prev('input').attr('type','password');
+		}	
+	});
+});
+</script>
+   
 
-
-
-<%-- 	<form action="${contextPath }/member/regist" >
+<%-- <form action="${contextPath }/member/regist" >
 	
 		<label for="id">아이디</label> <input type="text" name="id" id="id"/><button id="check_dupl" type="button">중복확인</button><span id="dup"></span><hr>
 		<!-- button에 type 지정을 안해주면 submit으로 바로 날아감, type 체크 필수 -->
