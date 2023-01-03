@@ -1,5 +1,7 @@
 package com.project.www.member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -19,6 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.protobuf.Service;
 import com.mysql.cj.Session;
+import com.project.www.lecture.dto.Lecture;
+import com.project.www.lecture.service.LectureService;
 import com.project.www.member.dto.Member;
 import com.project.www.member.mapper.MemberMapper;
 import com.project.www.member.service.MemberService;
@@ -38,6 +42,9 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
+	@Autowired
+	LectureService lectureService;
+	
 	//로그인 폼
 	@GetMapping("/loginForm")
 	public void loginForm() {}
@@ -50,7 +57,8 @@ public class MemberController {
 	@PostMapping("/login")
 	public String login(Member member, Model model, HttpSession session) {
 		log.info("member  >>>>> " + member);
-		
+		List<Lecture> Llist = lectureService.viewFreelecture();
+		model.addAttribute("Llist", Llist);
 		Member _member = memberService.getMember(member.getId());
 		if(_member == null) {
 			model.addAttribute("result", "id  오류입니다");
