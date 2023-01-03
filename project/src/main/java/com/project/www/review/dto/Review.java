@@ -20,4 +20,6 @@ public class Review {
 	private String content;
 	private Date date;
 	private int score;
+	private String id;
+	private String title;
 }

@@ -273,7 +273,8 @@
 	</div>
 	</section>
 	
-    <!-- 웰컴 강의 리스트 --> <section class="welcome root" id="">
+    <!-- 웰컴 강의 리스트 --> 
+    <section class="welcome root" id="">
 	<div class="container">
 		<div class="main_course_list">
 			<div class="header">
@@ -307,7 +308,7 @@
 									data-gtm-vis-has-fired-8964582_476="1">
 									<!-- 이동할 경로 -->
 									
-										<a class="course_card_front e_course_click" href="">
+										<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 											<div class="card-image">
 												<figure class="image is_thumbnail"> <img
 													loading="lazy"
@@ -436,7 +437,7 @@
 												style="display: none;" aria-hidden="true"></div>
 										</a>
 										<div class="course_card_back">
-											<a class="e_course_click" href="">
+											<a class="e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 												<p class="course_title">${lecture.title }</p>
 												<p class="course_description"></p>
 												<div class="back_course_metas">
@@ -567,23 +568,22 @@
 					<div class="swiper-wrapper" id="swiper-wrapper-4f485c9d083b6399"
 						aria-live="polite"
 						style="transition-duration: 0ms; transform: translate3d(0px, -3383.42px, 0px);">
+						<c:forEach var="review" items="${rlist}">
 						<div
 							class="swiper-slide box space-inset-8 swiper-slide-duplicate swiper-slide-duplicate-active"
 							data-swiper-slide-index="0" role="group" aria-label="1 / 60"
 							style="margin-bottom: 20px;">
 							<div class="box_top">
-								<span class="text is-2 name">오리날다 님(수강생)</span> <span
-									class="text is-3 date">방금</span>
+								<span class="text is-2 name">${review.id }님(수강생)</span> <span
+									class="text is-3 date">${review.date }</span>
 							</div>
 							<div class="box_bottom">
-								<a href="/course/http-웹-네트워크" class="title is-7"> <span>모든
-										개발자를 위한 HTTP 웹 기본 지식</span><span class="icon"><i
+								<a href="/course/http-웹-네트워크" class="title is-7"> <span>${review.title }</span><span class="icon"><i
 										class="fal fa-angle-right"></i></span></a>
-								<div class="text is-1">강의 듣고 나서 403 error 코드를 만났습니다. 디비를
-									확인해보니 user의 권한이 부여가 안 되어있네요 강의 한개씩 듣다 보면 비전공자인 저도 좋은 개발자가 될 수
-									있을거 같아요. 고생하셨습니다 ^ㅠ^</div>
+								<div class="text is-1">${review.content }</div>
 							</div>
 						</div>
+						</c:forEach>
 						
 						</div>
 					</div>

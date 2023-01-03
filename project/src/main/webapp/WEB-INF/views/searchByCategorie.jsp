@@ -155,14 +155,19 @@
 												<span class="review_cnt">(${lecture.count_review })</span>
 											</div>
 											<div class="price">
-												<del>₩${lecture.price }</del>
+												<c:if test="${lecture.realprice eq 0 }">
+
+												</c:if>
+												<c:if test="${lecture.realprice ne 0 }">
+													<del>₩${lecture.price }</del>
+												</c:if>
 												<br>
 												<c:if test="${lecture.realprice eq 0 }">
 												<span class="pay_price">무료</span>
 												</c:if>
 
 												<c:if test="${lecture.realprice ne 0 }">
-													<<span class="pay_price">₩${lecture.realprice }</span>
+													<span class="pay_price">₩${lecture.realprice }</span>
 												</c:if>
 											</div>
 
