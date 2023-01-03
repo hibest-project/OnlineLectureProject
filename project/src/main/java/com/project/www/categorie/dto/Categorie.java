@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Component
 public class Categorie {
+
 	private int categorie_num;
 	private String cname;
 }
