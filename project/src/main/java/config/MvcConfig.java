@@ -30,6 +30,25 @@ public class MvcConfig implements WebMvcConfigurer {
 		//registry.addResourceHandler("/upload/**").addResourceLocations("/upload/");
 		registry.addResourceHandler("/upload/**").addResourceLocations("file:///c:/upload/");
 	}
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(authCheckInterceptor())
+			.addPathPatterns("/member/myPage")
+			.addPathPatterns("/member/modify")
+			.addPathPatterns("/mypage/*")
+			;
+			//.excludePathPatterns("/edit/help/**");
+	}
+
+	@Bean
+	public AuthCheckInterceptor authCheckInterceptor() {
+		return new AuthCheckInterceptor();
+	}
+	
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 	
 	
 }
