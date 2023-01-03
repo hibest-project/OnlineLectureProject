@@ -115,16 +115,20 @@
 							</div>
 		
 							<div class="navbar-item buttons">
-								<c:if test="${empty auth}">
-          <a role="button" class="button space-inset-4 signin" href="${pageContext.request.contextPath }/member/loginForm">로그인</a>
-          <a class="e-signup button space-inset-4 is-primary " href="${pageContext.request.contextPath }/member/registForm">회원가입</a>
-          </c:if>
-          <c:if test="${!empty auth}">
-          <span>${auth.name}님, 즐 하루!!!</span>
-           <a role="button" class="button space-inset-4 signin" href="${contextPath}/mypage/viewmypage ">마이페이지</a>
-          <a class="e-signup button space-inset-4 is-primary " href="${pageContext.request.contextPath }/member/logout">로그아웃</a>
-                       </c:if>
-							</div>
+						<c:if test="${empty auth}">
+							<a role="button" class="button space-inset-4 signin"
+								href="${pageContext.request.contextPath }/member/loginForm">로그인</a>
+							<a class="e-signup button space-inset-4 is-primary "
+								href="${pageContext.request.contextPath }/member/registForm">회원가입</a>
+						</c:if>
+						<c:if test="${!empty auth}">
+							<span>${auth.name}님, 즐 하루!!!</span>
+							<a role="button" class="button space-inset-4 signin"
+								href="${pageContext.request.contextPath}/mypage/viewmypage ">마이페이지</a>
+							<a class="e-signup button space-inset-4 is-primary "
+								href="${pageContext.request.contextPath }/member/logout">로그아웃</a>
+						</c:if>
+					</div>
 						</div>
 					</div>
 				</div>
