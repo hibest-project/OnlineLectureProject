@@ -15,7 +15,7 @@
 		<div class="field has-addons mentors__search-input">
 			<div class="control">
 				<input class="input e-input-search-mentor" type="text" 
-					   name="keyword" placeholder="검색어 입력" value="">
+					   name="keyword" placeholder="검색어 입력" value="고민">
 			</div>
 			<div class="control">
 				<button type="submit" class="button e-button-search-mentor">

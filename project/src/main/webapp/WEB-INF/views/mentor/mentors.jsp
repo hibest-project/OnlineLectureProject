@@ -147,8 +147,8 @@
       
 			<!-- 카테고리 유무 체크 -->
 	<c:choose>
-	  <c:when test="${categorie_num eq 0}">
-    	<c:if test="${pc.prev == true }">
+		<c:when test="${categorie_num eq 0}">
+		<c:if test="${pc.prev == true }">
     		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
     	</c:if>
         <c:forEach begin="${pc.beginPage }" end="${pc.endPage }" var="pageNum">
@@ -171,7 +171,8 @@
     	</c:if>
 	  </c:otherwise>
 	</c:choose>
-	    	
+	
+	
       </ul>
     </nav>
           </div>

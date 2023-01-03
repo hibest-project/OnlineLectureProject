@@ -55,6 +55,7 @@ public class MentoringController {
 			pc.setPaging(dto);
 			pc.setArticleTotalCount(mentorService.getTotal(dto));
 			model.addAttribute("pc", pc);
+			System.out.println("pc.getPaging().getKeyword() >>>>>>>>>>>>>> " +pc.getPaging().getKeyword());
 		} else {
 					/* 카테고리가 있을때 */
 			List<Mentoring> categorie_mentor = mentorService.getCategorieMentor(categorie_num, dto);
