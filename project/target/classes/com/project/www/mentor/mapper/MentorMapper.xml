@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.www.mentor.mapper.MentorMapper">
+	
+	<resultMap id="mentoring" type="com.project.www.mentor.dto.Mentoring">
+		<result property="mentoring_id" column="mentoring_id" />
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="mentoring_content" column="mentoring_content" />
+		<result property="rule" column="rule" />
+		<result property="time" column="time" />
+		<result property="price" column="price" />
+			<association property="mentor" javaType="com.project.www.mentor.dto.Mentor">
+				<result property="mentor_id" column="mentor_id" />
+				<result property="id" column="id" />
+				<result property="categorie_num" column="categorie_num" />
+				<result property="email" column="email" />
+				<result property="name" column="name" />
+				<result property="phone" column="phone" />
+				<result property="job" column="job" />
+				<result property="current" column="current" />
+				<result property="mentor_content" column="mentor_content" />
+				<result property="career" column="career" />
+			</association>
+			<association property="mentoringGrade" javaType="com.project.www.mentor.dto.MentoringGrade">
+				<result property="mentoring_id" column="mentoring_id" />
+				<result property="m_grade" column="m_grade" />
+				<result property="id" column="id" />
+				<result property="grade_content" column="grade_content" />
+				<result property="score" column="score" />
+			</association>
+			<collection property="categorie" resultMap="categorie"/>
+			<collection property="pageDTO" resultMap="pageDTO"/>
+	</resultMap>
+	
+	<resultMap id="categorie" type="com.project.www.categorie.dto.Categorie">
+		<id property="categorie_num" column="categorie_num" />
+		<result property="cname" column="cname" />
+	</resultMap>
+	
+	<resultMap id="pageDTO" type="com.project.www.mentor.dto.PageDTO">
+		<id property="pageNum" column="pageNum" />
+		<result property="countPerPage" column="countPerPage" />
+	</resultMap>
+	
+
+	<select id="getList" resultMap="mentoring">
+		select * from mentor inner join mentoring using(mentor_id, id) order by mentoring_id desc
+	</select>
+
+	<sql id="search">
+	 <if test="keyword != null">
+		where title like CONCAT('%',#{keyword},'%')
+	 </if>
+	</sql>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from mentoring
+		<include refid="search" />
+	</select>
+
+	<select id="getPage" resultMap="mentoring" >
+     	select * from mentor inner join mentoring using(mentor_id, id)
+     	<include refid="search" />
+     	order by mentoring_id desc 
+     	limit #{pageNum}, #{countPerPage}
+     </select>
+     
+     <select id="categorieList" resultMap="categorie" >
+		select * from categorie
+     </select>
+     
+     <select id="categorieMentor" resultMap="mentoring">
+		select ming.*, m.* from mentor m inner join categorie c
+		on m.categorie_num = c.categorie_num
+        inner join mentoring ming
+        on m.mentor_id = ming.mentor_id
+		where c.categorie_num = #{categorie_num}
+		order by ming.mentoring_id desc
+		limit #{pageNum}, #{countPerPage}
+     </select>
+     
+     <select id="getTotalCountByCategorie" resultType="int">
+		select count(*) from mentor m inner join mentoring ming 
+		using(mentor_id)
+		where m.categorie_num = #{categorie_num}
+	 </select>
+     
+</mapper>

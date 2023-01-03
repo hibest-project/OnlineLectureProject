@@ -20,10 +20,10 @@ public class DbConfig {
 	@Bean(destroyMethod = "close")
 	public HikariDataSource dataSource() {
 		HikariDataSource ds = new HikariDataSource();
-		// ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		// ds.setJdbcUrl("jdbc:mysql://localhost/world?characterEncoding=utf8");
-		ds.setJdbcUrl("jdbc:log4jdbc:mysql://localhost/project?characterEncoding=utf8");
+		 ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		//ds.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+		ds.setJdbcUrl("jdbc:mysql://localhost/project?characterEncoding=utf8");
+		//ds.setJdbcUrl("jdbc:log4jdbc:mysql://localhost/project?characterEncoding=utf8");
 		ds.setUsername("project");
 		ds.setPassword("project");
 		ds.addDataSourceProperty("cachePrepStmts", "true");
