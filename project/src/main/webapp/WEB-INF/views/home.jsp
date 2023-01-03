@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/css/npm_tinymce.594df9f476c7ad317e8e.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/MAIN.29a1bc1bc62d78adcc71.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/main.aa70040a92f0bb23778b.css" />
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
 
@@ -221,16 +221,20 @@
 										</a>
 										<!--  좋아요, 장바구니 버튼 -->
 										<div class="course_card_control active_btn">
-											<div
-												class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
-												data-tooltip="좋아요에 추가">
-												<i class="far fa-heart fa-lg"></i>
-											</div>
-
-											<div
-												class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
-												data-tooltip="내 폴더에 추가">
-												<i class="far fa-plus fa-lg"></i>
+												<div class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
+													data-tooltip="좋아요에 추가" id ="tooltip" >
+													<c:choose>
+														<c:when test="${auth ne null}">
+															<button onclick='javascript: like_func("${lecture.lecture_id}");'>
+															 <img src='${contextPath }/resources/img/love.png' id='like_img${lecture.lecture_id}' >
+																</button>
+														</c:when>
+														<c:otherwise>
+															<a href='javascript: login_need();'><img
+																src='${contextPath }/resources/img/love.png'
+																id='like_img'></a>
+														</c:otherwise>
+													</c:choose>
 											</div>
 										</div>
 									</div>
@@ -444,26 +448,30 @@
 													</div>
 												</div>
 											</a>
+											<!--  좋아요, 장바구니 버튼 -->
 											<div class="course_card_control active_btn">
+												<div class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
+													data-tooltip="좋아요에 추가" id ="tooltip" >
+													<c:choose>
+														<c:when test="${auth ne null}">
+															<button onclick='javascript: like_func("${lecture.lecture_id}");'>
+															 <img src='${contextPath }/resources/img/love.png' id='like_img${lecture.lecture_id}' >
+																</button>
+														</c:when>
+														<c:otherwise>
+															<a href='javascript: login_need();'><img
+																src='${contextPath }/resources/img/love.png'
+																id='like_img'></a>
+														</c:otherwise>
+													</c:choose>
 
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left course-card__button-cart add_cart e_cart_action"
-													fxd-data="{&quot;type&quot;:&quot;cart&quot;}"
-													data-tooltip="수강바구니에 추가">
-													<i class="far fa-cart-plus fa-lg"></i>
 												</div>
+	
 
-
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
-													data-tooltip="좋아요에 추가">
-													<i class="far fa-heart fa-lg"></i>
-												</div>
-
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
-													data-tooltip="내 폴더에 추가">
-													<i class="far fa-plus fa-lg"></i>
+											<div
+												class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
+												data-tooltip="내 폴더에 추가">
+												<i class="far fa-plus fa-lg"></i>
 												</div>
 
 											</div>
@@ -655,6 +663,40 @@
 
 
 <jsp:include page="footer.jsp"/>
+	<script>
+
+	
+	
+	function like_func(id){
+		
+		var lecture_id = id;
+	  $.ajax({
+	    url: '${contextPath }/mypage/like',
+	    type: "GET",
+	     data: 'lecture_id=' + lecture_id
+	     ,  
+	    success: function(result) {
+	    	if(result == "like"){
+	    		document.getElementById("like_img"+lecture_id).src ='${contextPath }/resources/img/heart.png';
+	    	
+	    	}else{
+	    		document.getElementById("like_img"+lecture_id).src ='${contextPath }/resources/img/love.png';
+	    	}
+			
+	    },
+	    error: function(request, status, error){
+	     
+	    }
+	  });
+	}
+	
+	function login_need() {
+		alert("로그인이필요한 서비스입니다");
+		
+		
+	}
+
+</script>
 </body>
 
 </html>
