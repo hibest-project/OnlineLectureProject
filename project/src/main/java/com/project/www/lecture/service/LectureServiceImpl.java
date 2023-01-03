@@ -34,7 +34,7 @@ public class LectureServiceImpl implements LectureService{
 	}
 
 	@Override
-	public List<Lecture> viewDetailLecture(int lectureId) {
+	public Lecture viewDetailLecture(int lectureId) {
 		
 		return lectureMapper.viewDetailLecture(lectureId);
 	}
