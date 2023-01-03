@@ -16,6 +16,7 @@
 
 
 <title>홈페이지</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
 	<header id="header"> 
@@ -66,7 +67,7 @@
 								<a href="#" class="navbar-item"><span>로드맵</span></a>
 							</div>
 							<div class="navbar-item">
-								<a href="#" class="navbar-item"><span>멘토링</span></a>
+								<a href="${contextPath }/mentoring/viewMentoring" class="navbar-item"><span>멘토링</span></a>
 							</div>
 		
 							<div class="has-dropdown is-hoverable navbar-item  icon_drop_menu">
