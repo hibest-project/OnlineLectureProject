@@ -1,5 +1,6 @@
 package com.project.www.mypage.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +19,19 @@ public class MyPageServiceImpl implements MyPageService {
 	MyPageMapper myPageMapper;
 
 	@Override
-	public List<ListenLecture> getListenClass() {
+	public List<ListenLecture> getListenClass(String id) {
 		
-		return myPageMapper.getListenClassList();
+		return myPageMapper.getListenClassList(id);
 	}
 
-//	@Override
-//	public List<WishList> getWish() {
-//		
-//		return myPageMapper.getWishList();
-//	}
+	@Override
+	public List<WishList> getWish(String id) {
+		return myPageMapper.getWishList(id);
+	}
+
+
+
+
 	
 
 	

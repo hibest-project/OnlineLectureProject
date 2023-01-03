@@ -1,5 +1,7 @@
 package com.project.www.mypage.dto;
 
+import java.util.HashMap;
+
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
@@ -12,8 +14,29 @@ import lombok.NoArgsConstructor;
 @Component
 public class WishList {
 
-	private int wish_list_id;//(PK)	새 컬럼(PK)	N/A	INT(5)	NOT NULL
-	private String id;//(FK)	회원 아이디(FK)	N/A	VARCHAR(100)	NULL
-	private int lecture_id;//(FK)	강의 아이디(FK)	N/A	INT(5)	NULL
+	private int wish_list_id;
+	private String id;
+	private int lecture_id;
+	private int categorie_num;
+	private int dtail_num;
+	private int teacher_id;
+	private String title;
+	private int price;
+	private int discount;
+	private String level;
+	private String date;
+	private String about_lecture;
+	private String fileName;
+	private String cname;
+	private String dname;
+	private String teacher_name;
+	private int realprice;
+	private int count_listener;
+	private int count_review;
+	private double score;
+	private int like_check;
+
+
+	
 
 }

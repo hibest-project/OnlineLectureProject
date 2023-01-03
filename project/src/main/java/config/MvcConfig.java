@@ -41,6 +41,7 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addInterceptor(authCheckInterceptor())
 			.addPathPatterns("/member/myPage")
 			.addPathPatterns("/member/modify")
+			.addPathPatterns("/mypage/*")
 			;
 			//.excludePathPatterns("/edit/help/**");
 	}

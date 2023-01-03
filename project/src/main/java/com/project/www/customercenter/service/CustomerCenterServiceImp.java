@@ -29,14 +29,14 @@ public class CustomerCenterServiceImp implements CustomerCenterService {
 	}
 
 	@Override
-	public List<InquiryBoard> getInquiry(InquiryBoard inquiryid) {
+	public List<InquiryBoard> getInquiry(int inquiryid) {
 
 		System.out.println(inquiryid);
 		return customerCenterMapper.getinquiryList(inquiryid);
 	}
 
 	@Override
-	public List<Comments> getComments(InquiryBoard inquiryid) {
+	public List<Comments> getComments(int inquiryid) {
 		return customerCenterMapper.getCommentsList(inquiryid);
 	}
 
