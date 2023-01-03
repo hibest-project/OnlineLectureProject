@@ -170,9 +170,16 @@
 												</div>
 												<span class="review_cnt">${lecture.count_review }</span>
 											</div>
-											
-											<div class="price">${lecture.realprice} </div>
-											<div class="tags">
+
+
+												<c:if test="${lecture.realprice eq 0 }">
+													<div class="price">무료</div>
+												</c:if>
+
+												<c:if test="${lecture.realprice ne 0 }">
+													<div class="price">₩${lecture.realprice}</div>
+												</c:if>
+												<div class="tags">
 												<span class="tag "
 													style="background-color: hsl(321, 63%, 90%)"> + ${lecture.count_listener } 명</span>
 											</div>
@@ -304,7 +311,7 @@
 											<div class="card-image">
 												<figure class="image is_thumbnail"> <img
 													loading="lazy"
-													src=""
+													src="${contextPath}/thumbnails.do?lecture_id=${lecture.lecture_id}&fileName=${lecture.fileName}"
 													data-src=""
 													class="swiper-lazy" alt="">
 												<div class="onload_placeholder"></div>
@@ -394,17 +401,33 @@
 													<span class="review_cnt">${lecture.count_review }</span>
 												</div>
 												<div class="price">
-													<del>${lecture.price }</del>
+													<c:if test="${lecture.realprice eq 0 }">
+													
+													</c:if>
+													<c:if test="${lecture.realprice ne 0 }">
+													<del>₩${lecture.price }</del>
+													</c:if>
 													<br>
-													<span class="pay_price">${lecture.realprice }</span>
+													<c:if test="${lecture.realprice eq 0 }">
+														<span class="pay_price">무료</span>
+													</c:if>
+
+													<c:if test="${lecture.realprice ne 0 }">
+													<span class="pay_price">₩${lecture.realprice }</span>
+													</c:if>
 												</div>
 
 												<div class="tags">
 													<span class="tag "
 														style="background-color: hsl(321, 63%, 90%)">+${lecture.count_listener }명</span>
-													<span class="tag is-hidden-student"
-														style="background-color: hsl(155, 40%, 87%)">독점</span> <span
-														class="tag " style="background-color: hsl(1, 100%, 89%)">할인중</span>
+													<c:if test="${lecture.realprice eq 0 }">
+														
+													</c:if>
+													<c:if test="${lecture.realprice ne 0 }">
+														<span class="tag "
+															style="background-color: hsl(1, 100%, 89%)">할인중</span>
+													</c:if>
+
 												</div>
 
 											</div>

@@ -157,7 +157,13 @@
 											<div class="price">
 												<del>₩${lecture.price }</del>
 												<br>
-												<span class="pay_price">₩${lecture.realprice }</span>
+												<c:if test="${lecture.realprice eq 0 }">
+												<span class="pay_price">무료</span>
+												</c:if>
+
+												<c:if test="${lecture.realprice ne 0 }">
+													<<span class="pay_price">₩${lecture.realprice }</span>
+												</c:if>
 											</div>
 
 											<div class="tags">

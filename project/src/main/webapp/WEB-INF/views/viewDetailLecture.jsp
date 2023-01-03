@@ -5,6 +5,7 @@
 	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,8 +28,8 @@
 
 </head>
 <body id="inflearn" class="pg___course-slug pg___course-description is_logged_in is-student-user">
+
 <jsp:include page="header.jsp"/>
-${list }
 	<main id="main" class=""> <section
 		class="pg___course-description-section">
 
@@ -51,21 +52,19 @@ ${list }
 					</div>
 					<div class="cd-header__right ac-cd-7 ac-ct-12">
 						<div class="cd-header__breadcrumb">
-							<span
-								class="cd-header__breadcrumb-label cd-header__breadcrumb-label-best">BEST</span>
 
-							<span class="cd-header__breadcrumb-el">개발 · 프로그래밍</span> <span
+							<span class="cd-header__breadcrumb-el">${lecture.cname }</span> <span
 								class="infd-icon"><svg width="16" height="16"
 									viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 								<path fill="#212529" clip-rule="evenodd"
 									d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z"
 									fill-rule="evenodd"></path></svg></span> <span
-								class="cd-header__breadcrumb-el">백엔드</span>
+								class="cd-header__breadcrumb-el">${lecture.dname }</span>
 
 						</div>
 						<div class="cd-header__title-container">
 							<h1 class="cd-header__title">
-								스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술 <span class="visually_hidden">대시보드</span>
+								${lecture.title }<span class="visually_hidden">대시보드</span>
 							</h1>
 
 						</div>
@@ -149,8 +148,8 @@ ${list }
 												clip-rule="evenodd"></path></svg>
 										</span>
 									</div>
-								</div> <strong>(5.0)</strong>
-							</span> <span>1280개의 수강평</span>&nbsp;∙&nbsp;<span><strong>13939명</strong>의
+								</div> <strong>${lecture.score }</strong>
+							</span> <span> ${lecture.count_review}개의 수강평</span>&nbsp;∙&nbsp;<span><strong>${lecture.count_listener }명</strong>의
 								수강생</span>
 						</div>
 						<div class="cd-header__instructors cd-header__sub-row">
@@ -168,87 +167,9 @@ ${list }
 										d="M13.2 10.5H2.8c-.22 0-.4.169-.4.375v.75c0 .206.18.375.4.375h10.4c.22 0 .4-.169.4-.375v-.75c0-.206-.18-.375-.4-.375zM14.8 3c-.663 0-1.2.504-1.2 1.125 0 .166.04.321.11.464L11.9 5.606c-.385.216-.883.094-1.105-.272L8.758 1.992c.267-.206.442-.515.442-.867C9.2.504 8.663 0 8 0c-.662 0-1.2.504-1.2 1.125 0 .352.175.66.442.867L5.205 5.334c-.223.366-.723.488-1.105.272L2.293 4.59c.067-.14.11-.298.11-.464 0-.621-.538-1.125-1.2-1.125C.54 3 0 3.504 0 4.125S.537 5.25 1.2 5.25c.065 0 .13-.01.193-.019L3.2 9.75h9.6l1.807-4.519c.063.01.128.019.193.019.662 0 1.2-.504 1.2-1.125S15.463 3 14.8 3z"></path></svg></span>
 							</a>
 						</div>
-						<div class="cd-header__tags cd-header__sub-row">
-							<span class="infd-icon"><svg width="16"
-									xmlns="http://www.w3.org/2000/svg" height="16"
-									viewBox="0 0 16 16">
-								<path fill="#ffffff" fill-rule="evenodd"
-									d="M5.773 1.455c-.283 0-.518.216-.542.498L5 4.727H2.545c-.3 0-.545.244-.545.546 0 .301.244.545.545.545H4.91l-.364 4.364h-2c-.3 0-.545.244-.545.545 0 .301.244.546.545.546h1.91l-.224 2.684c-.027.317.224.588.542.588.282 0 .518-.216.541-.498l.231-2.774H9.91l-.224 2.684c-.026.317.224.588.542.588.283 0 .518-.216.542-.498L11 11.273h2.454c.302 0 .546-.245.546-.546 0-.301-.244-.545-.546-.545h-2.363l.364-4.364h2c.3 0 .545-.244.545-.545 0-.302-.244-.546-.546-.546h-1.909l.224-2.684c.027-.317-.224-.588-.542-.588-.282 0-.518.216-.541.498l-.232 2.774H6.091l.224-2.684c.026-.317-.224-.588-.542-.588zM6 5.818l-.364 4.364H10l.364-4.364H6z"
-									clip-rule="evenodd"></path></svg></span> <a href="/tag-curation/skill/216"
-								target="_blank" class="cd-header__tag"> MVC </a> <a
-								href="/tag-curation/skill/66" target="_blank"
-								class="cd-header__tag"> Spring </a>
-						</div>
+						
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="cd-mb-information">
-
-			<div class="cd-floating__price cd-floating__price--dis">
-				<h4 class="cd-price__discount-rate">30%</h4>
-				<h4>69,300원</h4>
-				<del class="cd-price__reg-price">99,000원</del>
-			</div>
-			<div class="cd-mb-information__cover"></div>
-			<div class="cd-floating__info--wrapper">
-
-				<div class="cd-floating__info bootstrap-components">
-					<div class="cd-floating__info-row">
-						<span class="infd-icon"><svg width="16" height="16"
-								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path fill="#212529"
-								d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>지식공유자:&nbsp;<a
-							href="/users/74366">김영한</a>
-					</div>
-					<div class="cd-floating__info-row">
-						<span class="infd-icon"><svg width="16" height="16"
-								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path fill="#212529"
-								d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>총
-						72개 수업 (15시간 22분)
-					</div>
-					<div class="cd-floating__info-row cd-floating__info-row--duration">
-						<span class="infd-icon"><svg width="16" height="16"
-								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path fill="#212529"
-								d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>
-						수강기한:&nbsp;<span class="course-duration">무제한</span>
-					</div>
-					<div class="cd-floating__info-row">
-						<span class="infd-icon"><svg width="16" height="16"
-								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path fill="#212529"
-								d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>수료증:
-						발급
-					</div>
-					<div class="cd-floating__info-row cd-floating__info-row--levels">
-						<span class="infd-icon"><svg width="16" height="16"
-								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-							<path fill="#212529"
-								d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>
-						<div>
-							난이도:&nbsp;
-							<div data-bs-toggle="tooltip" data-bs-placement="누구나 들을 수 있는"
-								title="누구나 들을 수 있는"
-								class="cd-floating__info-tooltip cd-floating__info--gray">
-								<span>입문</span>
-							</div>
-							<span class="infd-icon infd-icon--no-margin">-</span>
-							<div data-bs-toggle="tooltip" data-bs-placement="선수 지식이 필요한"
-								title="선수 지식이 필요한" class="cd-floating__info-tooltip ">
-								<span>초급</span>
-							</div>
-							<span class="infd-icon infd-icon--no-margin">-</span>
-							<div data-bs-toggle="tooltip" data-bs-placement="전문성을 높이는"
-								title="전문성을 높이는"
-								class="cd-floating__info-tooltip cd-floating__info--gray">
-								<span>중급이상</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -259,7 +180,7 @@ ${list }
 				<a href="#">강의소개</a>
 			</span> 
 			 <span class="cd-menu__el reviews"> 
-				<a href="#">수강평<span class="cd-menu__count">1.2K</span></a>
+				<a href="#">수강평</a>
 			</span>
 			<span class="cd-menu__el questions"> 
 				<a href="#">커뮤니티</a>
@@ -274,12 +195,9 @@ ${list }
 						<section class="cd-body" id="description">
 
 						<div class="cd-body__title cd-body__intro-title">
-							<strong>초급자</strong>를 위해 준비한<br> <strong>[백엔드, 웹
-								개발] 강의입니다.</strong>
+							<strong>${lecture.level }자</strong>를 위해 준비한<br> <strong>[${lecture.cname }, ${lecture.dname }] 강의입니다.</strong>
 						</div>
-						<p class="cd-body__description">웹 애플리케이션을 개발할 때 필요한 모든 웹 기술을
-							기초부터 이해하고, 완성할 수 있습니다. 스프링 MVC의 핵심 원리와 구조를 이해하고, 더 깊이있는 백엔드 개발자로
-							성장할 수 있습니다.</p>
+						<p class="cd-body__description">${lecture.about_lecture }</p>
 						</section>
 						
 					</div>
@@ -294,9 +212,28 @@ ${list }
 							<div class="cd-floating__card--top">
 
 								<div class="cd-floating__price cd-floating__price--dis">
-									<h4 class="cd-price__discount-rate">30%</h4>
-									<h4>69,300원</h4>
-									<del class="cd-price__reg-price">99,000원</del>
+									
+									<c:if test="${lecture.realprice eq 0 }">
+									</c:if>
+									<c:if test="${lecture.realprice ne 0 }">
+									<h4 class="cd-price__discount-rate">${lecture.discount }%</h4>
+									</c:if>
+									
+									
+									<c:if test="${lecture.realprice eq 0 }">
+									<h4> 무료 </h4>
+									</c:if>
+									
+									<c:if test="${lecture.realprice ne 0 }">
+									<h4> ${lecture.realprice }원 </h4>
+									</c:if>
+									
+									
+									<c:if test="${lecture.realprice eq 0 }">
+									</c:if>
+									<c:if test="${lecture.realprice ne 0 }">
+									<del class="cd-price__reg-price">${lecture.price }원</del>
+									</c:if>
 								</div>
 								<div class="cd-floating__buttons">
 									<button
@@ -313,31 +250,18 @@ ${list }
 										<span class="infd-icon"><svg width="16" height="16"
 												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 											<path fill="#212529"
-												d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>지식공유자:&nbsp;<a
-											href="/users/74366">김영한</a>
+												d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>지식공유자:&nbsp;${lecture.teacher_name }
 									</div>
-									<div class="cd-floating__info-row">
-										<span class="infd-icon"><svg width="16" height="16"
-												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-											<path fill="#212529"
-												d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>총
-										72개 수업 (15시간 22분)
-									</div>
+									
 									<div
 										class="cd-floating__info-row cd-floating__info-row--duration">
 										<span class="infd-icon"><svg width="16" height="16"
 												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 											<path fill="#212529"
 												d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>
-										수강기한:&nbsp;<span class="course-duration">무제한</span>
+										수강기한:&nbsp;<span class="course-duration">${lecture.date }</span>
 									</div>
-									<div class="cd-floating__info-row">
-										<span class="infd-icon"><svg width="16" height="16"
-												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-											<path fill="#212529"
-												d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>수료증:
-										발급
-									</div>
+									
 									<div
 										class="cd-floating__info-row cd-floating__info-row--levels">
 										<span class="infd-icon"><svg width="16" height="16"
@@ -346,25 +270,14 @@ ${list }
 												d="M8 10c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"></path></svg></span>
 										<div>
 											난이도:&nbsp;
-											<div data-bs-toggle="tooltip" data-bs-placement="누구나 들을 수 있는"
-												title=""
-												class="cd-floating__info-tooltip cd-floating__info--gray"
-												data-bs-original-title="누구나 들을 수 있는">
-												<span>입문</span>
-											</div>
+											
 											<span class="infd-icon infd-icon--no-margin">-</span>
 											<div data-bs-toggle="tooltip" data-bs-placement="선수 지식이 필요한"
 												title="" class="cd-floating__info-tooltip "
 												data-bs-original-title="선수 지식이 필요한">
-												<span>초급</span>
+												<span>${lecture.level }</span>
 											</div>
-											<span class="infd-icon infd-icon--no-margin">-</span>
-											<div data-bs-toggle="tooltip" data-bs-placement="전문성을 높이는"
-												title=""
-												class="cd-floating__info-tooltip cd-floating__info--gray"
-												data-bs-original-title="전문성을 높이는">
-												<span>중급이상</span>
-											</div>
+											
 										</div>
 									</div>
 
