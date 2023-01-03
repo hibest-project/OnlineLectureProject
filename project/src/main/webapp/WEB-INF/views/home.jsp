@@ -448,24 +448,25 @@
 													</div>
 												</div>
 											</a>
+											<!--  좋아요, 장바구니 버튼 -->
 											<div class="course_card_control active_btn">
-											<form action="" method="post">
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
-													>
+												<div class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
+													data-tooltip="좋아요에 추가" id ="tooltip" >
 													<c:choose>
-														<c:when test="${mno ne null}">
-															<a href='javascript: like_func();'><img
-																src='${contextPath }/resources/img/love.png' id='like_img'></a>
+														<c:when test="${auth ne null}">
+															<button onclick='javascript: like_func("${lecture.lecture_id}");'>
+															 <img src='${contextPath }/resources/img/love.png' id='like_img${lecture.lecture_id}' >
+																</button>
 														</c:when>
 														<c:otherwise>
 															<a href='javascript: login_need();'><img
-																src='${contextPath }/resources/img/heart.png'></a>
+																src='${contextPath }/resources/img/love.png'
+																id='like_img'></a>
 														</c:otherwise>
 													</c:choose>
 
 												</div>
-											</form>
+	
 
 											<div
 												class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
