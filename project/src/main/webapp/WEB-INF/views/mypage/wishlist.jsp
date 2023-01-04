@@ -64,8 +64,7 @@
 								data-gtm-vis-total-visible-time-8964582_476="100"
 								data-gtm-vis-has-fired-8964582_476="1">
 
-								<a class="course_card_front e_course_click"
-									href="/course/스프링-JPA-웹앱">
+								<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${wl.lecture_id }">
 									<div class="card-image">
 										<figure class="image is_thumbnail"> <img
 											loading="lazy"
@@ -166,7 +165,7 @@
 										style="display: none;" aria-hidden="true"></div>
 								</a>
 								<div class="course_card_back">
-									<a class="e_course_click" href="/course/스프링-JPA-웹앱">
+									<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${wl.lecture_id }">
 										<p class="course_title">${wl.title }</p>
 										<p class="course_description">강의 내용자리</p>
 										<div class="back_course_metas">
