@@ -40,7 +40,7 @@ public class MentoringController {
 		int countPerPage = dto.getCountPerPage();
 		int start = pageNum * countPerPage - countPerPage + 1;
 		dto.setPageNum(start);
-
+		
 		// 원하는 페이지의 mentor 목록 가져오기
 		int categorie_num = categorie.getCategorie_num();
 		if (categorie_num == 0) {
@@ -74,6 +74,5 @@ public class MentoringController {
 		
 		return "mentor/mentors";
 	}
-	
-	
+		
 }

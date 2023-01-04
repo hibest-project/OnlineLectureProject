@@ -15,14 +15,32 @@
 </head>
 
 <body id="inflearn" class="pg___instructors is_logged_out is-student-user">
+
 				<!-- 헤더 -->
 	<jsp:include page="../header.jsp"/>
 
 	<main id="main" class="">
 <section class="instructor_list_section">
+
+				<!-- 멘토링 지원 -->
+  <header class="instructor_list_hero">
+    <a href='javascript: func();'>
+      <div class="hero-content container">
+        <div class="hero-content__image-cover"></div>
+        <h1 class="heading_list">멘토링</h1>
+        <p class="heading_desc">
+          업계 선배들 혹은 동료들과 인사이트를 나눠 보세요.<br>
+          더 빨리, 더 멀리 갈 수 있어요.
+        </p>
+        <span class="heading_more">멘토 지원하기 <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill="#212529" clip-rule="evenodd" d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z" fill-rule="evenodd"></path></svg></span>
+      </div>
+    </a>
+  </header>
+						
   <main class="container">
     <div class="content_palette" id="content_palette">
 			<div class="content_body">
+
 				<!-- 사이드바 -->
         <div class="panel_left">
           <jsp:include page="aside.jsp"/>
@@ -30,6 +48,7 @@
         
         <div class="panel_right">
           <div class="view">
+
 				<!-- 멘토카드 -->
 <div class="mentor-cards" id = "cards">
   <c:forEach var="m" items="${list }" varStatus="status">
@@ -53,10 +72,12 @@
       <div class="mentor-card__bottom">
         <div>
           <a href="#" class="mentor-card__name">${m.mentor.name }</a>
+          <c:if test="${m.mentoringGrade.score ne 0}">
           <button class="mentor-card__rating e-show-reviews">
             <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
             <span class="rating-number">${m.mentoringGrade.score}</span>
           </button>
+          </c:if>
         </div>
       </div>
     </section>
@@ -154,8 +175,6 @@
     	</c:if>
 	  </c:otherwise>
 	</c:choose>
-	
-	
       </ul>
     </nav>
           </div>
@@ -165,7 +184,8 @@
   </main>
   
 </section>
-
+				<!-- 푸터 -->
+	<jsp:include page="../footer.jsp"/>
 
 </main>
 <script src="${path }/resources/js/mentors/modal.js"></script>
