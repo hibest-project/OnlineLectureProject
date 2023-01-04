@@ -39,4 +39,10 @@ public class LectureServiceImpl implements LectureService{
 		return lectureMapper.viewDetailLecture(lectureId);
 	}
 
+	@Override
+	public List<Lecture> searchByDetailCategorie(int detailNum) {
+		
+		return lectureMapper.searchByDetailCategorie(detailNum);
+	}
+
 }
