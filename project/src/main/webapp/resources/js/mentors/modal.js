@@ -3,8 +3,6 @@ const sc = document.getElementById('sc');
 
 let modal = "";
 
-alert('wow');
-
 open.addEventListener("click", function(e) {
 	var target = e.target;
 	console.log("target >>> ", target);

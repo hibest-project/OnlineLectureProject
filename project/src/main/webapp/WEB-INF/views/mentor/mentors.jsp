@@ -20,22 +20,6 @@
 
 	<main id="main" class="">
 <section class="instructor_list_section">
-
-				<!-- 멘토링 지원 -->
-  <header class="instructor_list_hero">
-    <a href="#">
-      <div class="hero-content container">
-        <div class="hero-content__image-cover"></div>
-        <h1 class="heading_list">멘토링</h1>
-        <p class="heading_desc">
-          업계 선배들 혹은 동료들과 인사이트를 나눠 보세요.<br>
-          더 빨리, 더 멀리 갈 수 있어요.
-        </p>
-        <span class="heading_more">멘토 지원하기 <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill="#212529" clip-rule="evenodd" d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z" fill-rule="evenodd"></path></svg></span>
-      </div>
-    </a>
-  </header>
-						
   <main class="container">
     <div class="content_palette" id="content_palette">
 			<div class="content_body">
@@ -51,13 +35,14 @@
   <c:forEach var="m" items="${list }" varStatus="status">
     <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
-        <h3 class="mentor-card__title" data-num="${status.index }">${m.mentoring_id}</h3><%-- ${m.title } --%>
+        <h3 class="mentor-card__title" data-num="${status.index }">${m.title }</h3>
         <div class="mentor-card__job-wrapper">
           <dl class="mentor-card__job-info-list">
             <div><dt>직무</dt><dd>${m.mentor.job }</dd></div>
             <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
 			<c:if test="${m.mentor.current ne null }">
 			<div><dt>현직</dt><dd class="mentor-card__company-name">${m.mentor.current }</dd></div>
+			<div><dt>글번호</dt><dd>${m.mentoring_id} </dd></div>
 			</c:if>
           </dl>
           <figure class="mentor-card__thumbnail">
@@ -78,7 +63,7 @@
   </c:forEach>
 </div>
 		
-				<!-- 모달1  -->
+				<!-- 모달  -->
 <c:forEach var="m" items="${list }" varStatus="status">
 <div class="modal apply-mentoring-modal" id ="modal${status.index }" style="display: none;">
 <div class="dimmed"></div>
@@ -119,9 +104,9 @@
     </div>
       <div class="apply-mentoring__intro-body">
       	<h3>자기소개</h3>
-      	<p>${m.mentoring_content }</p>&nbsp;
+      	<p>${m.mentor.mentor_content }</p>&nbsp;
       	<h3>진행방식</h3>
-      	<p>${m.mentor.mentor_content }</p>
+      	<p>${m.mentoring_content }</p>&nbsp;
       	
       </div>
     </div>
@@ -145,9 +130,9 @@
       
 			<!-- 카테고리 유무 체크 -->
 	<c:choose>
-	  <c:when test="${categorie.categorie_num eq 0}">
+	  <c:when test="${categorie.categorie_num eq 0 && not empty pc.paging.keyword}">
 		<c:if test="${pc.prev == true }">
-    		<li><a href="${path }/mentoring/viewMentoring?keyword=${pc.paging.keyword }&keyword=${paging.keyword }&pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
+    		<li><a href="${path }/mentoring/viewMentoring?&keyword=${pc.paging.keyword }&pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
     	</c:if>
         <c:forEach begin="${pc.beginPage }" end="${pc.endPage }" var="pageNum">
 		<li><a href="${path }/mentoring/viewMentoring?keyword=${pc.paging.keyword }&pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>

@@ -32,7 +32,7 @@
 			<div class="container desktop_container">
 				<div class="content">
 					<div class="brand_header">
-						<a href="/" class="brand_logo e-brand-logo"> <span
+						<a href="${contextPath}/" class="brand_logo e-brand-logo"> <span
 							class="visually_hidden">인프런</span><img width="140" alt="인프런 겨울 로고"
 							src="https://cdn.inflearn.com/assets/brand/Winter2022BrandLogo.png">
 						</a>
