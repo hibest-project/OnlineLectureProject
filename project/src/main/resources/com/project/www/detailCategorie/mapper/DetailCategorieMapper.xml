@@ -8,4 +8,6 @@
 		select * from detail_categorie where categorie_num = #{categorieNum}
 	</select>
 
+
+	
 </mapper>

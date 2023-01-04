@@ -578,8 +578,8 @@
 									class="text is-3 date">${review.date }</span>
 							</div>
 							<div class="box_bottom">
-								<a href="/course/http-웹-네트워크" class="title is-7"> <span>${review.title }</span><span class="icon"><i
-										class="fal fa-angle-right"></i></span></a>
+								<span>${review.title }</span><span class="icon"><i
+										class="fal fa-angle-right"></i></span>
 								<div class="text is-1">${review.content }</div>
 							</div>
 						</div>

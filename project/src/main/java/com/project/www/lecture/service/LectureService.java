@@ -14,4 +14,6 @@ public interface LectureService {
 
 	Lecture viewDetailLecture(int lectureId);
 
+	List<Lecture> searchByDetailCategorie(int detailNum);
+
 }
