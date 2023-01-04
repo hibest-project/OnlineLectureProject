@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="${path}/resources/css/MAIN.ea79944d69658074a062.css">
 <link rel="stylesheet" href="${path}/resources/css/npm_tinymce.594df9f476c7ad317e8e.css">
 <link rel="stylesheet" href="${path}/resources/css/_service_faq.1128b84b495bcb4970d0.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body id="inflearn" class="faq pg___faq is_logged_in is-student-user">
 
@@ -29,15 +30,15 @@
 			
 			<c:forEach var="QnA" items="${list }" varStatus="status">
 				<ul class="accordions list">
-					<li class="accordion qna_box is-active">
+					<li class="accordion qna_box is-active" >
 						<div class="accordion-header question">
-							<button class="click_button">
+							<button class="click_button"  onclick='javascript: show("${QnA.q_n_id}");'>
 								<div class="plus-minus-toggle collapsed"></div>
 								<p class="text">${QnA.title}</p>
 							</button>
 						</div>
-						<div class="accordion-body answer">
-							<div class="accordion-content">
+						<div class="accordion-body answer" style="display: none;" id = "qnaboard${QnA.q_n_id}">
+							<div class="accordion-content" >
 								<p style="font-size: medium;">
 									<strong>${QnA.content}
 								</p>
@@ -50,6 +51,21 @@
 	</section>
 
 	<jsp:include page="../footer.jsp" />
+	
+	   <script type="text/javascript">
+ 
+        function show(id){
+        	var qnaid = id
+            if($('#qnaboard'+ id).css('display') == 'none'){
+                $('#qnaboard'+ id).show();
+            }else{
+                $('#qnaboard'+ id).hide();
+            }
+            }
+            
+    
+        
+    </script>
 
 
 </body>
