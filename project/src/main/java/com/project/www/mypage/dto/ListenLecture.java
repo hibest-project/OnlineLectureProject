@@ -17,7 +17,6 @@ public class ListenLecture {
 	private String name ;
 	private String fileName;
 	private String title;
-	public static void main(String[] args) {
-		
-	}
+	private int lecture_id;
+
 }

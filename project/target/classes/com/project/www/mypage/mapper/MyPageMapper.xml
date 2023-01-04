@@ -6,13 +6,12 @@
 
 	<select id="getListenClassList" resultType="com.project.www.mypage.dto.ListenLecture">
 		select
-		m.id,l.title,l.fileName, d.dname
+		m.id,l.title,l.fileName, d.dname,l.lecture_id
 		from listen_lecture ll, lecture l,detail_categorie d, member m
-		where m.id =
-		ll.id
+		where m.id = ll.id
 		and ll.lecture_id = l.lecture_id
 		and l.detail_num = d.detail_num
-		and m.id = #{id}
+		and m.id =#{id}
 	</select>
 
 	<select id="getWishList" resultType="com.project.www.mypage.dto.WishList">

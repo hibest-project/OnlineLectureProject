@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.www.customercenter.dto.Comments;
@@ -99,6 +101,14 @@ public class CustomerCenterController {
 		customerCenterMapper.deleteInquiry(inquiryid);
 //		List<Comments> Commentslist = customerCenterMapper.deleteComments(inquiryid);
 		return "redirect:./inquiryBoard";
+	}
+	//qna 삭제 >db
+	@GetMapping("/removeqna")
+	public @ResponseBody String qnaRemove(@RequestParam("q_n_id") int q_n_id) {
+		System.out.println(q_n_id+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		customerCenterMapper.deleteQnA(q_n_id);
+
+		return "redirect:./customercenterhome";
 	}
 	
 	
