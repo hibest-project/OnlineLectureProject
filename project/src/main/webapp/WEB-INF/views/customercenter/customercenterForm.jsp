@@ -35,6 +35,12 @@
 								<div class="plus-minus-toggle collapsed"></div>
 								<p class="text">${QnA.title}</p>
 							</button>
+							
+							<c:if test="${ auth.name eq 'admin'}">
+							<button onclick='javascript: removeqna("${QnA.q_n_id}");'>삭제</button>
+							</c:if>
+							<c:if test="${ auth.name ne 'admin'}">
+							</c:if>
 						</div>
 						<div class="accordion-body answer" style="display: none;" id = "qnaboard${QnA.q_n_id}">
 							<div class="accordion-content" >
@@ -62,6 +68,25 @@
             }
             }
             
+        function removeqna(id){
+    		
+    		var q_n_id = id;
+    	  $.ajax({
+    		  url: '${path }/customercenter/removeqna',
+    	    type: "GET",
+    	     data: 'q_n_id=' + q_n_id ,  
+    	    success: function() {
+    	    	
+    			
+    	    },
+    	    error: function(request, status, error){
+    	    	alert("삭제실패" + q_n_id)
+    	     
+    	    }
+    	  });
+    	}
+    	
+   
     
         
     </script>

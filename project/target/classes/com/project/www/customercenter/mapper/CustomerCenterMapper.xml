@@ -33,10 +33,10 @@
 	<update id="deleteInquiry">
 		update inquiry_board set title = '삭제된글입니다',content = '삭제된글입니다',email = '삭제된글입니다' where inquiryid = #{inquiryid}
 	</update>
-	<!-- 개시글 삭제시 댓글같이삭제 -->
-<!-- 	<delete id="deleteComments">
-		delete from comments where inquiryid = #{inquiryid};
-	</delete> -->
+	<!-- qna 삭제 -->
+	<delete id="deleteQnA">
+		delete from q_n_board where q_n_id = #{q_n_id};
+	</delete> 
 
 
 </mapper>

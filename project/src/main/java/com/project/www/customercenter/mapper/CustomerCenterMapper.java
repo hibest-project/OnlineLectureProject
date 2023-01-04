@@ -31,6 +31,8 @@ public interface CustomerCenterMapper {
 
 	void deleteInquiry(InquiryBoard inquiryid);
 
+	void deleteQnA(int q_n_id);
+
 ;
 
 
