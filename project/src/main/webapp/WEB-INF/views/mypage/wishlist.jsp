@@ -77,6 +77,7 @@
 
 										</figure>
 
+
 										<span class="course_card_ribbon is-shown-admin student_cnt">1539</span>
 									</div>
 									<div class="card-content">
