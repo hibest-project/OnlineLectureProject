@@ -22,12 +22,11 @@
 	<jsp:include page="../header.jsp" />
 
 	<br>
-	<br>
-	<br>
 	<section class="faq_section">
+	
 		<div class="container is-mobile">
 			<jsp:include page="./customercenter_nav.jsp" />
-			
+			<p class="faq_heading">궁금한 점이 있으신가요? <br>먼저 아래의 자주 묻는 질문 FAQ 리스트를 확인 해주세요!</p>
 			<c:forEach var="QnA" items="${list }" varStatus="status">
 				<ul class="accordions list">
 					<li class="accordion qna_box is-active" >

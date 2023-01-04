@@ -28,8 +28,10 @@
 	<br>
 	<br>
 	<br>
+	
+	
 	<section class="faq_section">
-		<div class="container is-mobile">
+		<div class="container is-mobile" style="max-width: 880px;">
 			<jsp:include page="./customercenter_nav.jsp" />
 
 
