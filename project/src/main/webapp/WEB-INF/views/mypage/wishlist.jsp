@@ -69,7 +69,7 @@
 									<div class="card-image">
 										<figure class="image is_thumbnail"> <img
 											loading="lazy"
-											src="https://cdn.inflearn.com/public/courses/324844/course_cover/db70e7cf-b214-4985-830f-5fd824ae7e74/bgs-spring-jpa.jpg"
+											src="${contextPath}/thumbnails.do?lecture_id=${wl.lecture_id}&fileName=${wl.fileName}"
 											data-src="https://cdn.inflearn.com/public/courses/324844/course_cover/db70e7cf-b214-4985-830f-5fd824ae7e74/bgs-spring-jpa.jpg"
 											class="swiper-lazy" alt="bgs-spring-jpa.jpg">
 										<div class="onload_placeholder"></div>

@@ -52,8 +52,8 @@
 									<a class="course_card_front"
 										href="/course/jpa-spring-data-기초/dashboard">
 										<div class="card-image">
-											<figure class="image is_thumbnail"> <img
-												src="https://cdn.inflearn.com/public/courses/329494/cover/1c24cf07-3998-4ba1-8f50-32f4758e1e10/329494-eng.png"
+											<figure class="image is_thumbnail">
+											 <img src="${contextPath}/thumbnails.do?lecture_id=${ListenLecture.lecture_id}&fileName=${ListenLecture.fileName}"
 												alt="JPA &amp; Spring Data JPA 기초"></figure>
 										</div>
 										<div class="card-content">
