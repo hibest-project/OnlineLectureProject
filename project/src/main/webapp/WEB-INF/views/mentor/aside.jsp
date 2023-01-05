@@ -25,21 +25,10 @@
 		</div>
 	</form>
 		
-		<!-- <div class="select sort_select">
-			<select data-type="order">
-
-				<option value="common">기본순</option>
-				<option value="latest">최근신청순</option>
-				<option value="recent">신규멘토순</option>
-				<option value="count">인기순</option>
-			</select>
-		</div> -->
-
-		<nav class="accordions checkbox_accordions">
+	<nav class="accordions checkbox_accordions">
 		<div class="accordion is-active first_accordion">
 			<div class="accordion-header toggle">분야별</div>
 			<div class="accordion-body level_accordion_body">
-			
 			<c:forEach var="list" items="${categorieList }">
 				<div class="accordion-content">
 					<div class="atom_checkbox accordion_checkbox">
@@ -47,32 +36,29 @@
 					</div>
 				</div>
 			</c:forEach>
-			
 			</div>
 		</div>
-		</nav>
-		<a href="/mentors" class="filter_reset"><i class="far fa-sync-alt"></i>&nbsp;&nbsp;필터
-			초기화</a>
+	</nav>
+		<a href="#" class="filter_reset"><i class="far fa-sync-alt"></i>&nbsp;&nbsp;필터 초기화</a>
 	</div>
 	
 	<div class="header_navigation">
-	<div class="nav_left">
-		<button type="button" aria-label="필터 메뉴 보기"
-			class="slider_button button">
-			<i class="far fa-filter"></i> 필터
-		</button>
-	</div>
-	<div class="nav_right">
-		<div class="field has-addons ">
-			<div class="control">
-				<input class="input e-input-search-mentor" type="text" value="">
-			</div>
-			<div class="control">
-				<button type="button" class="button e-button-search-mentor">검색</button>
+		<div class="nav_left">
+			<button type="button" aria-label="필터 메뉴 보기" class="slider_button button">
+				<i class="far fa-filter"></i> 필터
+			</button>
+		</div>
+		<div class="nav_right">
+			<div class="field has-addons ">
+				<div class="control">
+					<input class="input e-input-search-mentor" type="text" value="">
+				</div>
+				<div class="control">
+					<button type="button" class="button e-button-search-mentor">검색</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 		<script>
 			$('.e-input-search-mentor').on('keydown', function(e){
 				if(e.code == 'Enter'){
