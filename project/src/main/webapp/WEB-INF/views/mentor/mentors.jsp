@@ -15,6 +15,7 @@
 </head>
 
 <body id="inflearn" class="pg___instructors is_logged_out is-student-user">
+
 				<!-- 헤더 -->
 	<jsp:include page="../header.jsp"/>
 
@@ -23,7 +24,7 @@
 
 				<!-- 멘토링 지원 -->
   <header class="instructor_list_hero">
-    <a href="#">
+    <a href='javascript: func();'>
       <div class="hero-content container">
         <div class="hero-content__image-cover"></div>
         <h1 class="heading_list">멘토링</h1>
@@ -39,6 +40,7 @@
   <main class="container">
     <div class="content_palette" id="content_palette">
 			<div class="content_body">
+
 				<!-- 사이드바 -->
         <div class="panel_left">
           <jsp:include page="aside.jsp"/>
@@ -46,9 +48,9 @@
         
         <div class="panel_right">
           <div class="view">
+
 				<!-- 멘토카드 -->
 <div class="mentor-cards" id = "cards">
-
   <c:forEach var="m" items="${list }" varStatus="status">
     <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
@@ -59,6 +61,7 @@
             <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
 			<c:if test="${m.mentor.current ne null }">
 			<div><dt>현직</dt><dd class="mentor-card__company-name">${m.mentor.current }</dd></div>
+			<div><dt>글번호</dt><dd>${m.mentoring_id} </dd></div>
 			</c:if>
           </dl>
           <figure class="mentor-card__thumbnail">
@@ -69,16 +72,17 @@
       <div class="mentor-card__bottom">
         <div>
           <a href="#" class="mentor-card__name">${m.mentor.name }</a>
+          <c:if test="${m.mentoringGrade.score ne 0}">
           <button class="mentor-card__rating e-show-reviews">
             <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
             <span class="rating-number">${m.mentoringGrade.score}</span>
-            <i class="fal fa-chevron-right"></i>
           </button>
+          </c:if>
         </div>
       </div>
     </section>
   </c:forEach>
- </div>
+</div>
 		
 				<!-- 모달  -->
 <c:forEach var="m" items="${list }" varStatus="status">
@@ -121,9 +125,9 @@
     </div>
       <div class="apply-mentoring__intro-body">
       	<h3>자기소개</h3>
-      	<p>${m.mentoring_content }</p>&nbsp;
+      	<p>${m.mentor.mentor_content }</p>&nbsp;
       	<h3>진행방식</h3>
-      	<p>${m.mentor.mentor_content }</p>
+      	<p>${m.mentoring_content }</p>&nbsp;
       	
       </div>
     </div>
@@ -140,22 +144,22 @@
   </div>
 </div></div></div>
 </c:forEach>
-		
-				<!-- 페이징 -->
+
+						<!-- 페이징 -->
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
       <ul class="pages">
       
 			<!-- 카테고리 유무 체크 -->
 	<c:choose>
-		<c:when test="${categorie_num eq 0}">
+	  <c:when test="${categorie.categorie_num eq 0 && not empty pc.paging.keyword}">
 		<c:if test="${pc.prev == true }">
-    		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
+    		<li><a href="${path }/mentoring/viewMentoring?&keyword=${pc.paging.keyword }&pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
     	</c:if>
         <c:forEach begin="${pc.beginPage }" end="${pc.endPage }" var="pageNum">
-		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
+		<li><a href="${path }/mentoring/viewMentoring?keyword=${pc.paging.keyword }&pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
 		</c:forEach>
 		<c:if test="${pc.next == true }">
-    		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
+    		<li><a href="${path }/mentoring/viewMentoring?keyword=${pc.paging.keyword }&pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
     	</c:if>
 	  </c:when>
 	  
@@ -171,8 +175,6 @@
     	</c:if>
 	  </c:otherwise>
 	</c:choose>
-	
-	
       </ul>
     </nav>
           </div>
@@ -182,7 +184,8 @@
   </main>
   
 </section>
-
+				<!-- 푸터 -->
+	<jsp:include page="../footer.jsp"/>
 
 </main>
 <script src="${path }/resources/js/mentors/modal.js"></script>

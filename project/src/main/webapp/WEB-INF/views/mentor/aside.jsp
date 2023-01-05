@@ -10,12 +10,12 @@
 <body>
 	<div class="sticky">
 
-			<!-- 검색창 -> form으로 keyword 넘겨주기 -->
+			<!-- 검색창에서 form으로 keyword 넘겨주기 -->
 	<form action="${path }/mentoring/viewMentoring">
 		<div class="field has-addons mentors__search-input">
 			<div class="control">
 				<input class="input e-input-search-mentor" type="text" 
-					   name="keyword" placeholder="검색어 입력" value="고민">
+					   name="keyword" placeholder="검색어 입력" value="">
 			</div>
 			<div class="control">
 				<button type="submit" class="button e-button-search-mentor">
@@ -25,16 +25,15 @@
 		</div>
 	</form>
 		
-        
-<!-- 		<div class="select sort_select"> -->
-<!-- 			<select data-type="order"> -->
+		<!-- <div class="select sort_select">
+			<select data-type="order">
 
-<!-- 				<option value="common">기본순</option> -->
-<!-- 				<option value="latest">최근신청순</option> -->
-<!-- 				<option value="recent">신규멘토순</option> -->
-<!-- 				<option value="count">인기순</option> -->
-<!-- 			</select> -->
-<!-- 		</div> -->
+				<option value="common">기본순</option>
+				<option value="latest">최근신청순</option>
+				<option value="recent">신규멘토순</option>
+				<option value="count">인기순</option>
+			</select>
+		</div> -->
 
 		<nav class="accordions checkbox_accordions">
 		<div class="accordion is-active first_accordion">

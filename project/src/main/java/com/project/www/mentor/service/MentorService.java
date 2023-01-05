@@ -21,5 +21,4 @@ public interface MentorService {
 	public int getTotalByCategorie(int categorie_num, PageDTO dto);
 
 
-
 }
