@@ -33,9 +33,10 @@ close.forEach((item) => item.addEventListener("click", function(e) {
 
 
 function func(){
-	document.querySelector(".heading_list").innerHTML = "멘토링에 지원할 자격이 된다고 생각합니까? 당신이? ㅋ";
+	document.querySelector(".heading_list").innerHTML = "멘토링에 지원할 '자격'이 된다고 생각합니까? 당신이? ㅋ";
 	document.querySelector(".heading_list").style.textAlign= "center";
 	document.querySelector(".heading_desc").innerHTML = "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ";
 	document.querySelector(".heading_desc").style.textAlign= "center";
 	document.querySelector(".heading_more").style.display ='none';
+	document.querySelector(".hero-content__image-cover").style.display='none';
 }
