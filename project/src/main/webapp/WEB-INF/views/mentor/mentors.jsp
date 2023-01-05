@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css5.css">
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css6.css">
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body id="inflearn" class="pg___instructors is_logged_out is-student-user">
@@ -144,6 +145,11 @@
   </div>
 </div></div></div>
 </c:forEach>
+<script>
+	$('button.e-apply-next').on('click', function(e){
+		$('button.e-apply-next').fadeOut();
+	});
+</script>
 
 						<!-- 페이징 -->
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
