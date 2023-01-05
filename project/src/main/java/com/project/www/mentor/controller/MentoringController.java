@@ -49,12 +49,12 @@ public class MentoringController {
 			List<Mentoring> list = mentorService.getPage(dto);
 			model.addAttribute("list", list);
 			dto.setPageNum(pageNum);
-			System.out.println("dto2 >>>>>>>>>>>> " + dto);
 			
 			// 페이징 처리하기 위한 객체 생성
 			PageCreate pc = new PageCreate();
 			pc.setPaging(dto);
 			pc.setArticleTotalCount(mentorService.getTotal(dto));
+			System.out.println("pc >>>>>>>>>> "+pc);
 			model.addAttribute("pc", pc);
 		} else {
 					/* 카테고리가 있을때 */

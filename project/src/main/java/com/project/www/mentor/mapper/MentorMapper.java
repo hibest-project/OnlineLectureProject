@@ -15,7 +15,7 @@ public interface MentorMapper {
 
 	public List<Mentoring> getList();
 
-	public int getTotalCount();
+	public int getTotalCount(PageDTO dto);
 
 	public int getTotalCountByCategorie(int categorie_num);
 

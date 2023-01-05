@@ -28,7 +28,7 @@ public class MentorServiceImpl implements MentorService {
 
 	@Override
 	public int getTotal(PageDTO dto) {
-		return mentorMapper.getTotalCount();
+		return mentorMapper.getTotalCount(dto);
 	}
 
 	@Override
