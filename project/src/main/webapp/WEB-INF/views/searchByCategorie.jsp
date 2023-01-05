@@ -68,7 +68,7 @@
 									data-gtm-vis-has-fired-8964582_476="1">
 
 									<a class="course_card_front e_course_click"
-										href="#">
+										href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 										<div class="card-image">
 											<figure class="image is_thumbnail"> <img
 												loading="lazy"
@@ -155,9 +155,20 @@
 												<span class="review_cnt">(${lecture.count_review })</span>
 											</div>
 											<div class="price">
-												<del>₩${lecture.price }</del>
+												<c:if test="${lecture.realprice eq 0 }">
+
+												</c:if>
+												<c:if test="${lecture.realprice ne 0 }">
+													<del>₩${lecture.price }</del>
+												</c:if>
 												<br>
-												<span class="pay_price">₩${lecture.realprice }</span>
+												<c:if test="${lecture.realprice eq 0 }">
+												<span class="pay_price">무료</span>
+												</c:if>
+
+												<c:if test="${lecture.realprice ne 0 }">
+													<span class="pay_price">₩${lecture.realprice }</span>
+												</c:if>
 											</div>
 
 											<div class="tags">
@@ -171,7 +182,7 @@
 											style="display: none;" aria-hidden="true"></div>
 									</a>
 									<div class="course_card_back">
-										<a class="e_course_click" href="#">
+										<a class="e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 											<p class="course_title">${lecture.title }</p>
 											
 											<div class="back_course_metas">

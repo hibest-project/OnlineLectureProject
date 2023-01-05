@@ -12,6 +12,8 @@ import com.project.www.categorie.dto.Categorie;
 import com.project.www.categorie.service.CategorieService;
 import com.project.www.lecture.dto.Lecture;
 import com.project.www.lecture.service.LectureService;
+import com.project.www.review.dto.Review;
+import com.project.www.review.service.ReviewService;
 
 
 @Controller
@@ -23,14 +25,20 @@ public class HomeController {
 	@Autowired
 	CategorieService categorieService;
 	
+	@Autowired
+	ReviewService reviewService;
+	
 	@GetMapping()
 	public String home(Model model ) {
 		List<Categorie> clist = categorieService.viewAllCategorie();
 		List<Lecture> Llist = lectureService.viewFreelecture();
 		List<Lecture> startList = lectureService.viewStartLecture();
+		List<Review> rlist = reviewService.viewAllReview();
+		
 		model.addAttribute("clist", clist);
 		model.addAttribute("Llist", Llist);
 		model.addAttribute("startList", startList);
+		model.addAttribute("rlist", rlist);
 		
 		return "home";
 	} 

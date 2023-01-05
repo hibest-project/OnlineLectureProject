@@ -28,9 +28,9 @@ public class LectureController {
 	
 	@GetMapping("/lectureId")
 	public String ViewDetailLecture(Model model,int lectureId) {
-		List<Lecture> list = lectureService.viewDetailLecture(lectureId);
+		Lecture lecture = lectureService.viewDetailLecture(lectureId);
 		List<Categorie> clist = categorieService.viewAllCategorie();
-		model.addAttribute("list", list);
+		model.addAttribute(lecture);
 		model.addAttribute("clist", clist);
 		return "viewDetailLecture";
 	}

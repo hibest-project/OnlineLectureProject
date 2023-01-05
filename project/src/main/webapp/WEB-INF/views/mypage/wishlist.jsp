@@ -64,18 +64,18 @@
 								data-gtm-vis-total-visible-time-8964582_476="100"
 								data-gtm-vis-has-fired-8964582_476="1">
 
-								<a class="course_card_front e_course_click"
-									href="/course/스프링-JPA-웹앱">
+								<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${wl.lecture_id }">
 									<div class="card-image">
 										<figure class="image is_thumbnail"> <img
 											loading="lazy"
-											src="https://cdn.inflearn.com/public/courses/324844/course_cover/db70e7cf-b214-4985-830f-5fd824ae7e74/bgs-spring-jpa.jpg"
+											src="${contextPath}/thumbnails.do?lecture_id=${wl.lecture_id}&fileName=${wl.fileName}"
 											data-src="https://cdn.inflearn.com/public/courses/324844/course_cover/db70e7cf-b214-4985-830f-5fd824ae7e74/bgs-spring-jpa.jpg"
 											class="swiper-lazy" alt="bgs-spring-jpa.jpg">
 										<div class="onload_placeholder"></div>
 										<div class="swiper-lazy-preloader"></div>
 
 										</figure>
+
 
 										<span class="course_card_ribbon is-shown-admin student_cnt">1539</span>
 									</div>
@@ -165,7 +165,7 @@
 										style="display: none;" aria-hidden="true"></div>
 								</a>
 								<div class="course_card_back">
-									<a class="e_course_click" href="/course/스프링-JPA-웹앱">
+									<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${wl.lecture_id }">
 										<p class="course_title">${wl.title }</p>
 										<p class="course_description">강의 내용자리</p>
 										<div class="back_course_metas">

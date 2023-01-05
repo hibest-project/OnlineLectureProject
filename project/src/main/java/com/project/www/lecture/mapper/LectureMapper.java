@@ -15,6 +15,8 @@ public interface LectureMapper {
 
 	List<Lecture> searchByCategorie(int categorieNum);
 
-	List<Lecture> viewDetailLecture(int lectureId);
+	Lecture viewDetailLecture(int lectureId);
+
+	List<Lecture> searchByDetailCategorie(int detailNum);
 
 }

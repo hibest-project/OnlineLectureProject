@@ -9,7 +9,7 @@
 	<div class="accordion-body">
             
             <c:forEach var="detailCategorie" items="${dlist}">
-              <a class="e-change-qs accordion-content " href="#" style="border-top:1px solid #e4e4e4;"> ${detailCategorie.dname }</a>
+              <a class="e-change-qs accordion-content " href="${contextPath }/detailCategorie/detailNum?detailNum=${detailCategorie.detail_num }&categorieNum=${detailCategorie.categorie_num }" style="border-top:1px solid #e4e4e4;"> ${detailCategorie.dname }</a>
               </c:forEach>
           </div>
 	</nav> 

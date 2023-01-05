@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="${contextPath }/resources/css/npm_tinymce.594df9f476c7ad317e8e.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/MAIN.29a1bc1bc62d78adcc71.css" />
 <link rel="stylesheet" href="${contextPath }/resources/css/main.aa70040a92f0bb23778b.css" />
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body id="inflearn" class="main_page is_logged_out is-student-user">
 
@@ -170,9 +170,16 @@
 												</div>
 												<span class="review_cnt">${lecture.count_review }</span>
 											</div>
-											
-											<div class="price">${lecture.realprice} </div>
-											<div class="tags">
+
+
+												<c:if test="${lecture.realprice eq 0 }">
+													<div class="price">무료</div>
+												</c:if>
+
+												<c:if test="${lecture.realprice ne 0 }">
+													<div class="price">₩${lecture.realprice}</div>
+												</c:if>
+												<div class="tags">
 												<span class="tag "
 													style="background-color: hsl(321, 63%, 90%)"> + ${lecture.count_listener } 명</span>
 											</div>
@@ -221,16 +228,20 @@
 										</a>
 										<!--  좋아요, 장바구니 버튼 -->
 										<div class="course_card_control active_btn">
-											<div
-												class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
-												data-tooltip="좋아요에 추가">
-												<i class="far fa-heart fa-lg"></i>
-											</div>
-
-											<div
-												class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
-												data-tooltip="내 폴더에 추가">
-												<i class="far fa-plus fa-lg"></i>
+												<div class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
+													data-tooltip="좋아요에 추가" id ="tooltip" >
+													<c:choose>
+														<c:when test="${auth ne null}">
+															<button onclick='javascript: like_func("${lecture.lecture_id}");'>
+															 <img src='${contextPath }/resources/img/love.png' id='like_img${lecture.lecture_id}' >
+																</button>
+														</c:when>
+														<c:otherwise>
+															<a href='javascript: login_need();'><img
+																src='${contextPath }/resources/img/love.png'
+																id='like_img'></a>
+														</c:otherwise>
+													</c:choose>
 											</div>
 										</div>
 									</div>
@@ -262,7 +273,8 @@
 	</div>
 	</section>
 	
-    <!-- 웰컴 강의 리스트 --> <section class="welcome root" id="">
+    <!-- 웰컴 강의 리스트 --> 
+    <section class="welcome root" id="">
 	<div class="container">
 		<div class="main_course_list">
 			<div class="header">
@@ -296,11 +308,11 @@
 									data-gtm-vis-has-fired-8964582_476="1">
 									<!-- 이동할 경로 -->
 									
-										<a class="course_card_front e_course_click" href="">
+										<a class="course_card_front e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 											<div class="card-image">
 												<figure class="image is_thumbnail"> <img
 													loading="lazy"
-													src=""
+													src="${contextPath}/thumbnails.do?lecture_id=${lecture.lecture_id}&fileName=${lecture.fileName}"
 													data-src=""
 													class="swiper-lazy" alt="">
 												<div class="onload_placeholder"></div>
@@ -390,17 +402,33 @@
 													<span class="review_cnt">${lecture.count_review }</span>
 												</div>
 												<div class="price">
-													<del>${lecture.price }</del>
+													<c:if test="${lecture.realprice eq 0 }">
+													
+													</c:if>
+													<c:if test="${lecture.realprice ne 0 }">
+													<del>₩${lecture.price }</del>
+													</c:if>
 													<br>
-													<span class="pay_price">${lecture.realprice }</span>
+													<c:if test="${lecture.realprice eq 0 }">
+														<span class="pay_price">무료</span>
+													</c:if>
+
+													<c:if test="${lecture.realprice ne 0 }">
+													<span class="pay_price">₩${lecture.realprice }</span>
+													</c:if>
 												</div>
 
 												<div class="tags">
 													<span class="tag "
 														style="background-color: hsl(321, 63%, 90%)">+${lecture.count_listener }명</span>
-													<span class="tag is-hidden-student"
-														style="background-color: hsl(155, 40%, 87%)">독점</span> <span
-														class="tag " style="background-color: hsl(1, 100%, 89%)">할인중</span>
+													<c:if test="${lecture.realprice eq 0 }">
+														
+													</c:if>
+													<c:if test="${lecture.realprice ne 0 }">
+														<span class="tag "
+															style="background-color: hsl(1, 100%, 89%)">할인중</span>
+													</c:if>
+
 												</div>
 
 											</div>
@@ -409,7 +437,7 @@
 												style="display: none;" aria-hidden="true"></div>
 										</a>
 										<div class="course_card_back">
-											<a class="e_course_click" href="">
+											<a class="e_course_click" href="${contextPath }/lecture/lectureId?lectureId=${lecture.lecture_id }">
 												<p class="course_title">${lecture.title }</p>
 												<p class="course_description"></p>
 												<div class="back_course_metas">
@@ -444,26 +472,30 @@
 													</div>
 												</div>
 											</a>
+											<!--  좋아요, 장바구니 버튼 -->
 											<div class="course_card_control active_btn">
+												<div class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
+													data-tooltip="좋아요에 추가" id ="tooltip" >
+													<c:choose>
+														<c:when test="${auth ne null}">
+															<button onclick='javascript: like_func("${lecture.lecture_id}");'>
+															 <img src='${contextPath }/resources/img/love.png' id='like_img${lecture.lecture_id}' >
+																</button>
+														</c:when>
+														<c:otherwise>
+															<a href='javascript: login_need();'><img
+																src='${contextPath }/resources/img/love.png'
+																id='like_img'></a>
+														</c:otherwise>
+													</c:choose>
 
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left course-card__button-cart add_cart e_cart_action"
-													fxd-data="{&quot;type&quot;:&quot;cart&quot;}"
-													data-tooltip="수강바구니에 추가">
-													<i class="far fa-cart-plus fa-lg"></i>
 												</div>
+	
 
-
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left course-card__button-like add_cart e-like"
-													data-tooltip="좋아요에 추가">
-													<i class="far fa-heart fa-lg"></i>
-												</div>
-
-												<div
-													class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
-													data-tooltip="내 폴더에 추가">
-													<i class="far fa-plus fa-lg"></i>
+											<div
+												class="tooltip is-tooltip-warning is-tooltip-left e-add-mylist"
+												data-tooltip="내 폴더에 추가">
+												<i class="far fa-plus fa-lg"></i>
 												</div>
 
 											</div>
@@ -536,23 +568,22 @@
 					<div class="swiper-wrapper" id="swiper-wrapper-4f485c9d083b6399"
 						aria-live="polite"
 						style="transition-duration: 0ms; transform: translate3d(0px, -3383.42px, 0px);">
+						<c:forEach var="review" items="${rlist}">
 						<div
 							class="swiper-slide box space-inset-8 swiper-slide-duplicate swiper-slide-duplicate-active"
 							data-swiper-slide-index="0" role="group" aria-label="1 / 60"
 							style="margin-bottom: 20px;">
 							<div class="box_top">
-								<span class="text is-2 name">오리날다 님(수강생)</span> <span
-									class="text is-3 date">방금</span>
+								<span class="text is-2 name">${review.id }님(수강생)</span> <span
+									class="text is-3 date">${review.date }</span>
 							</div>
 							<div class="box_bottom">
-								<a href="/course/http-웹-네트워크" class="title is-7"> <span>모든
-										개발자를 위한 HTTP 웹 기본 지식</span><span class="icon"><i
-										class="fal fa-angle-right"></i></span></a>
-								<div class="text is-1">강의 듣고 나서 403 error 코드를 만났습니다. 디비를
-									확인해보니 user의 권한이 부여가 안 되어있네요 강의 한개씩 듣다 보면 비전공자인 저도 좋은 개발자가 될 수
-									있을거 같아요. 고생하셨습니다 ^ㅠ^</div>
+								<span>${review.title }</span><span class="icon"><i
+										class="fal fa-angle-right"></i></span>
+								<div class="text is-1">${review.content }</div>
 							</div>
 						</div>
+						</c:forEach>
 						
 						</div>
 					</div>
@@ -655,6 +686,40 @@
 
 
 <jsp:include page="footer.jsp"/>
+	<script>
+
+	
+	
+	function like_func(id){
+		
+		var lecture_id = id;
+	  $.ajax({
+	    url: '${contextPath }/mypage/like',
+	    type: "GET",
+	     data: 'lecture_id=' + lecture_id
+	     ,  
+	    success: function(result) {
+	    	if(result == "like"){
+	    		document.getElementById("like_img"+lecture_id).src ='${contextPath }/resources/img/heart.png';
+	    	
+	    	}else{
+	    		document.getElementById("like_img"+lecture_id).src ='${contextPath }/resources/img/love.png';
+	    	}
+			
+	    },
+	    error: function(request, status, error){
+	     
+	    }
+	  });
+	}
+	
+	function login_need() {
+		alert("로그인이필요한 서비스입니다");
+		
+		
+	}
+
+</script>
 </body>
 
 </html>

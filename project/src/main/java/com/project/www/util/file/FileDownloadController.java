@@ -26,13 +26,9 @@ public class FileDownloadController {
 		// 파일 경로 파라미터로 받아서 설정
 		String filePath=CURR_IMAGE_REPO_PATH+"\\"+lecture_id+"\\"+fileName;
 		File image=new File(filePath);
-		// 뒤에서부터 .의 위치를 찾아서 index 반환
-		int lastIndex = fileName.lastIndexOf(".");
-		// fileName의 .을 문자열 자르기
-		String imageFileName = fileName.substring(0,lastIndex);
-		// 만약 이미지가 있다면 썸내일 만들기
+		// 파일이 있다면 썸내일 만들어라
 		if (image.exists()) { 
-			Thumbnails.of(image).size(121,154).outputFormat("png").toOutputStream(out);
+			Thumbnails.of(image).size(1200,781).outputFormat("png").toOutputStream(out);
 		}
 		//버퍼 생성
 		byte[] buffer = new byte[1024 * 8];
