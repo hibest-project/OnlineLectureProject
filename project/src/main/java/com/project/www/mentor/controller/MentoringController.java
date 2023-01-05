@@ -31,9 +31,6 @@ public class MentoringController {
 
 	@GetMapping("/viewMentoring")
 	public String mentoring(Model model, Categorie categorie, PageDTO dto) {
-
-//		System.out.println("categorie >>>>>>>>>> " + categorie);
-//		System.out.println("dto >>>>>>>>>>>> " + dto);
 		
 		// pageNum을 limit으로 바꿔주기
 		int pageNum = dto.getPageNum();
@@ -54,7 +51,6 @@ public class MentoringController {
 			PageCreate pc = new PageCreate();
 			pc.setPaging(dto);
 			pc.setArticleTotalCount(mentorService.getTotal(dto));
-			System.out.println("pc >>>>>>>>>> "+pc);
 			model.addAttribute("pc", pc);
 		} else {
 					/* 카테고리가 있을때 */
