@@ -56,4 +56,21 @@ public class MvcConfig implements WebMvcConfigurer {
 	}
 	
 	
+	@Bean
+	public JavaMailSenderImpl javaMailSender() {
+		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		Properties properties = new Properties();
+		String host = "smtp.naver.com";  
+		properties.put("mail.smtp.auth", true);
+		properties.put("mail.smtp.starttls.enable", true);
+		properties.put("mail.smtp.ssl.trust", host);
+		mailSender.setHost(host);
+		mailSender.setPort(587);
+		mailSender.setUsername("nebarnd");
+		mailSender.setPassword("ddqrad2069014");
+		mailSender.setDefaultEncoding("utf8");
+		mailSender.setJavaMailProperties(properties);
+		return mailSender;
+	}
+	
 }
