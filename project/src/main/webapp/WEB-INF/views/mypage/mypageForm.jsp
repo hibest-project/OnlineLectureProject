@@ -363,14 +363,14 @@
 									<p>6. 현재 비밀번호를 입력하고 탈퇴하기를 누르시면 위 내용에 동의하는 것으로 간주됩니다.</p>
 								</div>
 
-								<input class="input" type="password" placeholder="현재 비밀번호">
+																<form class="delete-form" action="${contextPath }/member/remove" method="post">
+								<input type="hidden" name="id" value="${auth.id }">
+								<input class="input" type="password" name="password" placeholder="현재 비밀번호">
 								<small class="invalid"></small>
 								<div class="button_container">
-								<form action="${contextPath }/member/remove" method="post"></form>
-									<button class="ac-button is-lg is-solid is-primary e-sign-up-button form__button remove_btn" type="button" >탈퇴하기</button>
-									<%-- <a href="${contextPath }/member/remove" action="" method="post">탈퇴하기</a> --%>
-
+									<button class="ac-button is-lg is-solid is-primary e-sign-up-button form__button remove_btn" type="button" onclick="removeMember();" >탈퇴하기</button>
 								</div>
+								</form>	
 							</div>
 						</div>
 					</div>
@@ -383,6 +383,37 @@
 	</div>
 	</section></main>
 
+<script>
+function removeMember(){
+	
+	if(window.confirm("탈퇴하시겠습니까?")){
+		 var formData = $(".delete-form").serialize();
+			console.log(formData);
+	        $.ajax({
+	            cache : false,
+	            url : "${contextPath }/member/remove", 
+	            type : 'POST', 
+	            data : formData, 
+	            success : function(data) {
+	                console.log("data >>>>>>>>>> ", data);
+	                if(data == "success"){
+	                	alert("탈퇴 처리 되었습니다, 더 나은 서비스로 보답하겠습니다.");
+	                	location.href="${contextPath }/";    
+	                }else if(data == "wrong password"){
+	                	alert("password 오류입니다");
+	                }else{
+	                	alert("탈퇴 처리 실패, 관리자에게 문의하셈 ㅋㅋㅋ");
+	                }
+	            
+	            }, // success 
+	            error : function(xhr, status) {
+	            	console.log("xhr >>>>>>>>>> ", xhr);
+	                //alert(xhr + " : " + status);
+	            }
+	        }); // $.ajax 
+	} 
+}
+</script>
 
 </body>
 </html>
