@@ -1,6 +1,5 @@
-const open = document.getElementById('cards');
-const sc = document.getElementById('sc');
-
+const open = document.querySelector('#cards');
+const sc = document.querySelector('#sc');
 let modal = "";
 
 open.addEventListener("click", function(e) {
@@ -11,18 +10,10 @@ open.addEventListener("click", function(e) {
 	
 	if(tag === 'H3'){
 		let num = target.dataset.num;
-		modal = document.getElementById('modal'+num);
+		modal = document.querySelector('#modal'+num);
 		modal.style.display = "flex";
 		sc.scrollTop = 0;
 	}
-	
-// if(className == rating){
-// alert('wow');
-// let num = target.dataset.num;
-// modal = document.getElementById('modal2'+num);
-// modal.style.display = "flex";
-// sc.scrollTop = 0;
-// }
 });
 
 let close = document.querySelectorAll('.close');
@@ -30,13 +21,3 @@ console.log("close >>> ", close);
 close.forEach((item) => item.addEventListener("click", function(e) {
 	modal.style.display = "none";
 }));
-
-
-function func(){
-	document.querySelector(".heading_list").innerHTML = "멘토링에 지원할 '자격'이 된다고 생각합니까? 당신이? ㅋ";
-	document.querySelector(".heading_list").style.textAlign= "center";
-	document.querySelector(".heading_desc").innerHTML = "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ";
-	document.querySelector(".heading_desc").style.textAlign= "center";
-	document.querySelector(".heading_more").style.display ='none';
-	document.querySelector(".hero-content__image-cover").style.display='none';
-}

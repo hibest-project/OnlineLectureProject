@@ -25,13 +25,13 @@
 
 				<!-- 멘토링 지원 -->
   <header class="instructor_list_hero">
-    <a href='javascript: func();'>
+    <a href='#' onclick='fake()'>
       <div class="hero-content container">
         <div class="hero-content__image-cover"></div>
         <h1 class="heading_list">멘토링</h1>
         <p class="heading_desc">
-          업계 선배들 혹은 동료들과 인사이트를 나눠 보세요.<br>
-          더 빨리, 더 멀리 갈 수 있어요.
+			업계 선배들 혹은 동료들과 인사이트를 나눠 보세요.<br>
+			더 빨리, 더 멀리 갈 수 있어요.
         </p>
         <span class="heading_more">멘토 지원하기 <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill="#212529" clip-rule="evenodd" d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z" fill-rule="evenodd"></path></svg></span>
       </div>
@@ -145,11 +145,6 @@
   </div>
 </div></div></div>
 </c:forEach>
-<script>
-	$('button.e-apply-next').on('click', function(e){
-		$('button.e-apply-next').fadeOut();
-	});
-</script>
 
 						<!-- 페이징 -->
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
@@ -194,6 +189,22 @@
 	<jsp:include page="../footer.jsp"/>
 
 </main>
+<script>
+	function fake(){
+		$('.heading_list').text("멘토링에 지원할 '자격'이 된다고 생각합니까? 당신이? ㅋ");
+		$('.heading_list').css("text-align", "center");
+		$('.heading_desc').text("nope");
+		$('.heading_desc').css("text-align", "center");
+		$(".heading_more").css("display","none");
+		$(".hero-content__image-cover").css("display","none");
+		$('.instructor_list_hero').css("background-color", "#b60000");
+		$('.instructor_list_hero').fadeOut(5000);
+	};
+
+	$("button.e-apply-next").on('click', function(e){
+		$("button.e-apply-next").fadeOut();
+	});
+</script>
 <script src="${path }/resources/js/mentors/modal.js"></script>
 </body>
 </html>
