@@ -32,7 +32,6 @@
 .signup{width:50%; margin: auto}
 
 </style>
-<!-- 로그인 할 때 아이디, 비밀번호 일치 하지 않는다는 alert 창 -->
 <c:if test="${!empty result }">
 	<script>
 		alert("${result }")

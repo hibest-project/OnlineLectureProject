@@ -1,6 +1,5 @@
-const open = document.getElementById('cards');
-
-const sc = document.getElementById('sc');
+const open = document.querySelector('#cards');
+const sc = document.querySelector('#sc');
 let modal = "";
 
 open.addEventListener("click", function(e) {
@@ -11,7 +10,7 @@ open.addEventListener("click", function(e) {
 	
 	if(tag === 'H3'){
 		let num = target.dataset.num;
-		modal = document.getElementById('modal'+num);
+		modal = document.querySelector('#modal'+num);
 		modal.style.display = "flex";
 		sc.scrollTop = 0;
 	}

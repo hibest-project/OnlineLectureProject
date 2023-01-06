@@ -12,9 +12,11 @@
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css5.css">
 	<link rel="stylesheet" href="${path}/resources/css/mentors/css6.css">
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body id="inflearn" class="pg___instructors is_logged_out is-student-user">
+
 				<!-- 헤더 -->
 	<jsp:include page="../header.jsp"/>
 
@@ -23,13 +25,13 @@
 
 				<!-- 멘토링 지원 -->
   <header class="instructor_list_hero">
-    <a href="#">
+    <a href='#' onclick='fake()'>
       <div class="hero-content container">
         <div class="hero-content__image-cover"></div>
         <h1 class="heading_list">멘토링</h1>
         <p class="heading_desc">
-          업계 선배들 혹은 동료들과 인사이트를 나눠 보세요.<br>
-          더 빨리, 더 멀리 갈 수 있어요.
+			업계 선배들 혹은 동료들과 인사이트를 나눠 보세요.<br>
+			더 빨리, 더 멀리 갈 수 있어요.
         </p>
         <span class="heading_more">멘토 지원하기 <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path fill="#212529" clip-rule="evenodd" d="m6.22 3.22c.293-.293.767-.293 1.06 0l4.25 4.25c.293.293.293.767 0 1.06l-4.25 4.25c-.293.293-.767.293-1.06 0s-.293-.767 0-1.06l3.72-3.72-3.72-3.72c-.293-.293-.293-.767 0-1.06z" fill-rule="evenodd"></path></svg></span>
       </div>
@@ -39,6 +41,7 @@
   <main class="container">
     <div class="content_palette" id="content_palette">
 			<div class="content_body">
+
 				<!-- 사이드바 -->
         <div class="panel_left">
           <jsp:include page="aside.jsp"/>
@@ -46,9 +49,9 @@
         
         <div class="panel_right">
           <div class="view">
+
 				<!-- 멘토카드 -->
 <div class="mentor-cards" id = "cards">
-
   <c:forEach var="m" items="${list }" varStatus="status">
     <section class="mentor-card e-mentoring" data-id="${m.mentor.mentor_id}">
       <div class="mentor-card__top">
@@ -59,6 +62,7 @@
             <div><dt>경력</dt><dd>${m.mentor.career }</dd></div>
 			<c:if test="${m.mentor.current ne null }">
 			<div><dt>현직</dt><dd class="mentor-card__company-name">${m.mentor.current }</dd></div>
+			<div><dt>글번호</dt><dd>${m.mentoring_id} </dd></div>
 			</c:if>
           </dl>
           <figure class="mentor-card__thumbnail">
@@ -69,16 +73,17 @@
       <div class="mentor-card__bottom">
         <div>
           <a href="#" class="mentor-card__name">${m.mentor.name }</a>
+          <c:if test="${m.mentoringGrade.score ne 0}">
           <button class="mentor-card__rating e-show-reviews">
             <span class="has-icon rating-star"><i class="fas fa-star"></i></span>
             <span class="rating-number">${m.mentoringGrade.score}</span>
-            <i class="fal fa-chevron-right"></i>
           </button>
+          </c:if>
         </div>
       </div>
     </section>
   </c:forEach>
- </div>
+</div>
 		
 				<!-- 모달  -->
 <c:forEach var="m" items="${list }" varStatus="status">
@@ -121,9 +126,9 @@
     </div>
       <div class="apply-mentoring__intro-body">
       	<h3>자기소개</h3>
-      	<p>${m.mentoring_content }</p>&nbsp;
+      	<p>${m.mentor.mentor_content }</p>&nbsp;
       	<h3>진행방식</h3>
-      	<p>${m.mentor.mentor_content }</p>
+      	<p>${m.mentoring_content }</p>&nbsp;
       	
       </div>
     </div>
@@ -140,22 +145,22 @@
   </div>
 </div></div></div>
 </c:forEach>
-		
-				<!-- 페이징 -->
+
+						<!-- 페이징 -->
     <nav class="comp_paginate" role="navigation" aria-label="pagination">
       <ul class="pages">
       
 			<!-- 카테고리 유무 체크 -->
 	<c:choose>
-		<c:when test="${categorie_num eq 0}">
+	  <c:when test="${categorie.categorie_num eq 0 && not empty pc.paging.keyword}">
 		<c:if test="${pc.prev == true }">
-    		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
+    		<li><a href="${path }/mentoring/viewMentoring?&keyword=${pc.paging.keyword }&pageNum=${pc.beginPage - pc.buttonNum}"><button class="page e-pagination  prev" data-page="prev" aria-label="PREV">PREV</button></a></li>
     	</c:if>
         <c:forEach begin="${pc.beginPage }" end="${pc.endPage }" var="pageNum">
-		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
+		<li><a href="${path }/mentoring/viewMentoring?keyword=${pc.paging.keyword }&pageNum=${pageNum}"><button class="page e-pagination  active" data-page="${pageNum }" aria-label="페이지 이동">${pageNum }</button></a></li>
 		</c:forEach>
 		<c:if test="${pc.next == true }">
-    		<li><a href="${path }/mentoring/viewMentoring?pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
+    		<li><a href="${path }/mentoring/viewMentoring?keyword=${pc.paging.keyword }&pageNum=${pc.beginPage + pc.buttonNum}"><button class="page e-pagination  next" data-page="next" aria-label="NEXT">NEXT</button></a></li>
     	</c:if>
 	  </c:when>
 	  
@@ -171,8 +176,6 @@
     	</c:if>
 	  </c:otherwise>
 	</c:choose>
-	
-	
       </ul>
     </nav>
           </div>
@@ -182,9 +185,26 @@
   </main>
   
 </section>
-
+				<!-- 푸터 -->
+	<jsp:include page="../footer.jsp"/>
 
 </main>
+<script>
+	function fake(){
+		$('.heading_list').text("멘토링에 지원할 '자격'이 된다고 생각합니까? 당신이? ㅋ");
+		$('.heading_list').css("text-align", "center");
+		$('.heading_desc').text("nope");
+		$('.heading_desc').css("text-align", "center");
+		$(".heading_more").css("display","none");
+		$(".hero-content__image-cover").css("display","none");
+		$('.instructor_list_hero').css("background-color", "#b60000");
+		$('.instructor_list_hero').fadeOut(5000);
+	};
+
+	$("button.e-apply-next").on('click', function(e){
+		$("button.e-apply-next").fadeOut();
+	});
+</script>
 <script src="${path }/resources/js/mentors/modal.js"></script>
 </body>
 </html>

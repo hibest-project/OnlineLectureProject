@@ -43,6 +43,7 @@
 	<resultMap id="pageDTO" type="com.project.www.mentor.dto.PageDTO">
 		<id property="pageNum" column="pageNum" />
 		<result property="countPerPage" column="countPerPage" />
+		<result property="keyword" column="keyword" />
 	</resultMap>
 	
 
@@ -57,7 +58,7 @@
 	</sql>
 	
 	<select id="getTotalCount" resultType="int">
-		select count(*) from mentoring
+		select count(*) from mentoring 
 		<include refid="search" />
 	</select>
 

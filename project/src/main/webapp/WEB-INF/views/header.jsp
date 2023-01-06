@@ -122,7 +122,7 @@
 								href="${pageContext.request.contextPath }/member/registForm">회원가입</a>
 						</c:if>
 						<c:if test="${!empty auth}">
-							<span>${auth.name}님, 즐 하루!!!</span>
+							<%-- <span>${auth.name}님, 즐 하루!!!</span> --%>
 							<a role="button" class="button space-inset-4 signin"
 								href="${pageContext.request.contextPath}/mypage/viewmypage ">마이페이지</a>
 							<a class="e-signup button space-inset-4 is-primary "

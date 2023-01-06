@@ -31,16 +31,13 @@ public class MentoringController {
 
 	@GetMapping("/viewMentoring")
 	public String mentoring(Model model, Categorie categorie, PageDTO dto) {
-
-		System.out.println("categorie >>>>>>>>>> " + categorie);
-		System.out.println("dto >>>>>>>>>>>> " + dto);
 		
 		// pageNum을 limit으로 바꿔주기
 		int pageNum = dto.getPageNum();
 		int countPerPage = dto.getCountPerPage();
 		int start = pageNum * countPerPage - countPerPage + 1;
 		dto.setPageNum(start);
-
+		
 		// 원하는 페이지의 mentor 목록 가져오기
 		int categorie_num = categorie.getCategorie_num();
 		if (categorie_num == 0) {
@@ -49,13 +46,12 @@ public class MentoringController {
 			List<Mentoring> list = mentorService.getPage(dto);
 			model.addAttribute("list", list);
 			dto.setPageNum(pageNum);
-					
+			
 			// 페이징 처리하기 위한 객체 생성
 			PageCreate pc = new PageCreate();
 			pc.setPaging(dto);
 			pc.setArticleTotalCount(mentorService.getTotal(dto));
 			model.addAttribute("pc", pc);
-			System.out.println("pc.getPaging().getKeyword() >>>>>>>>>>>>>> " +pc.getPaging().getKeyword());
 		} else {
 					/* 카테고리가 있을때 */
 			List<Mentoring> categorie_mentor = mentorService.getCategorieMentor(categorie_num, dto);
@@ -74,6 +70,5 @@ public class MentoringController {
 		
 		return "mentor/mentors";
 	}
-	
-	
+		
 }
