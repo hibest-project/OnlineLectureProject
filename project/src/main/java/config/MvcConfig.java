@@ -66,8 +66,8 @@ public class MvcConfig implements WebMvcConfigurer {
 		properties.put("mail.smtp.ssl.trust", host);
 		mailSender.setHost(host);
 		mailSender.setPort(587);
-		mailSender.setUsername("nebarnd");
-		mailSender.setPassword("ddqrad2069014");
+		mailSender.setUsername("");
+		mailSender.setPassword("");
 		mailSender.setDefaultEncoding("utf8");
 		mailSender.setJavaMailProperties(properties);
 		return mailSender;
