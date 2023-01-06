@@ -1,5 +1,8 @@
 package com.project.www.member.service;
 
+import javax.servlet.http.HttpServletResponse;
+
+import com.project.www.member.dto.MailDTO;
 import com.project.www.member.dto.Member;
 
 public interface MemberService {
@@ -11,9 +14,22 @@ public interface MemberService {
 	void registMember(Member member);
 
 	//회원정보 수정
-	public Member modifyMember(Member member);
+	Member modifyMember(Member member);
 	
 	//회원 탈퇴
-	public Member removeMember(Member member);
+	void remove(String id);
+
+	//임시 비밀번호 이메일 전송
+	Member findByEmail(String email);
+
+	MailDTO createMailAndChangePassword(String email);
+
+	
+	
+
+	
+
+	
+
 
 }
