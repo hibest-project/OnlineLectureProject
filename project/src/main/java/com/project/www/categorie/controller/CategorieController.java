@@ -42,4 +42,6 @@ public class CategorieController {
 		return "searchByCategorie";
 	}
 	
+	
+	
 }
